@@ -1,0 +1,34 @@
+/mi_proyecto
+│── index.php                     # Router principal (ahora redirige si no hay sesión) ojo solo esta estatica no verifica
+│
+│
+│
+│── /app
+│    │
+│    │── /config
+│    │    └── ConexionDatos.php
+│    │    └── CRUD.php
+│    │    └── SQL.php
+│    │
+│    ├── /controllers
+│    │     ├── 
+│    │     ├── 
+│    │     └── AuthController.php        # Nuevo: manejo de login
+│    │
+│    ├── /models
+│    │     ├──          # Nuevo: usuarios
+│    │     ├── 
+│    │     └── 
+│    │
+│    └── /views
+│          ├── login.php
+│          ├── dashboard.php
+│          ├── productos_listar.php
+│          ├── productos_form.php
+│          └── error404.php
+│
+│── /public
+│     ├── /css
+│     │     └── estilos.css
+│     └── /js
+│           └── dashboard.js
