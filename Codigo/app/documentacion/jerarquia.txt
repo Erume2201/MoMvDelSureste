@@ -11,7 +11,8 @@
 │    │    └── SQL.php
 │    │
 │    ├── /controllers
-│    │     ├── 
+│    │     ├── js
+│    │     │   ├── iniciarSesion.js
 │    │     ├── 
 │    │     └── AuthController.php        # Nuevo: manejo de login
 │    │
@@ -21,14 +22,12 @@
 │    │     └── 
 │    │
 │    └── /views
-│          ├── login.php
 │          ├── dashboard.php
-│          ├── productos_listar.php
-│          ├── productos_form.php
-│          └── error404.php
+│          ├── login.php
+│          ├── 
+│          └──
 │
 │── /public
 │     ├── /css
 │     │     └── estilos.css
-│     └── /js
-│           └── dashboard.js
+│     └── 

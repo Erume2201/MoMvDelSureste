@@ -4,16 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Iniciar Sesión</title>
-    <link rel="stylesheet" href="public/css/estilos.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 </head>
 
-
-<body>
     
 <body class="d-flex justify-content-center align-items-center min-vh-100 bg-light">
-    <form id="my-form" method="post" action="modules/controller/login.php" class="w-100" style="max-width: 400px;">
+    <form id="my-form" method="POST" action="#" class="w-100" style="max-width: 400px;">
         <div class="px-lg-5 py-lg-4 p-4 shadow rounded bg-white">
             <h2 class="text-center mb-4">Empresa fantasma</h2>
 
@@ -39,9 +36,12 @@
                    class="form-text text-decoration-none fw-bold">¿Has olvidado tu contraseña?</a>
             </div>
 
-            <!-- Botón de inicio de sesión -->
-            <button type="submit" class="btn btn-primary w-100 mb-3" id="iniciar_sesion"
-                    name="iniciar_sesion">Iniciar sesión</button>
+                <!-- Botón de inicio de sesión -->
+            <button type="button" class="btn btn-primary w-100 mb-3" id="iniciar_sesion">
+        Iniciar sesión
+    </button>
+
+
 
             <!-- Enlace para crear una cuenta -->
             <div class="text-center">
@@ -53,8 +53,9 @@
     </form>
 
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="app/controllers/js/iniciarSesion.js"></script>
+   <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+ <script src="../controllers/js/iniciarSesion.js"></script>
+
 </body>
 
 

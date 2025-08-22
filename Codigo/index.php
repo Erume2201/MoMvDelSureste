@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
         integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+   
     <!-- Estilos de letras -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,13 +32,17 @@
 <body>
     <?php
 
+<?php
 session_start();
-if (session_status() === PHP_SESSION_ACTIVE && !empty($_SESSION)) {
+
+// Para pruebas, la sesión puede estar vacía o tener un valor de prueba
+if (isset($_SESSION['usuario'])) {
     header("Location: app/views/dashboard.php");
-    exit();
 } else {
     header("Location: app/views/login.php");
 }
+exit();
+
 
 
 ?>
