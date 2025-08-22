@@ -37,9 +37,8 @@
             </div>
 
                 <!-- Botón de inicio de sesión -->
-            <button type="button" class="btn btn-primary w-100 mb-3" id="iniciar_sesion">
-        Iniciar sesión
-    </button>
+            <button type="submit" class="btn btn-primary w-100 mb-3">Iniciar sesión</button>
+
 
 
 
@@ -51,10 +50,7 @@
             </div>
         </div>
     </form>
-
-
-   <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
- <script src="../controllers/js/iniciarSesion.js"></script>
+ <script src="controllers/js/iniciarSesion.js"></script>
 
 </body>
 

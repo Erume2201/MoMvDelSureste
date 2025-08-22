@@ -30,22 +30,17 @@
 </head>
 
 <body>
+    
     <?php
 
 <?php
 session_start();
-
-// Para pruebas, la sesión puede estar vacía o tener un valor de prueba
-if (isset($_SESSION['usuario'])) {
-    header("Location: app/views/dashboard.php");
-} else {
-    header("Location: app/views/login.php");
-}
-exit();
-
-
+#controlador de inicio de sesion
+require 'app/controllers/php/Menu/menu.php';
 
 ?>
+
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>

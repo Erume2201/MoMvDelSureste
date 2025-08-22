@@ -2,15 +2,16 @@ $(document).ready(function () {
     const form = document.getElementById('my-form');
     const correo = document.getElementById('exampleFormControlEmail1');
     const pass = document.getElementById('password');
+    const iniciarBtn = document.getElementById('iniciar_sesion');
 
-    // Escuchamos el "submit" del formulario, no el click del botón
+    // Listener del submit del formulario
     form.addEventListener("submit", function(event) {
-        event.preventDefault(); // 👈 evita que el form se envíe por defecto
+        event.preventDefault(); // evita el envío real
         console.log("Formulario capturado ✅");
         console.log("Correo:", correo.value);
-        console.log("Pass:", pass.value);
+        console.log("Contraseña:", pass.value);
 
-        // Aquí va tu AJAX
+        // Aquí puedes agregar tu AJAX
         /*
         $.ajax({
             url: "../controllers/AuthController.php",
@@ -20,11 +21,18 @@ $(document).ready(function () {
                 pass: pass.value,
             },
             success: function(response) {
-                console.log("Respuesta:", response);
+                console.log("Respuesta del servidor:", response);
             }
         });
         */
     });
+
+    // Listener del click del botón tipo "button"
+    iniciarBtn.addEventListener("click", function() {
+        // dispara el evento submit del formulario manualmente
+        form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+    });
 });
+
 
 
