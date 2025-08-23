@@ -1,7 +1,7 @@
 <?php
 session_start();
 #controlador de inicio de sesion
-session_destroy();
+#session_destroy();
 require __DIR__ . '/app/controllers/php/menu.php';
 ?>
 
@@ -25,9 +25,10 @@ require __DIR__ . '/app/controllers/php/menu.php';
     <!-- TERMINA ESTILO DE LETRAS -->
     
     <!--icono en la pestaña-->
-    <!--<link rel="icon" href="assets/img/logoSearchBookCrodeV2.ico" type="image/x-icon"> ->
+    <!--link rel="icon" href="assets/img/logoSearchBookCrodeV2.ico" type="image/x-icon"> ->
 
     <!-- Graficación -->
+
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.css" />
@@ -50,33 +51,3 @@ require __DIR__ . '/app/controllers/php/menu.php';
 </script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </html>
-
-
-
-
-
-
-
-
-<!--
-$controller = isset($_GET['controller']) ? ucfirst(strtolower($_GET['controller'])) . 'Controller' : 'DashboardController';
-$action = isset($_GET['action']) ? $_GET['action'] : 'index';
-
-$controllerPath = "app/controllers/$controller.php";
-
-if (file_exists($controllerPath)) {
-    require_once $controllerPath;
-    if (class_exists($controller)) {
-        $objController = new $controller();
-        if (method_exists($objController, $action)) {
-            $objController->$action();
-        } else {
-            require 'app/views/error404.php';
-        }
-    } else {
-        require 'app/views/error404.php';
-    }
-} else {
-    require 'app/views/error404.php';
-} -->
-

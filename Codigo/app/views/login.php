@@ -44,7 +44,7 @@
         </div>
     </form>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-     <script src="app/controllers/js/iniciarSesion.js"></script>
+    <script src="app/controllers/js/iniciarSesion.js"></script>
 
 </body>
 

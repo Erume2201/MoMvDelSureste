@@ -9,7 +9,8 @@ if (isset($_GET["module"])) {
     switch ($option) {
         case 'iniciar_sesion':
             $_SESSION['s1'] = true;
-            $_SESSION['usuario'] = "efren";
+            $_SESSION['usuario'] = "Efren";
+
             break;
         case 'cerrar_sesion':
             session_destroy();

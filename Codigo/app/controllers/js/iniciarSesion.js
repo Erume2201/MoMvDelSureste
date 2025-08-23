@@ -1,7 +1,7 @@
 $(document).ready(function () {
     var correo = document.getElementById('exampleFormControlEmail1');
     var pass = document.getElementById('password');
-    var buscar = document.getElementById('iniciar_sesion');
+    var iniciarS = document.getElementById('iniciar_sesion');
     var form = document.getElementById('my-form');
 
        /**
@@ -21,8 +21,8 @@ $(document).ready(function () {
         }
     });
 
-    if (buscar != null) {
-        buscar.addEventListener("click", function () {
+    if (iniciarS != null) {
+        iniciarS.addEventListener("click", function () {
            var actionURL = 'index.php?module=iniciar_sesion';
              window.location.href = actionURL;
                 /* METODO PARA OBTENER DATOS DE LA BD

@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="public/css/estilos.css">
+    <link rel="stylesheet" href="/../public/css/estilos.css">
+
     <style>
-        body {
+
+               body {
             margin: 0;
             font-family: Arial, sans-serif;
             display: flex;
@@ -90,6 +92,7 @@
             gap:20px;
         }
     </style>
+    
 </head>
 <body>
     <!-- Sidebar -->
