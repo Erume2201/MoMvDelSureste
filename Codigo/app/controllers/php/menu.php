@@ -25,10 +25,11 @@ if (isset($_GET["module"])) {
 
 // Verificar si el usuario está autenticado.
 if (!isset($_SESSION['s1'])) {
-    require 'app/views/dashboard.php';
+   // Usuario NO autenticado → mostrar login
+    require __DIR__ . '/../../views/login.php';
 } else {
-    // El usuario está autenticado, puedes mostrar la interfaz principal
-    require 'app/views/login.php';
+    // Usuario autenticado → mostrar dashboard
+    require __DIR__ . '/../../views/dashboard.php';
 }
 
 ?>
