@@ -1,9 +1,8 @@
 <?php
 session_start();
-
 #controlador de inicio de sesion
+session_destroy();
 require __DIR__ . '/app/controllers/php/menu.php';
-
 ?>
 
 <!DOCTYPE html>

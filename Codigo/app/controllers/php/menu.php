@@ -1,35 +1,29 @@
 <?php
-// Iniciar la sesión solo si no está activa
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-   
+
 // Enrutamiento de URL  
 if (isset($_GET["module"])) {
     $option = $_GET["module"];
     switch ($option) {
-        case '#1':
+        case 'iniciar_sesion':
+            $_SESSION['s1'] = true;
+            $_SESSION['usuario'] = "efren";
             break;
-        case '#2':
-            break;
-        case '#3':
-            break;
-        case '#4':
-                break;    
-        default:
-            // Acción por defecto
+        case 'cerrar_sesion':
+            session_destroy();
+            // Redireccionar a la página de inicio de sesión después de destruir la sesión
+            header("Location: index.php?module=");
+            exit;
             break;
     }
 }
 
-
 // Verificar si el usuario está autenticado.
 if (!isset($_SESSION['s1'])) {
-   // Usuario NO autenticado → mostrar login
     require __DIR__ . '/../../views/login.php';
 } else {
-    // Usuario autenticado → mostrar dashboard
-    require __DIR__ . '/../../views/dashboard.php';
+     require __DIR__ . '/../../views/dashboard.php';
 }
-
 ?>

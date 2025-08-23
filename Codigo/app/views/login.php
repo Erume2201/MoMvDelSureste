@@ -34,13 +34,7 @@
                 <a href="#" id="forgotPassword"
                    class="form-text text-decoration-none fw-bold">¿Has olvidado tu contraseña?</a>
             </div>
-
-                <!-- Botón de inicio de sesión -->
-            <button type="submit" class="btn btn-primary w-100 mb-3">Iniciar sesión</button>
-
-
-
-
+               <button id="iniciar_sesion" type="button" class="btn btn-primary w-100 mb-3">Iniciar sesión</button>
             <!-- Enlace para crear una cuenta -->
             <div class="text-center">
                 <p class="mb-1">¿Todavía no tienes una cuenta?</p>
@@ -49,7 +43,8 @@
             </div>
         </div>
     </form>
- <script src="../../controllers/js/iniciarSesion.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script src="app/controllers/js/iniciarSesion.js"></script>
 
 </body>
 
