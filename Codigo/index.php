@@ -1,5 +1,11 @@
 <?php
+session_start();
+
+#controlador de inicio de sesion
+require __DIR__ . '/app/controllers/php/menu.php';
+
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -30,18 +36,9 @@
 </head>
 
 <body>
-    
-    <?php
-
-<?php
-session_start();
-#controlador de inicio de sesion
-require 'app/controllers/php/Menu/menu.php';
-
-?>
-
-
+    <!-- Formulario Login.. -->
 </body>
+
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
 
@@ -62,7 +59,7 @@ require 'app/controllers/php/Menu/menu.php';
 
 
 
-/*
+<!--
 $controller = isset($_GET['controller']) ? ucfirst(strtolower($_GET['controller'])) . 'Controller' : 'DashboardController';
 $action = isset($_GET['action']) ? $_GET['action'] : 'index';
 
@@ -82,5 +79,5 @@ if (file_exists($controllerPath)) {
     }
 } else {
     require 'app/views/error404.php';
-}*/
+} -->
 
