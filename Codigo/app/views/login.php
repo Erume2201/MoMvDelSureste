@@ -9,7 +9,7 @@
 
     
 <body class="d-flex justify-content-center align-items-center min-vh-100 bg-light">
-    <form id="my-form" method="POST" action="#" class="w-100" style="max-width: 400px;">
+    <form id="my-form" class="w-100" style="max-width: 400px;">
         <div class="px-lg-5 py-lg-4 p-4 shadow rounded bg-white">
             <h2 class="text-center mb-4">Empresa fantasma</h2>
 
@@ -49,7 +49,7 @@
             </div>
         </div>
     </form>
- <script src="controllers/js/iniciarSesion.js"></script>
+ <script src="../../controllers/js/iniciarSesion.js"></script>
 
 </body>
 
