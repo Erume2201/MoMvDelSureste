@@ -9,8 +9,8 @@ require_once __DIR__ . '/../config/config.php';
     <meta charset="UTF-8">
     <title>Dashboard</title>
     <!-- Llamando los estilos con la BASE_URL -->
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>css/dashboard.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>css/estilos.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/dashboard.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/estilos.css">
 </head>
 <body>
     <!-- Sidebar -->
