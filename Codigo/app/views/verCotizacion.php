@@ -8,10 +8,10 @@ require_once __DIR__ . '/../config/config.php';
     <meta charset="UTF-8">
     <title>Dashboard</title>
     <!--icono en la pestaña-->
-    <link rel="icon" href="public/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="<?php echo BASE_URL; ?>public/img/favicon.ico" type="image/x-icon">
     <!-- Llamando los estilos con la BASE_URL -->
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>css/dashboard.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>css/estilos.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/dashboard.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/estilos.css">
 </head>
 <body>
     <!-- Sidebar -->
@@ -52,7 +52,7 @@ require_once __DIR__ . '/../config/config.php';
         <!-- Generamos hasta 20 tarjetas -->
         <?php for ($i = 1; $i <= 5; $i++): ?>
             <div class="card">
-                <img src="public/img/LOGO_MV_transparente.png" alt="Logo MV" 
+                <img src="<?php echo BASE_URL; ?>public/img/LOGO_MV_transparente.png" alt="Logo MV" 
                  style="width:200px; height:auto; margin-bottom:5px;">
                 <button class="btn-ver-cotizacion">
                     Ver Cotización-<?php echo str_pad($i, 3, '0', STR_PAD_LEFT); ?>
