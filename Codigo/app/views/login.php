@@ -1,3 +1,7 @@
+<?php 
+require_once __DIR__ . '/../config/config.php'; 
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,49 +15,50 @@
 <body class="d-flex justify-content-center align-items-center min-vh-100" 
       style="background: linear-gradient(135deg, #0d47a1, #1976d2, #42a5f5, #e3f2fd);">
 
-    <form id="my-form" class="w-100" style="max-width: 500px;">
-        <div class="px-lg-5 py-lg-4 p-4 shadow-lg rounded bg-white text-center" 
-             style="background-color: rgba(255,255,255,0.9);">
+    <form id="my-form" class="w-100" style="max-width: 420px;">
+        <div class="p-4 p-md-5 shadow-lg rounded bg-white text-center">
 
             <!-- Logo arriba -->
-            <img src="public/img/LOGO_MV_transparente.png" alt="Logo MV" 
-                 style="width:200px; height:auto; margin-bottom:5px;">
+            <img src="<?php echo BASE_URL; ?>public/img/LOGO_MV_transparente.png" alt="Logo MV" 
+                class="img-fluid mb-3" style="max-width:180px;">
 
-            <h2 class="text-center mb-4 text-primary fw-bold">MO.MV DEL SURESTE</h2>
+            <h2 class="text-primary fw-bold mb-4">MO.MV DEL SURESTE</h2>
 
             <!-- Input de correo electrónico -->
-            <div class="mb-4 text-start">
+            <div class="mb-3 text-start">
                 <label for="exampleFormControlEmail1" class="form-label fw-bold">Correo</label>
                 <input type="email" class="form-control" id="exampleFormControlEmail1" 
                        name="correo" placeholder="correo@ejemplo.com" maxlength="45" required>
             </div>
 
             <!-- Campo de contraseña -->
-            <div class="mb-4 text-start">
+            <div class="mb-3 text-start">
                 <label for="password" class="form-label fw-bold">Contraseña</label>
-                <div class="input-group mt-1 mb-4">
-                    <input class="form-control" type="password" maxlength="45"
-                           placeholder="Ingresa tu contraseña" name="password" id="password" required />
+                <input class="form-control" type="password" maxlength="45"
+                    placeholder="Ingresa tu contraseña" name="password" id="password" required/>
+                <div class="mt-2">
+                    <a href="#" id="forgotPassword"
+                    class="form-text text-decoration-none fw-bold text-primary">¿Has olvidado tu contraseña?
+                    </a>
                 </div>
-                <a href="#" id="forgotPassword"
-                   class="form-text text-decoration-none fw-bold text-primary">¿Has olvidado tu contraseña?</a>
             </div>
 
+            <!-- Botón Login -->
             <button id="iniciar_sesion" type="button" 
                     class="btn btn-primary w-100 mb-3 shadow-sm">
                 Iniciar sesión
             </button>
 
             <!-- Enlace para crear una cuenta -->
-            <div class="text-center">
-                <p class="mb-1">¿Ya tienes una cotización?</p>
-                <a href="#" class="text-primary fw-bold text-decoration-none">Buscala ahora</a>
-            </div>
+            <small class="d-block">
+                ¿Ya tienes una cotización? 
+                <a href="#" class="fw-bold text-primary text-decoration-none">Búscala ahora</a>
+            </small>
         </div>
     </form>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="app/controllers/js/iniciarSesion.js"></script>
+    <script src="<?php echo BASE_URL; ?>app/controllers/js/iniciarSesion.js"></script>
 </body>
 
 
