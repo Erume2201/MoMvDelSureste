@@ -2,7 +2,7 @@
 // app/config/config.php
 
 // URL base del proyecto
-define('BASE_URL', 'http://localhost/EmpresaResiduo/Codigo/public/');
+define('BASE_URL', 'http://localhost/EmpresaResiduo/Codigo/');
 
 
 
