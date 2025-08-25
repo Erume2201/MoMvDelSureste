@@ -1,7 +1,6 @@
 <?php
 session_start();
 #controlador de inicio de sesion
-session_destroy();
 require __DIR__ . '/app/controllers/php/menu.php';
 ?>
 
@@ -25,7 +24,7 @@ require __DIR__ . '/app/controllers/php/menu.php';
     <!-- TERMINA ESTILO DE LETRAS -->
     
     <!--icono en la pestaña-->
-    <!--link rel="icon" href="assets/img/logoSearchBookCrodeV2.ico" type="image/x-icon"> ->
+    <!--link rel="icon" href="assets/img/logoSearchBookCrodeV2.ico" type="image/x-icon"> -->
 
     <!-- Graficación -->
 

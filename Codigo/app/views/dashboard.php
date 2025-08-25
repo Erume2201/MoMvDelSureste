@@ -18,7 +18,8 @@ require_once __DIR__ . '/../config/config.php';
         <h2>Menú</h2>
         <div class="menu-item">
             <a href="#">Generales</a>
-            <div class="submenu">
+             <!-- Submenú siempre visible -->
+            <div class="submenu" style="display:block">
                 <a href="index.php?module=usuarios">Usuarios</a>
                 <a href="index.php?module=clientes">Clientes</a>
                 <a href="index.php?module=tiendas">Tiendas</a>
