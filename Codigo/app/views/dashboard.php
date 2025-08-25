@@ -1,98 +1,16 @@
+<!--  -->
+<?php 
+require_once __DIR__ . '/../config/config.php'; 
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="/../public/css/estilos.css">
-
-    <style>
-
-               body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            display: flex;
-        }
-
-        /* Estilos del sidebar */
-        .sidebar {
-            width: 220px;
-            background: #2c3e50;
-            color: white;
-            height: 100vh;
-            position: fixed;
-            left: 0;
-            top: 0;
-            padding-top: 20px;
-        }
-
-        .sidebar h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .sidebar a {
-            display: block;
-            padding: 12px 20px;
-            color: white;
-            text-decoration: none;
-        }
-
-        .sidebar a:hover {
-            background: #34495e;
-        }
-
-        .submenu {
-            display: none;
-            background: #3b4a5a;
-        }
-
-        .submenu a {
-            padding-left: 40px;
-        }
-
-        .sidebar .menu-item:hover .submenu {
-            display: block;
-        }
-
-        /* Contenido principal */
-        .main-content {
-            margin-left: 220px;
-            padding: 20px;
-            width: calc(100% - 220px);
-        }
-
-        header {
-            display:flex; 
-            justify-content:space-between; 
-            align-items:center; 
-            margin-bottom: 20px;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        header a {
-            padding:8px 12px; 
-            background:#d9534f; 
-            color:#fff; 
-            text-decoration:none; 
-            border-radius:5px;
-        }
-
-        .card {
-            flex:1; 
-            background:#eee; 
-            padding:15px; 
-            border-radius:5px;
-        }
-
-        section {
-            display:flex; 
-            gap:20px;
-        }
-    </style>
-    
+    <!-- Llamando los estilos con la BASE_URL -->
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>css/dashboard.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>css/estilos.css">
 </head>
 <body>
     <!-- Sidebar -->
