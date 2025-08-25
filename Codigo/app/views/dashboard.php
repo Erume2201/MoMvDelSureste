@@ -14,27 +14,40 @@ require_once __DIR__ . '/../config/config.php';
 </head>
 <body>
     <!-- Sidebar -->
-    <div class="sidebar">
-        <h2>Menú</h2>
-        <div class="menu-item">
-            <a href="#">Generales</a>
-             <!-- Submenú siempre visible -->
-            <div class="submenu" style="display:block">
-                <a href="index.php?module=usuarios">Usuarios</a>
-                <a href="index.php?module=clientes">Clientes</a>
-                <a href="index.php?module=tiendas">Tiendas</a>
-            </div>
+  <div class="sidebar">
+    <h2>Menú</h2>
+
+    <!-- Menu Generales -->
+    <div class="menu-item">
+        <a href="#">Generales</a>
+        <div class="submenu" style="display:block">
+            <a href="index.php?module=usuarios">&#x1F464; Usuarios</a> <!-- 👤 -->
+            <a href="index.php?module=clientes">&#x1F465; Clientes</a> <!-- 👥 -->
+            <a href="index.php?module=tiendas">&#x1F3EA; Tiendas</a> <!-- 🏪 -->
         </div>
-        <a href="index.php?module=cotizacion">Cotización</a>
-        <a href="index.php?module=facturacion">Facturación</a>
     </div>
 
-    <!-- Contenido principal -->
-    <div class="main-content">
-        <header>
-            <h1>Bienvenido, <?= htmlspecialchars($_SESSION['usuario']); ?></h1>
-            <a href="index.php?module=cerrar_sesion">Cerrar Sesión</a>
-        </header>
+    <!-- Menu Cotizaciones -->
+    <div class="menu-item">
+        <a href="#">Cotizaciones</a>
+        <div class="submenu" style="display:block">
+            <a href="index.php?module=cotizar">&#x270F;&#xFE0F; Cotizar</a> <!-- ✏️ -->
+            <a href="index.php?module=ver_cotizaciones">&#x1F4C3; Ver cotizaciones</a> <!-- 📃 -->
+            <a href="index.php?module=calendario">&#x1F4C5; Calendario de Cotizaciones</a> <!-- 📅 -->
+        </div>
+    </div>
+
+    <a href="index.php?module=facturacion">&#x1F4B3; Facturación</a> <!-- 💳 -->
+</div>
+
+
+   <div class="main-content">
+    <header>
+        <h1>Dashboard, Bienvenido <?= htmlspecialchars($_SESSION['usuario']); ?></h1>
+        <a href="index.php?module=cerrar_sesion">Cerrar Sesión</a>
+    </header>
+
+
 
         <main>
             <section>
