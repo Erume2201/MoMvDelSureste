@@ -8,6 +8,8 @@ require_once __DIR__ . '/../config/config.php';
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
+    <!--icono en la pestaña-->
+    <link rel="icon" href="public/img/favicon.ico" type="image/x-icon">
     <!-- Llamando los estilos con la BASE_URL -->
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>css/dashboard.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>css/estilos.css">
