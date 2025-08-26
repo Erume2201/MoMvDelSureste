@@ -14,51 +14,61 @@ require_once __DIR__ . '/../config/config.php';
      <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/login.css">
 </head>
 
-<body class="d-flex justify-content-center align-items-center min-vh-100">
+<body>
+    <div class="login-split">
 
-    <form id="my-form" class="w-100">
-        <div class="p-4 p-md-5 shadow-lg text-center">
+        <!-- Lado izquierdo: formulario -->
+        <div class="login-left">
+            <form id="my-form" class="w-100">
+                <div class="p-4 p-md-5 shadow-lg text-center">
 
-            <!-- Logo arriba -->
-            <img src="<?php echo BASE_URL; ?>public/img/LOGO_MV_transparente.png" alt="Logo MV" class="img-fluid mb-3">
+                    <!-- Logo arriba -->
+                    <img src="<?php echo BASE_URL; ?>public/img/LOGO_MV_transparente.png" alt="Logo MV" class="img-fluid mb-3">
 
-            <h2 class="text-primary fw-bold">MO.MV DEL SURESTE</h2>
+                    <h2 class="text-primary fw-bold">MO.MV DEL SURESTE</h2>
 
-            <!-- Input de correo electrónico -->
-            <div class="mb-3 text-start">
-                <label for="exampleFormControlEmail1" class="form-label fw-bold">Correo</label>
-                <input type="email" class="form-control" id="exampleFormControlEmail1" 
-                       name="correo" placeholder="juanito123@correo.com" maxlength="45" required>
-            </div>
+                    <!-- Input de correo electrónico -->
+                    <div class="mb-3 text-start">
+                        <label for="exampleFormControlEmail1" class="form-label fw-bold">Correo</label>
+                        <input type="email" class="form-control" id="exampleFormControlEmail1" 
+                            name="correo" placeholder="juanito123@correo.com" maxlength="45" required>
+                    </div>
 
-            <!-- Campo de contraseña -->
-            <div class="mb-3 text-start">
-                <label for="password" class="form-label fw-bold">Contraseña</label>
-                <input class="form-control" type="password" maxlength="45"
-                    placeholder="Ingresa tu contraseña" name="password" id="password" required/>
-                <div class="mt-2">
-                    <a href="#" id="forgotPassword"
-                    class="form-text fw-bold text-primary text-decoration-none">
-                    ¿Has olvidado tu contraseña?
-                    </a>
+                    <!-- Campo de contraseña -->
+                    <div class="mb-3 text-start">
+                        <label for="password" class="form-label fw-bold">Contraseña</label>
+                        <input class="form-control" type="password" maxlength="45"
+                            placeholder="Ingresa tu contraseña" name="password" id="password" required/>
+                        <div class="mt-2">
+                            <a href="#" id="forgotPassword"
+                            class="form-text fw-bold text-primary text-decoration-none">
+                            ¿Has olvidado tu contraseña?
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Botón Login -->
+                    <button id="iniciar_sesion" type="button" 
+                            class="btn btn-primary w-100 mb-3 shadow-sm">
+                        Iniciar sesión
+                    </button>
+
+                    <!-- Enlace para crear una cuenta -->
+                    <small class="d-block">
+                        ¿Ya tienes una cotización? 
+                        <a href="#" class="fw-bold text-primary text-decoration-none">
+                            Búscala ahora
+                        </a>
+                    </small>
                 </div>
-            </div>
-
-            <!-- Botón Login -->
-            <button id="iniciar_sesion" type="button" 
-                    class="btn btn-primary w-100 mb-3 shadow-sm">
-                Iniciar sesión
-            </button>
-
-            <!-- Enlace para crear una cuenta -->
-            <small class="d-block">
-                ¿Ya tienes una cotización? 
-                <a href="#" class="fw-bold text-primary text-decoration-none">
-                    Búscala ahora
-                </a>
-            </small>
+            </form>
         </div>
-    </form>
+
+        <!-- Lado derecho: imagen ilustrativa -->  
+        <aside class="login-right">
+            <img src="<?php echo BASE_URL; ?>public/img/login-illustration.jpg" alt="Ilustracion" class="login-illustration">
+        </aside>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="<?php echo BASE_URL; ?>app/controllers/js/iniciarSesion.js"></script>
