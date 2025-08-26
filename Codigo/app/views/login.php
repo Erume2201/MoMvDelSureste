@@ -64,9 +64,9 @@ require_once __DIR__ . '/../config/config.php';
             </form>
         </div>
 
-        <!-- Lado derecho: imagen ilustrativa -->  
+        <!-- Lado derecho: panel transparente con logo superpuesto -->
         <aside class="login-right">
-            <img src="<?php echo BASE_URL; ?>public/img/login-illustration.jpg" alt="Ilustracion" class="login-illustration">
+            <!-- Este logo permanece centrado sobre el fondo -->
             <img src="<?php echo BASE_URL; ?>public/img/logo_mv_blanco.png" alt="logo_blanco" class="logomv-illustration">
         </aside>
     </div>
@@ -74,4 +74,5 @@ require_once __DIR__ . '/../config/config.php';
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="<?php echo BASE_URL; ?>app/controllers/js/iniciarSesion.js"></script>
 </body>
+
 </html>

@@ -1,8 +1,14 @@
 /* ===== Estilos de Login ===== */
 
-/* Fondo general */
+/* Imagen de fondo aplicada a todo el cuerpo */
 body {
-    background: linear-gradient(135deg, #0d47a1, #1976d2, #42a5f5, #e3f2fd);
+    margin: 0;
+    padding: 0;
+    background: url('../img/login-illustration.jpg') center center/cover no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    font-family: sans-serif;
 }
 
 /* Formulario principal */
@@ -10,9 +16,9 @@ body {
     max-width: 420px;
 }
 
-/* Caja blanca */
+/* Caja blanca del formulario (sin transparencia) */
 #my-form > div {
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: #ffffff;
     border-radius: 10px;
 }
 
@@ -21,18 +27,18 @@ body {
     max-width: 180px;
 }
 
-/* Títulos */
+/* Título */
 #my-form h2 {
     margin-bottom: 1.5rem;
 }
 
-/* Enlace "¿Has olvidado tu contraseña?" */
+/* Enlace de contraseña */
 #forgotPassword {
     display: inline-block;
     margin-top: 5px;
 }
 
-/* Botón de login */
+/* Botón login */
 #iniciar_sesion {
     transition: transform 0.2s ease-in-out;
 }
@@ -41,64 +47,45 @@ body {
     transform: scale(1.02);
 }
 
-/* ===== Layout Split Screen ===== */
-.login-split{
+/* Layout de pantalla dividida */
+.login-split {
     display: flex;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
+    overflow: hidden;
 }
 
-/* Izquierda: centramos tu formulario */
-.login-left{
+/* Izquierda: formulario blanco */
+.login-left {
     width: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f8f9fa;
     padding: 2rem;
+    background: transparent;
+    height: 100vh;
+    box-sizing: border-box;
 }
 
-/* Derecha: Panel visual */
-.login-right{
+/* Derecha: espacio con el logo centrado */
+.login-right {
     width: 60%;
-    background: url('../img/login-illustration.jpg') center center/cover no-repeat;
+    height: 100vh;
     position: relative;
-    /* Degradado de respaldo si no hay imagen o falla la carga */
-    background: radial-gradient(1200px 800px at 80% 20%, rgba(255,255,255,0.25), rgba(255,255,255,0) 40%) ,
-                linear-gradient(135deg, #0d47a1, #1976d2 50%, #42a5f5);
-    overflow: hidden;
-}
-/* Difuminado */
-.login-right::after{
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.25); /* Oscurecido sutil */
-    backdrop-filter: blur(1.5px); /* Difuminado */
+    background: transparent;
 }
 
-
-/* La imagen se adapta a todo el panel derecho */
-.login-illustration{
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.95;
-}
-
+/* Logo superpuesto */
 .logomv-illustration {
     position: absolute;
     top: 29%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Centrar */
-    max-width: 40%; /* Ajusta según tu logo */
-    z-index: 2; /* Encima de la ilustración */
+    transform: translate(-50%, -50%);
+    max-width: 40%;
+    z-index: 2;
 }
 
-
-/* Responsivo: solo formulario en móviles */
+/* Responsivo: solo el formulario visible en pantallas pequeñas */
 @media (max-width: 992px) {
     .login-split {
         flex-direction: column;
@@ -106,6 +93,7 @@ body {
 
     .login-left, .login-right {
         width: 100%;
+        height: auto;
     }
 
     .login-right {
