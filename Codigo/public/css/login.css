@@ -40,3 +40,65 @@ body {
 #iniciar_sesion:hover {
     transform: scale(1.02);
 }
+
+/* ===== Layout Split Screen ===== */
+.login-split{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Izquierda: centramos tu formulario */
+.login-left{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 2rem;
+}
+
+/* Derecha: Panel visual */
+.login-right{
+    width: 60%;
+    background: url('../img/login-illustration.jpg') center center/cover no-repeat;
+    position: relative;
+    /* Degradado de respaldo si no hay imagen o falla la carga */
+    background: radial-gradient(1200px 800px at 80% 20%, rgba(255,255,255,0.25), rgba(255,255,255,0) 40%) ,
+                linear-gradient(135deg, #0d47a1, #1976d2 50%, #42a5f5);
+    overflow: hidden;
+}
+/* Difuminado */
+.login-right::after{
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.25); /* Oscurecido sutil */
+    backdrop-filter: blur(1.5px); /* Difuminado */
+}
+
+
+/* La imagen se adapta a todo el panel derecho */
+.login-illustration{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.95;
+}
+
+/* Responsivo: solo formulario en móviles */
+@media (max-width: 992px) {
+    .login-split {
+        flex-direction: column;
+    }
+
+    .login-left, .login-right {
+        width: 100%;
+    }
+
+    .login-right {
+        display: none;
+    }
+}
