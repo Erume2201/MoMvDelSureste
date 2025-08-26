@@ -67,6 +67,7 @@ require_once __DIR__ . '/../config/config.php';
         <!-- Lado derecho: imagen ilustrativa -->  
         <aside class="login-right">
             <img src="<?php echo BASE_URL; ?>public/img/login-illustration.jpg" alt="Ilustracion" class="login-illustration">
+            <img src="<?php echo BASE_URL; ?>public/img/logo_mv_blanco.png" alt="logo_blanco" class="logomv-illustration">
         </aside>
     </div>
 
