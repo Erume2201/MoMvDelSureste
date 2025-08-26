@@ -1,0 +1,42 @@
+/* ===== Estilos de Login ===== */
+
+/* Fondo general */
+body {
+    background: linear-gradient(135deg, #0d47a1, #1976d2, #42a5f5, #e3f2fd);
+}
+
+/* Formulario principal */
+#my-form {
+    max-width: 420px;
+}
+
+/* Caja blanca */
+#my-form > div {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+}
+
+/* Logo */
+#my-form img {
+    max-width: 180px;
+}
+
+/* Títulos */
+#my-form h2 {
+    margin-bottom: 1.5rem;
+}
+
+/* Enlace "¿Has olvidado tu contraseña?" */
+#forgotPassword {
+    display: inline-block;
+    margin-top: 5px;
+}
+
+/* Botón de login */
+#iniciar_sesion {
+    transition: transform 0.2s ease-in-out;
+}
+
+#iniciar_sesion:hover {
+    transform: scale(1.02);
+}
