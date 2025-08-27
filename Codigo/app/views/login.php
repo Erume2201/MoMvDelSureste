@@ -20,25 +20,26 @@ require_once __DIR__ . '/../config/config.php';
         <!-- Lado izquierdo: formulario -->
         <div class="login-left">
             <form id="my-form" class="w-100">
+
                 <div class="p-4 p-md-5 shadow-lg text-center">
 
-                    <!-- Logo arriba -->
-                    <!-- <img src="<?php echo BASE_URL; ?>public/img/LOGO_MV_transparente.png" alt="Logo MV" class="img-fluid mb-3"> -->
                     <h1 class="iniciar-sesion">INICIAR SESION</h1>
-                    <h2 class="text-primary fw-bold">MO.MV DEL SURESTE</h2>
+                    <!-- <h2 class="text-primary fw-bold">MO.MV DEL SURESTE</h2> -->
 
                     <!-- Input de correo electrónico -->
                     <div class="mb-3 text-start">
                         <label for="exampleFormControlEmail1" class="form-label fw-bold">Correo</label>
                         <input type="email" class="form-control" id="exampleFormControlEmail1" 
-                            name="correo" placeholder="juanito123@correo.com" maxlength="45" required>
+                            name="correo" placeholder="juanito123@gmail.com" maxlength="45" required>
                     </div>
 
                     <!-- Campo de contraseña -->
                     <div class="mb-3 text-start">
                         <label for="password" class="form-label fw-bold">Contraseña</label>
                         <input class="form-control" type="password" maxlength="45"
-                            placeholder="Ingresa tu contraseña" name="password" id="password" required/>
+                            placeholder="Escribe tu contraseña..." name="password" id="password" required>
+
+                        <!-- Restablecer contraseña -->
                         <div class="mt-2">
                             <a href="#" id="forgotPassword"
                             class="form-text fw-bold text-primary text-decoration-none">

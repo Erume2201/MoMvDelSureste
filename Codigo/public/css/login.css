@@ -24,7 +24,7 @@
     font-family: 'NSans-bold';
     src: url('../fonts/NSans-bold.otf') format('opentype');
     font-weight: 700; /* bold */
-    font-style: bold;
+    font-style: normal;
 }
 
 
@@ -118,7 +118,7 @@ small, a{
     height: 100vh;
 }
 
-/* Izquierda: formulario blanco */
+/* Izquierda: formulario login */
 .login-left {
     width: 40%;
     display: flex;
@@ -140,10 +140,10 @@ small, a{
 /* Logo superpuesto */
 .logomv-illustration {
     position: absolute;
-    top: 30%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 40%;
+    max-width: 60%;
     z-index: 2;
 }
 
