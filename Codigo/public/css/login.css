@@ -21,7 +21,7 @@
 }
 
 @font-face {
-    font-family: 'NSans';
+    font-family: 'NSans-bold';
     src: url('../fonts/NSans-bold.otf') format('opentype');
     font-weight: 700; /* bold */
     font-style: bold;
@@ -34,10 +34,38 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: 'NSans', sans-serif;
     background: url('../img/login-illustration.jpg') center center/cover no-repeat;
     height: 100vh;
     overflow: hidden;
 }
+/** TAMAÑOS Y TIPO DE FUENTE en formulario **/
+/* Ajustes de peso según la jerarquía */
+h1, h2 {
+    font-family: 'NSans-bold', sans-serif;
+    font-weight: 700; /* Bold para títulos */
+}
+
+label {
+    font-family: 'NSans', sans-serif;
+    font-weight: 500; /* Regular para texto normal */
+}
+/* Enlace de cotización */
+small, a{
+    font-family: 'NSans', sans-serif;
+    font-weight: 300; /* Regular para texto normal */
+}
+/* Input de contraseña y correo */
+#password, #exampleFormControlEmail1{
+    font-family: 'NSans', sans-serif;
+    font-weight: 400; /* Texto mediano */
+}
+/* Botón de iniciar sesión */
+#iniciar_sesion{
+    font-family: 'NSans', sans-serif;
+    font-weight: 500; /* Texto mediano */
+}
+/* ------------------------------------------ */
 
 /* Formulario principal */
 #my-form {

@@ -50,7 +50,7 @@ require_once __DIR__ . '/../config/config.php';
                     <!-- Botón Login -->
                     <button id="iniciar_sesion" type="button" 
                             class="btn btn-primary w-100 mb-3 shadow-sm">
-                        Iniciar sesión
+                        Ingresar
                     </button>
 
                     <!-- Enlace para crear una cuenta -->
