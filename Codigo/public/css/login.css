@@ -41,7 +41,7 @@ body {
 }
 /** TAMAÑOS Y TIPO DE FUENTE en formulario **/
 /* Ajustes de peso según la jerarquía */
-h1, h2 {
+h1 {
     font-family: 'NSans-bold', sans-serif;
     font-weight: 700; /* Bold para títulos */
 }
@@ -59,11 +59,6 @@ small, a{
 #password, #exampleFormControlEmail1{
     font-family: 'NSans', sans-serif;
     font-weight: 400; /* Texto mediano */
-}
-/* Botón de iniciar sesión */
-#iniciar_sesion{
-    font-family: 'NSans', sans-serif;
-    font-weight: 500; /* Texto mediano */
 }
 /* ------------------------------------------ */
 
@@ -86,30 +81,72 @@ small, a{
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Logo */
-#my-form img {
-    max-width: 180px;
-}
-
 /* Título */
-#my-form h2 {
+#my-form h1 {
+    margin-top: -1rem;
     margin-bottom: 1.5rem;
+    padding: 5px;
 }
 
-/* Enlace de contraseña */
+/* Enlace de restablecimiento de contraseña */
 #forgotPassword {
+    font-family: 'NSans', sans-serif;
+    font-weight: 300; /* Regular para texto normal */
+    color: #0d6efd; /* Color primario Bootstrap */
     display: inline-block;
     margin-top: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+#forgotPassword:hover {
+    transform: scale(1.05); /* Ligero aumento */ 
+    color: #034fc0; /* Azul más oscuro al pasar el mouse */
+}
+#forgotPassword:active {
+    transform: scale(0.95); /* Pequeño hundimiento */
 }
 
 /* Botón login */
 #iniciar_sesion {
-    transition: transform 0.2s ease-in-out;
+    font-family: 'NSans', sans-serif;
+    font-weight: 500;
+    background: linear-gradient(90deg, #0d6efd, #0b5ed7); /* Degradado base */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.5rem;
+    transition: all 0.3s ease; /* Incluye color, fondo, sombra y transform */
+    cursor: pointer;
+}
+#iniciar_sesion:hover {
+    background: linear-gradient(90deg, #0b5ed7, #05295f); /* Degradado más intenso */
+    transform: scale(1.05); /* Ligero aumento */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra flotante */
+}
+#iniciar_sesion:active {
+    transform: scale(0.98); /* Pequeño hundimiento */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-#iniciar_sesion:hover {
-    transform: scale(1.02);
+/* Enlace de cotización (solo el enlace) */
+#enlace-cotizacion {
+    font-family: 'NSans', sans-serif;
+    font-weight: 500; /* Un poco más llamativo que el small */
+    color: #0d6efd; /* Color primario Bootstrap */
+    display: inline-block; /* Necesario para que la escala funcione bien */
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
 }
+#enlace-cotizacion:hover {
+    transform: scale(1.03); /* Ligero aumento */
+    color: #034fc0; /* Azul más oscuro al pasar el mouse */
+}
+#enlace-cotizacion:active {
+    transform: scale(0.95); /* Hundimiento suave */
+}
+
+
+
+/* ______________________________________ */
 
 /* Layout de pantalla dividida */
 .login-split {
