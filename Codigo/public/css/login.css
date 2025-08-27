@@ -1,3 +1,33 @@
+/* TIPOGRAFÍA */
+@font-face {
+    font-family: 'NSans';
+    src: url('../fonts/NSans-light.otf') format('opentype');
+    font-weight: 300; /* light */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NSans';
+    src: url('../fonts/NSans-regular.otf') format('opentype');
+    font-weight: 400; /* normal */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NSans';
+    src: url('../fonts/NSans-medium.otf') format('opentype');
+    font-weight: 500; /* medium */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NSans';
+    src: url('../fonts/NSans-bold.otf') format('opentype');
+    font-weight: 700; /* bold */
+    font-style: bold;
+}
+
+
 /* ===== Estilos de Login ===== */
 
 /* Imagen de fondo aplicada a todo el cuerpo */
@@ -5,21 +35,27 @@ body {
     margin: 0;
     padding: 0;
     background: url('../img/login-illustration.jpg') center center/cover no-repeat;
-    background-size: cover;
-    background-repeat: no-repeat;
     height: 100vh;
-    font-family: sans-serif;
+    overflow: hidden;
 }
 
 /* Formulario principal */
 #my-form {
     max-width: 420px;
+    width: 100%;
 }
 
 /* Caja blanca del formulario (sin transparencia) */
 #my-form > div {
-    background-color: #ffffff;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#my-form > div:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* Logo */
@@ -52,7 +88,6 @@ body {
     display: flex;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
 }
 
 /* Izquierda: formulario blanco */
@@ -72,13 +107,12 @@ body {
     width: 60%;
     height: 100vh;
     position: relative;
-    background: transparent;
 }
 
 /* Logo superpuesto */
 .logomv-illustration {
     position: absolute;
-    top: 29%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 40%;

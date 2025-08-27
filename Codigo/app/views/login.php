@@ -23,8 +23,8 @@ require_once __DIR__ . '/../config/config.php';
                 <div class="p-4 p-md-5 shadow-lg text-center">
 
                     <!-- Logo arriba -->
-                    <img src="<?php echo BASE_URL; ?>public/img/LOGO_MV_transparente.png" alt="Logo MV" class="img-fluid mb-3">
-
+                    <!-- <img src="<?php echo BASE_URL; ?>public/img/LOGO_MV_transparente.png" alt="Logo MV" class="img-fluid mb-3"> -->
+                    <h1 class="iniciar-sesion">INICIAR SESION</h1>
                     <h2 class="text-primary fw-bold">MO.MV DEL SURESTE</h2>
 
                     <!-- Input de correo electrónico -->
