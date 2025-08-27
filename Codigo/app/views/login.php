@@ -42,7 +42,7 @@ require_once __DIR__ . '/../config/config.php';
                         <!-- Restablecer contraseña -->
                         <div class="mt-2">
                             <a href="#" id="forgotPassword"
-                            class="form-text fw-bold text-primary text-decoration-none">
+                            class="form-text text-decoration-none">
                             ¿Has olvidado tu contraseña?
                             </a>
                         </div>
@@ -50,14 +50,14 @@ require_once __DIR__ . '/../config/config.php';
 
                     <!-- Botón Login -->
                     <button id="iniciar_sesion" type="button" 
-                            class="btn btn-primary w-100 mb-3 shadow-sm">
+                            class="btn w-100 mb-3 shadow-sm">
                         Ingresar
                     </button>
 
                     <!-- Enlace para crear una cuenta -->
                     <small class="d-block">
                         ¿Ya tienes una cotización? 
-                        <a href="#" class="fw-bold text-primary text-decoration-none">
+                        <a href="#" class="text-decoration-none" id="enlace-cotizacion">
                             Búscala ahora
                         </a>
                     </small>
