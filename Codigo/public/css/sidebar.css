@@ -1,46 +1,115 @@
+/* TIPOGRAFÍA */
+@font-face {
+    font-family: 'NSans';
+    src: url('../fonts/NSans-light.otf') format('opentype');
+    font-weight: 300; /* light */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NSans';
+    src: url('../fonts/NSans-regular.otf') format('opentype');
+    font-weight: 400; /* normal */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NSans';
+    src: url('../fonts/NSans-medium.otf') format('opentype');
+    font-weight: 500; /* medium */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NSans-bold';
+    src: url('../fonts/NSans-bold.otf') format('opentype');
+    font-weight: 700; /* bold */
+    font-style: normal;
+}
+
 /* =========================
    SIDEBAR
 ========================= */
 .sidebar {
   width: 220px;
-  background: #2c3e50;
-  color: white;
+  background: linear-gradient(180deg, #2c3e50 0%, #34495e 100%);
+  color: #ecf0f1;
   height: 100vh;
   position: fixed;
   left: 0;
   top: 0;
-  padding-top: 20px;
+  padding: 20px 0;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.25);
 }
 
-.sidebar h2 {
+/* Título principal */
+.sidebar h1 {
+  font-family: 'NSans-bold', sans-serif;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  color: #ffffff;
 }
 
+.sidebar .secciones {
+  font-family: 'NSans', sans-serif;
+  font-weight: 500; /* Regular para texto normal */
+}
+
+/* Enlaces principales */
 .sidebar a {
-  display: block;
-  padding: 12px 20px;
-  color: white;
+  display: flex; /* para alinear texto e icono/flecha */
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  color: #ecf0f1;
   text-decoration: none;
+  transition: background 0.3s, padding-left 0.3s;
 }
-
 .sidebar a:hover {
-  background: #34495e;
+  background: rgba(255, 255, 255, 0.08); /* más contraste */
+  padding-left: 22px; /* pequeño movimiento hacia la derecha */
+  color: #ffffff;
 }
 
- /* sub menu siempre visible */
+/* Separadores de secciones */
+.sidebar .menu-item {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 8px;
+  margin-top: 8px;
+}
+
+ /* Submenús */
 .submenu {
-  background: #3b4a5a;
-  display: none; /* por defecto oculto */
+  font-family: 'NSans', sans-serif;
+  font-weight: 400; /* Texto mediano */
+  background: rgba(255,255,255,0.05);
+  display: none;
+  transition: max-height 0.3s ease;
 }
 .submenu-visible {
-  display: block; /* clase para mostrarlo */
+  display: block;
 }
 .submenu a {
-    padding-left: 40px;
-    display: block;
+    padding-left: 35px;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+.submenu a:hover {
+  background: rgba(255,255,255,0.12);
+  opacity: 1;
+  color: #ffffff;
 }
 
-.sidebar .menu-item:hover .submenu {
-  display: block;
+/* Indicadores (flechas) */
+.sidebar .menu-item > a::after {
+  content: "▶";
+  font-size: 0.8rem;
+  transition: transform 0.3s;
+}
+
+.sidebar .menu-item:hover > a::after,
+.sidebar .menu-item .submenu-visible ~ a::after {
+  transform: rotate(90deg); /* flecha hacia abajo cuando se activa */
 }
