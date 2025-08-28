@@ -11,6 +11,8 @@ include __DIR__ . '../layout/sidebar.php'; // Esto solo carga el sidebar
     <title>Dashboard</title>
     <!--icono en la pestaña-->
     <link rel="icon" href="<?php echo BASE_URL; ?>public/img/favicon.ico" type="image/x-icon">
+    <!-- Iconos de Boxicon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- Llamando los estilos con la BASE_URL -->
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/sidebar.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/dashboard.css">
