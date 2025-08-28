@@ -41,15 +41,29 @@
   box-shadow: 2px 0 5px rgba(0,0,0,0.25);
 }
 
-/* Título principal */
-.sidebar h1 {
+/* Encabezado del sidebar con logo y nombre */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* espacio entre logo y texto */
+  margin-bottom: 30px;
+  padding: 0 30px;
+}
+
+.sidebar-logo {
+  height: 45px; /* ajusta el tamaño según el diseño */
+  width: auto;
+  object-fit: contain;
+}
+
+.sidebar-title {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
-  text-align: center;
-  margin-bottom: 25px;
-  font-size: 1.2rem;
-  letter-spacing: 1px;
+  font-size: 1rem; /* Mayor rem | mayor presencia */
   color: #ffffff;
+  margin: 0;
+  text-align: left;
 }
 
 .sidebar .secciones {

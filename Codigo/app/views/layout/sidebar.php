@@ -1,6 +1,11 @@
 <!-- Sidebar -->
 <div class="sidebar">
-    <h1>MENÚ</h1>
+    <!-- Icono y encabezado -->
+    <div class="sidebar-header">
+        <img src="<?php echo BASE_URL; ?>public/img/logo_mv_blanco_single.png" alt="Logo MO. MV" class="sidebar-logo">
+        <h2 class="sidebar-title">MO. MV DEL SURESTE</h2>
+    </div>
+
 
     <!-- Dashboard -->
     <a href="index.php?module=" class="secciones">
