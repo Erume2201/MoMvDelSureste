@@ -1,30 +1,29 @@
 /* TIPOGRAFÍA */
-@font-face {
-    font-family: 'NSans';
-    src: url('../fonts/NSans-light.otf') format('opentype');
-    font-weight: 300; /* light */
-    font-style: normal;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
 }
 
-@font-face {
-    font-family: 'NSans';
-    src: url('../fonts/NSans-regular.otf') format('opentype');
-    font-weight: 400; /* normal */
-    font-style: normal;
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
 }
 
-@font-face {
-    font-family: 'NSans';
-    src: url('../fonts/NSans-medium.otf') format('opentype');
-    font-weight: 500; /* medium */
-    font-style: normal;
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
 }
 
-@font-face {
-    font-family: 'NSans-bold';
-    src: url('../fonts/NSans-bold.otf') format('opentype');
-    font-weight: 700; /* bold */
-    font-style: normal;
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
 }
 
 /* =========================
@@ -44,7 +43,8 @@
 
 /* Título principal */
 .sidebar h1 {
-  font-family: 'NSans-bold', sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
   text-align: center;
   margin-bottom: 25px;
   font-size: 1.2rem;
@@ -53,15 +53,16 @@
 }
 
 .sidebar .secciones {
-  font-family: 'NSans', sans-serif;
-  font-weight: 500; /* Regular para texto normal */
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
 }
 
 /* Enlaces principales */
 .sidebar a {
-  display: flex; /* para alinear texto e icono/flecha */
-  justify-content: space-between;
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
+  gap: 10px; /* espacio entre icono y texto */
   padding: 12px 18px;
   color: #ecf0f1;
   text-decoration: none;
@@ -73,6 +74,13 @@
   color: #ffffff;
 }
 
+/* Íconos de Boxicon */
+.sidebar i.bx {
+  font-size: 1.2rem;
+  min-width: 20px; /* asegura alineación */
+}
+
+
 /* Separadores de secciones */
 .sidebar .menu-item {
   border-top: 1px solid rgba(255,255,255,0.1);
@@ -82,8 +90,8 @@
 
  /* Submenús */
 .submenu {
-  font-family: 'NSans', sans-serif;
-  font-weight: 400; /* Texto mediano */
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
   background: rgba(255,255,255,0.05);
   display: none;
   transition: max-height 0.3s ease;
@@ -92,7 +100,7 @@
   display: block;
 }
 .submenu a {
-    padding-left: 35px;
+    padding-left: 40px;
     font-size: 0.95rem;
     opacity: 0.9;
 }
@@ -103,13 +111,18 @@
 }
 
 /* Indicadores (flechas) */
+.sidebar .menu-item > a {
+  position: relative;
+}
+
 .sidebar .menu-item > a::after {
-  content: "▶";
+  content: "\25B6"; /* ▶ */
   font-size: 0.8rem;
+  position: absolute;
+  right: 18px;
   transition: transform 0.3s;
 }
 
-.sidebar .menu-item:hover > a::after,
-.sidebar .menu-item .submenu-visible ~ a::after {
-  transform: rotate(90deg); /* flecha hacia abajo cuando se activa */
+.sidebar .menu-item.open > a::after {
+  transform: rotate(90deg); /* flecha hacia abajo */
 }
