@@ -1,123 +1,168 @@
 /* =========================
-   BASE
+ BASE
 ========================= */
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  display: flex;
+margin: 0;
+font-family: Arial, sans-serif;
+display: flex;
+}
+/* =========================
+ SIDEBAR
+========================= */
+.sidebar {
+width: 220px;
+background: #2c3e50;
+color: white;
+height: 100vh;
+position: fixed;
+left: 0;
+top: 0;
+padding-top: 20px;
+}
+
+.sidebar h2 {
+text-align: center;
+margin-bottom: 20px;
+}
+
+.sidebar a {
+display: block;
+padding: 12px 20px;
+color: white;
+text-decoration: none;
+}
+
+.sidebar a:hover {
+background: #34495e;
+}
+/* sub menu siempre visible */
+.submenu {
+background: #3b4a5a;
+display: none; /* por defecto oculto */
+}
+.submenu-visible {
+display: block; /* clase para mostrarlo */
+}
+.submenu a {
+padding-left: 40px;
+display: block;
+}
+
+.sidebar .menu-item:hover .submenu {
+display: block;
 }
 
 /* =========================
-   CONTENIDO PRINCIPAL
+   CONTENIDO PRINCIPAL
 ========================= */
 .main-content {
-  margin-left: 220px;
-  padding: 20px;
-  width: calc(100% - 220px);
+margin-left: 220px;
+padding: 20px;
+width: calc(100% - 220px);
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 20px;
 }
 header h1 {
-  margin: 0;
+margin: 0;
 }
 header a {
-  padding: 8px 12px;
-  background: #d9534f;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
+padding: 8px 12px;
+background: #d9534f;
+color: #fff;
+text-decoration: none;
+border-radius: 5px;
 }
 
 /* =========================
-   SECCIONES Y TARJETAS
+ SECCIONES Y TARJETAS - SOLUCIÓN
 ========================= */
-section {
-  display: flex;
-  gap: 20px;
-}
-
-.ventas-progreso {
-  margin-top: 30px; /* antes estaba inline */
-}
-
-.card {
-  flex: 1;
-  background: #eee;
-  padding: 15px;
-  border-radius: 5px;
-}
-
-/* =========================
-   TARJETAS DE COTIZACIONES
-========================= */
+/* Este es el contenedor de las tarjetas de cotizaciones */
 .cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+ display: flex;
+ flex-wrap: wrap; /* Habilita el ajuste de las tarjetas a la siguiente línea */
+ gap: 20px; /* Espacio uniforme entre tarjetas */
+ justify-content: center; /* Centra las tarjetas cuando no llenan toda la fila */
 }
 
-/* Estilo de cada card */
-.card {
-    background: #34495e;
-    color: white;
-    padding: 15px;
-    border-radius: 8px;
-    width: calc(20% - 16px); /* máximo 5 cards por fila */
-    box-sizing: border-box;
-    text-align: center;
-    transition: transform 0.2s;
+/* Estilo de cada card de cotización */
+/* Ahora usamos un selector más específico para evitar conflictos */
+/* Estilo de cada card dentro del contenedor */
+.cards-container .card {
+  background: #7f9cb9;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  text-align: center;
+  transition: transform 0.2s;
+  flex-basis: 200px; /* Ancho base de la tarjeta */
+  flex-grow: 1; /* Permite que las tarjetas crezcan */
+  flex-shrink: 1; /* Permite que las tarjetas se encojan */
 }
-.card:hover {
-    transform: translateY(-5px);
-    background: #3d566e;
+.cards-container .card:hover {
+transform: translateY(-5px);
+background: #6a92b7;
+}
+
+/* Estilos para otras secciones, si existen */
+.ventas-progreso {
+margin-top: 30px;
+display: flex;
+gap: 20px;
+}
+.ventas-progreso .card {
+flex: 1; /* Si usas tarjetas en otras partes, dales su propio estilo */
+background: #eee;
+padding: 15px;
+border-radius: 5px;
 }
 
 /* =========================
-   BOTONES
+ BOTONES
 ========================= */
 .btn-ver-cotizacion {
-    background: #1abc9c;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
-    margin-bottom: 10px;
+background: #1abc9c;
+border: none;
+padding: 10px 15px;
+border-radius: 5px;
+color: white;
+cursor: pointer;
+font-weight: bold;
+margin-bottom: 10px;
 }
 .btn-ver-cotizacion:hover {
-    background: #16a085;
+background: #16a085;
 }
 
 /* =========================
-   RESPONSIVE
+   RESPONSIVE
 ========================= */
+/* Ahora que flex: 1 1 200px está aplicado, estas media queries son menos necesarias, pero aún útiles para control granular */
 @media screen and (max-width: 1200px) {
-    .card {
-        width: calc(25% - 16px); /* 4 por fila */
-    }
+  .cards-container .card {
+    max-width: calc(25% - 15px); /* Ajuste para 4 por fila */
+  }
 }
 
 @media screen and (max-width: 900px) {
-    .card {
-        width: calc(33.33% - 16px); /* 3 por fila */
-    }
+.cards-container .card {
+max-width: calc(33.33% - 15px); /* Ajuste para 3 por fila */
+ }
 }
 
 @media screen and (max-width: 600px) {
-    .card {
-        width: calc(50% - 16px); /* 2 por fila */
-    }
+ .cards-container .card {
+  max-width: calc(50% - 15px); /* Ajuste para 2 por fila */
+ }
 }
 
 @media screen and (max-width: 400px) {
-    .card {
-        width: 100%; /* 1 por fila */
-    }
+ .cards-container .card {
+  max-width: 100%; /* 1 por fila */
+ }
 }
-/* termina los contenedores*/
