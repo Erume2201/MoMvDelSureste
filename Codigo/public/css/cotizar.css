@@ -1,16 +1,33 @@
- body {
+/*
+ * Este es el CSS que va DESPUÉS de tu CSS del `sidebar`.
+ */
+
+/* =========================
+   CONTENIDO PRINCIPAL Y FORMULARIO
+========================= */
+body {
     font-family: Arial, sans-serif;
-    margin: 20px;
+    margin: 0; /* Asegura que no haya margen por defecto */
     background-color: #f4f4f4;
 }
+
+/* El `main-content` se desplaza para dejar espacio a la barra lateral */
+.main-content {
+    margin-left: 220px; /* Esta es la corrección clave */
+    padding: 20px;
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho */
+}
+
+/* El contenedor del formulario se centra dentro del `main-content` */
 .container {
     max-width: 800px;
-    margin: auto;
+    margin: 0 auto;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 h2, h3 {
     text-align: center;
     color: #333;

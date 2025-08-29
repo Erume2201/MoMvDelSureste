@@ -184,6 +184,10 @@ small, a{
     z-index: 2;
 }
 
+
+
+
+
 /* Responsivo: solo el formulario visible en pantallas pequeñas */
 @media (max-width: 992px) {
     .login-split {
