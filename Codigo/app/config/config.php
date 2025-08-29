@@ -2,7 +2,7 @@
 // app/config/config.php
 
 // URL base del proyecto
-define('BASE_URL', 'http://localhost/EmpresaResiduo/Codigo/');
+define('BASE_URL', 'http://localhost/MoMvDelSureste/Codigo/');
 
 
 
