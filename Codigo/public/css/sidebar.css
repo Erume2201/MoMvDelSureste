@@ -39,6 +39,7 @@
   top: 0;
   padding: 20px 0;
   box-shadow: 2px 0 5px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease; /* Transición para el menú en móvil */
 }
 
 /* Encabezado del sidebar con logo y nombre */
@@ -131,8 +132,74 @@
 
 /* Animación para la flecha */
 .arrow {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%); /* centra verticalmente */
   transition: transform 0.3s ease;
 }
 .arrow.rotated {
-  transform: rotate(180deg);
+  transform: translateY(-50%) rotate(180deg); /* mantiene el centrado y añade rotación */
+}
+
+/* Overlay semitransparente para móvil */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 999; /* Debajo del sidebar */
+}
+.sidebar-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* -- RESPONSIVE */
+/* Para que no se mueva en escritorio */
+@media (min-width: 769px) {
+  .sidebar {
+    transform: translateX(0);
+    position: fixed; /* sidebar fijo en escritorio */
+    left: 0;
+    top: 0;
+  }
+
+  .sidebar-toggle {
+    display: none; /* ocultar el botón en escritorio */
+  }
+}
+
+/* --- RESPONSIVE - VERSIÓN MÓVIL --- */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    transform: translateX(-100%); /* oculto por defecto */
+    z-index: 1000;
+  }
+
+  .sidebar.active {
+    transform: translateX(0); /* aparece al activar */
+  }
+
+  /* Botón hamburguesa */
+  .sidebar-toggle {
+    display: block;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    z-index: 1100;
+    cursor: pointer;
+  }
 }

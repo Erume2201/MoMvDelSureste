@@ -1,3 +1,9 @@
+
+<!-- Botón hamburguesa (visible solo en pantallas pequeñas) -->
+<button id="sidebar-toggle" class="sidebar-toggle" aria-label="Abrir menú">
+    <i class='bx bx-menu'></i>
+</button>
+
 <!-- Sidebar -->
 <div class="sidebar">
     <!-- Icono y encabezado -->
@@ -50,11 +56,11 @@
             </a>
             <a href="index.php?module=ver_cotizaciones">
                 <i class='bx bxs-file'></i>
-                Ver cotizaciones
+                Visualizar
             </a>
             <a href="index.php?module=calendario">
                 <i class='bx bxs-calendar'></i>
-                Calendario de Cotizaciones
+                Calendario
             </a>
         </div>
     </div>
