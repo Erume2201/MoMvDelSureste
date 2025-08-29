@@ -44,6 +44,7 @@ include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
             </section>
         </main>
     </div>
+    <script src="<?php echo BASE_URL; ?>public/js/sidebar.js"></script>
 </body>
 </html>
 

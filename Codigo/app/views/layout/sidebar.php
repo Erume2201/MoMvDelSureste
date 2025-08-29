@@ -2,7 +2,7 @@
 <div class="sidebar">
     <!-- Icono y encabezado -->
     <div class="sidebar-header">
-        <img src="<?php echo BASE_URL; ?>public/img/logo_mv_blanco_single.png" alt="Logo MO. MV" class="sidebar-logo">
+        <img src="<?php echo BASE_URL; ?>public/img/logo_mv_negro_single.png" alt="Logo MO. MV" class="sidebar-logo">
         <h2 class="sidebar-title">MO. MV DEL SURESTE</h2>
     </div>
 
@@ -20,7 +20,7 @@
             Generales
             <i class='bx bx-chevron-down arrow'></i>
         </a>
-        <div class="submenu submenu-visible">
+        <div class="submenu">
             <a href="index.php?module=usuarios">
                 <i class='bx bxs-user'></i>
                 Usuarios
@@ -43,7 +43,7 @@
             Cotizaciones
             <i class='bx bx-chevron-down arrow'></i>
         </a>
-        <div class="submenu submenu-visible">
+        <div class="submenu">
             <a href="index.php?module=cotizar">
                 <i class='bx bxs-edit-alt'></i>
                 Cotizar
