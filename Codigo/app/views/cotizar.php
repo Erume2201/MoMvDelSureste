@@ -9,7 +9,7 @@ include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
 <head>
 
    <meta charset="UTF-8">
-    <title>Dashboard</title>
+    <title>Cotizar</title>
     <!--icono en la pestaña-->
     <link rel="icon" href="public/img/favicon.ico" type="image/x-icon">
     <!-- Iconos de Boxicon -->
@@ -20,8 +20,9 @@ include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
     
 </head>
 <body>
-    <div class="container">
-        <h2>SOLICITUD ALTA DE CLIENTE Y CONTRATO SERVICIOS</h2>
+    <div class="main-content">
+        <div class="container">
+            <h2>SOLICITUD ALTA DE CLIENTE Y CONTRATO SERVICIOS</h2>
         
         <div class="form-section">
             <h3>Datos generales de facturación</h3>
@@ -30,6 +31,7 @@ include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
                 <input type="text" placeholder="Código Cliente">
                 <button type="button">Buscar</button>
             </div>
+            <H1></H1>
 
             <div class="form-row">
                 <div class="form-field">
@@ -115,6 +117,11 @@ include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
             </div>
         </div>
 
+        <div class="search-container">
+            <input type="text" placeholder="Buscar código tienda...">
+            <button type="button">Buscar Código Tienda</button>
+        </div>
+<H1></H1>
         <div class="form-section">
             <h3>Datos generales del sitio de recolección de residuos:</h3>
             <div class="form-row">
@@ -167,10 +174,6 @@ include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
                     <input type="text" name="telefono_responsable">
                 </div>
             </div>
-            <div class="search-container">
-                <input type="text" placeholder="Buscar código tienda...">
-                <button type="button">Buscar Código Tienda</button>
-            </div>
         </div>
 
         <div class="form-section">
@@ -187,6 +190,14 @@ include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
                 </div>
             </div>
         </div>
+        <H1></H1>
+        <div class="button">
+            <button type="button" id="cotizar">Generar Cotización</button>
+        </div>
+        </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+     <script src="<?php echo BASE_URL; ?>app/controllers/js/generarPdf.js"></script>
 </body>
 </html>
