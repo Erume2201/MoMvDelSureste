@@ -77,6 +77,7 @@ include __DIR__ . '../layout/sidebar.php'; // Esto solo carga el sidebar
     <!-- Bootstrap 5 JS (bundle con Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="<?php echo BASE_URL; ?>app/controllers/js/modalVerPdf.js"></script>
+    <script src="<?php echo BASE_URL; ?>public/js/sidebar.js"></script>
 </body>
 
 </html>

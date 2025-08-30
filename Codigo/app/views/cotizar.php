@@ -198,6 +198,7 @@ include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
-     <script src="<?php echo BASE_URL; ?>app/controllers/js/generarPdf.js"></script>
+    <script src="<?php echo BASE_URL; ?>app/controllers/js/generarPdf.js"></script>
+    <script src="<?php echo BASE_URL; ?>public/js/sidebar.js"></script>
 </body>
 </html>
