@@ -66,8 +66,10 @@
     </div>
 
     <!-- Facturación -->
-    <a href="index.php?module=facturacion" class="secciones">
-        <i class='bx bxs-credit-card'></i>
-        Facturación
-    </a>
+    <div class="menu-item">
+        <a href="index.php?module=facturacion" class="secciones">
+            <i class='bx bxs-credit-card'></i>
+            Facturación
+        </a>
+    </div>
 </div>

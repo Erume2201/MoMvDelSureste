@@ -106,18 +106,19 @@
 .sidebar .submenu {
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
-  display: none;
+  max-height: 0;
+  overflow: hidden;
   flex-direction: column;
   padding-left: 20px;
-  transition: max-height 0.3s ease;
+  transition: max-height 0.45s ease; /* Transición */
 }
 .sidebar .submenu-visible {
-  display: flex;
+  max-height: 500px; /* altura suficiente para mostrar el contenido */
 }
 .submenu a {
-    padding-left: 40px;
-    font-size: 0.95rem;
-    opacity: 0.9;
+  padding-left: 40px;
+  font-size: 0.95rem;
+  opacity: 0.9;
 }
 .submenu a:hover {
   background: rgba(255,255,255,0.12);
