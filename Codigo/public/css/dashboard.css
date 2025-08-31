@@ -56,7 +56,7 @@ border-radius: 5px;
 /* Ahora usamos un selector más específico para evitar conflictos */
 /* Estilo de cada card dentro del contenedor */
 .cards-container .card {
-  background: #7f9cb9;
+  background: #a4b9ce;
   color: white;
   padding: 15px;
   border-radius: 8px;
@@ -69,7 +69,7 @@ border-radius: 5px;
 }
 .cards-container .card:hover {
 transform: translateY(-5px);
-background: #6a92b7;
+background: #c1e0ef;
 }
 
 /* Estilos para otras secciones, si existen */

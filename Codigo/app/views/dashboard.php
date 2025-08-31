@@ -87,7 +87,7 @@ include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
             </div>
 
             <div class="card chart-card bar-chart">
-                <div class="card-title">TOTAL DE ORDENES</div>
+                <div class="card-title">TOTAL DE COTIZACIONES PAGADAS</div>
                 <div class="chart-container">
                     <canvas id="ordersChart"></canvas>
                 </div>
