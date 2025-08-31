@@ -77,7 +77,7 @@
     <div class="logout-item">
         <a href="index.php?module=cerrar_sesion" class="logout-link">
             <i class='bx bx-log-out'></i>
-            <span>Cerrar Sesión</span>
+            <span>Cerrar sesión</span>
         </a>
     </div>
 </div>
