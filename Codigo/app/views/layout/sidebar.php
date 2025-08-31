@@ -72,4 +72,12 @@
             Facturación
         </a>
     </div>
+
+     <!-- Cerrar Sesión -->
+    <div class="menu-item">
+    <a href="index.php?module=cerrar_sesion" class="secciones">
+        <i class='bx bx-log-out'></i>
+        <span>Cerrar Sesión</span>
+    </a>
+</div>
 </div>
