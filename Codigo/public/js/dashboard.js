@@ -8,12 +8,12 @@ new Chart(percentageCtx, {
     type: 'line',
     data: {
         // Etiquetas para el eje X
-        labels: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+        labels: ['ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DEC'],
         datasets: [{
             // Datos de ejemplo para el gráfico
             data: [30, 40, 35, 60, 45, 55, 30, 45, 40, 65, 80, 95],
             // Color de la línea
-            borderColor: '#ffab91',
+            borderColor: '#97ff91ff',
             // Suaviza las curvas de la línea
             tension: 0.4,
             // No rellena el área debajo de la línea
@@ -53,15 +53,15 @@ new Chart(ordersCtx, {
     type: 'bar',
     data: {
         // Etiquetas para el eje X
-        labels: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+        labels: ['ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DEC'],
         datasets: [{
-            label: 'Total Orders',
+            label: 'Total ordenes',
             // Datos de ejemplo para el gráfico
             data: [400, 550, 600, 700, 850, 950, 750, 800, 900, 750, 850, 920],
             // Color de las barras
             backgroundColor: '#008000',
             // Color del borde de las barras
-            borderColor: '#008000',
+            borderColor: '#0e0f0eff',
             // Ancho del borde de las barras
             borderWidth: 1,
             // Radio del borde para las barras
