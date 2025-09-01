@@ -78,6 +78,10 @@ include __DIR__ . '../layout/sidebar.php'; // Esto solo carga el sidebar
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="<?php echo BASE_URL; ?>app/controllers/js/modalVerPdf.js"></script>
     <script src="<?php echo BASE_URL; ?>public/js/sidebar.js"></script>
+    <!-- Librería de SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Script de los mensajes de alerta -->
+    <script src="public/js/alerts.js"></script>
 </body>
 
 </html>
