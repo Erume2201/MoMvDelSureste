@@ -44,29 +44,24 @@ document.addEventListener("DOMContentLoaded", () => {
         sidebar.classList.remove("active");
         overlay.classList.remove("active");
     });
+
+    // Resaltar módulo actual
+    const urlParams = new URLSearchParams(window.location.search);
+    const currentModule = urlParams.get("module");
+
+    if (currentModule) {
+        // Buscar enlace que apunte a este módulo
+        const activeLink = sidebar.querySelector(`a[href*="module=${currentModule}"]`);
+        if (activeLink) {
+            activeLink.classList.add("active"); // Para el estilo destacado
+
+            // Si es parte de un submenú, abrir ese submenú.
+            const submenu = activeLink.closest(".submenu");
+            if (submenu) {
+                submenu.classList.add("submenu-visible");
+                const arrow = submenu.previousElementSibling.querySelector(".arrow");
+                if(arrow) arrow.classList.add("rotated");
+            }
+        }
+    }
 });
-
-// ----------------------------------------------//
-
-// Sidebar con submenús despegables. Sin acordeón
-// document.addEventListener('DOMContentLoaded', () => {
-//     const toggles = document.querySelectorAll('.submenu-toggle');
-
-//     toggles.forEach(toggle => {
-//         toggle.addEventListener('click', (e) => {
-//             e.preventDefault();
-
-//             // Encontrar el submenú asociado
-//             const submenu = toggle.nextElementSibling;
-
-//             // Alternar clase visible
-//             submenu.classList.toggle('submenu-visible');
-
-//             // Rotar la flecha
-//             const arrow = toggle.querySelector('.arrow');
-//             if (arrow) {
-//                 arrow.classList.toggle('rotated');
-//             }
-//         });
-//     });
-// });

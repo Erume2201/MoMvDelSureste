@@ -89,6 +89,15 @@
   color: #ffffff;
 }
 
+/* Estado activo para enlaces principales y submenús */
+.sidebar a.active {
+  background: linear-gradient(90deg, #05295f 0%, #0056b3 100%);
+  color: #ffffff;
+  font-weight: 600;
+  padding-left: 22px; /* mantiene la coherencia con el hover */
+  border-radius: 4px;
+}
+
 /* Íconos de Boxicon */
 .sidebar i.bx {
   font-size: 1.2rem;
@@ -124,6 +133,14 @@
   background: rgba(255,255,255,0.12);
   opacity: 1;
   color: #000000;
+}
+
+/* Estado activo en submenús (ligeramente más suave) */
+.submenu a.active {
+  background: linear-gradient(90deg, #FFFFFF 0%, #cfcfcf 100%);
+  color: #000000;
+  font-weight: 500;
+  border-radius: 3px;
 }
 
 /* Indicadores (flechas) */
@@ -192,7 +209,7 @@
   transition: color 0.3s;
 }
 .sidebar .logout-link:hover {
-  background: linear-gradient(90deg, #ffebee 0%, #a60505 100%);
+  background: linear-gradient(90deg, #424242 0%, #a60505 100%);
   color: #fff;
   padding-left: 22px;
 }
