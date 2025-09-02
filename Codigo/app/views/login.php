@@ -57,7 +57,7 @@ require_once __DIR__ . '/../config/config.php';
                     <!-- Enlace para crear una cuenta -->
                     <small class="d-block">
                         ¿Ya tienes una cotización? 
-                        <a href="#" class="text-decoration-none" id="enlace-cotizacion">
+                        <a href="index.php?module=firmar_cotizacion" class="text-decoration-none" id="enlace-cotizacion">
                             Búscala ahora
                         </a>
                     </small>

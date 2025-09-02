@@ -22,16 +22,9 @@ require __DIR__ . '/app/controllers/php/menu.php';
         href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,800&family=Roboto:wght@700;900&display=swap"
         rel="stylesheet">
     <!-- TERMINA ESTILO DE LETRAS -->
-    
     <!--icono en la pestaña-->
     <link rel="icon" href="public/img/favicon.ico" type="image/x-icon">
-
-    <!-- Graficación -->
-
-    <script src="https://d3js.org/d3.v4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.css" />
-    <title>RECOLECCION DE HIDROCARBUROS</title>
+   
 </head>
 
 <body>
