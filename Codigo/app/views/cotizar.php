@@ -1,29 +1,31 @@
 <!-- Se incluyen archivos php -->
-<?php 
-require_once __DIR__ . '/../config/config.php'; 
+<?php
+require_once __DIR__ . '/../config/config.php';
 include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
-    <head>
+
+<head>
 
     <meta charset="UTF-8">
-        <title>Cotizar</title>
-        <!--icono en la pestaña-->
-        <link rel="icon" href="public/img/favicon.ico" type="image/x-icon">
-        <!-- Iconos de Boxicon -->
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <!-- Llamando los estilos con la BASE_URL -->
-        <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/sidebar.css">
-        <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/cotizar.css">
-        
-    </head>
-    <body>
-        <div class="main-content">
-            <div class="container">
-                <h2>SOLICITUD ALTA DE CLIENTE Y CONTRATO SERVICIOS</h2>
-            
+    <title>Cotizar</title>
+    <!--icono en la pestaña-->
+    <link rel="icon" href="public/img/favicon.ico" type="image/x-icon">
+    <!-- Iconos de Boxicon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Llamando los estilos con la BASE_URL -->
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/sidebar.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/cotizar.css">
+
+</head>
+
+<body class="main-cotizar">
+    <div class="main-content">
+        <div class="container">
+            <h2>SOLICITUD ALTA DE CLIENTE Y CONTRATO SERVICIOS</h2>
+
             <div class="form-section">
                 <h3>Datos generales de facturación</h3>
 
@@ -121,7 +123,7 @@ include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
                 <input type="text" placeholder="Buscar código tienda...">
                 <button type="button">Buscar Código Tienda</button>
             </div>
-    <H1></H1>
+            <H1></H1>
             <div class="form-section">
                 <h3>Datos generales del sitio de recolección de residuos:</h3>
                 <div class="form-row">
@@ -194,16 +196,16 @@ include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
             <div class="button">
                 <button type="button" id="cotizar">Generar Cotización</button>
             </div>
-            </div>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
-        <script src="<?php echo BASE_URL; ?>app/controllers/js/generarPdf.js"></script>
-        <script src="<?php echo BASE_URL; ?>public/js/sidebar.js"></script>
-        <!-- Librería de SweetAlert2 -->
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <!-- Script de los mensajes de alerta -->
-        <script src="public/js/alerts.js"></script>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+    <script src="<?php echo BASE_URL; ?>app/controllers/js/generarPdf.js"></script>
+    <script src="<?php echo BASE_URL; ?>public/js/sidebar.js"></script>
+    <!-- Librería de SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Script de los mensajes de alerta -->
+    <script src="public/js/alerts.js"></script>
 
-    </body>
+</body>
 </html>
