@@ -40,6 +40,9 @@ switch ($module) {
     case 'cotizar':
         require __DIR__ . '/../../views/cotizar.php';
         break;
+    case 'clientes':
+        require __DIR__ . '/../../views/clientes.php';
+        break;
     default:
         // Si la sesión está activa y no se especifica un módulo, muestra el dashboard.
         require __DIR__ . '/../../views/dashboard.php';
