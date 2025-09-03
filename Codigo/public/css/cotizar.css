@@ -115,7 +115,8 @@ body.main-cotizar {
 }
 /* Inputs modernizados */
 .form-field input[type="text"], 
-.form-field input[type="email"] {
+.form-field input[type="email"],
+.form-field input[type="number"] {
     padding: 10px 12px;
     border: 1px solid #ccc;
     border-radius: 6px;
@@ -124,7 +125,8 @@ body.main-cotizar {
 }
 /* Foco */
 .form-field input[type="text"]:focus, 
-.form-field input[type="email"]:focus {
+.form-field input[type="email"]:focus,
+.form-field input[type="number"]:focus {
     border-color: #007bff;
     box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
     outline: none;

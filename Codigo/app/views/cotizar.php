@@ -113,7 +113,7 @@ include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
 
                     <div class="form-field">
                         <label for="telefono_contacto">Teléfono.</label>
-                        <input type="text" name="telefono_contacto" id="telefono_contacto">
+                        <input type="number" name="telefono_contacto" id="telefono_contacto">
                     </div>
                 </div>
             </div>
