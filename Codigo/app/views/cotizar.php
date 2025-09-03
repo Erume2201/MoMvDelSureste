@@ -33,166 +33,169 @@ include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
                     <input type="text" placeholder="Código Cliente">
                     <button type="button">Buscar</button>
                 </div>
-                <H1></H1>
 
-                <div class="form-row">
+                <!-- Campos Labels + Inputs -->
+                <div class="form-grid">
                     <div class="form-field">
-                        <label>1. Nombre o Razón Social:</label>
-                        <input type="text" name="nombre_razon_social">
+                        <label for="nombre_razon_social">1. Nombre o Razón Social.</label>
+                        <input type="text" name="nombre_razon_social" id="nombre_razon_social">
                     </div>
+
                     <div class="form-field">
-                        <label>2. RFC:</label>
-                        <input type="text" name="rfc">
+                        <label for="rfc">2. RFC.</label>
+                        <input type="text" name="rfc" id="rfc">
                     </div>
-                </div>
-                <div class="form-row">
+
                     <div class="form-field">
-                        <label>3. Domicilio Fiscal:</label>
-                        <input type="text" name="domicilio_fiscal">
+                        <label for="domicilio_fiscal">3. Domicilio Fiscal.</label>
+                        <input type="text" name="domicilio_fiscal" id="domicilio_fiscal">
                     </div>
+
                     <div class="form-field">
-                        <label>4. Colonia:</label>
-                        <input type="text" name="colonia_fiscal">
+                        <label for="colonia_fiscal">4. Colonia.</label>
+                        <input type="text" name="colonia_fiscal" id="colonia_fiscal">
                     </div>
-                </div>
-                <div class="form-row">
+
                     <div class="form-field">
-                        <label>5. Ciudad:</label>
-                        <input type="text" name="ciudad_fiscal">
+                        <label for="ciudad_fiscal">5. Ciudad.</label>
+                        <input type="text" name="ciudad_fiscal" id="ciudad_fiscal">
                     </div>
+
                     <div class="form-field">
-                        <label>6. Estado:</label>
-                        <input type="text" name="estado_fiscal">
+                        <label for="estado_fiscal">6. Estado.</label>
+                        <input type="text" name="estado_fiscal" id="estado_fiscal">
                     </div>
+
                     <div class="form-field">
-                        <label>7. CP:</label>
-                        <input type="text" name="cp_fiscal">
+                        <label for="cp_fiscal">7. CP.</label>
+                        <input type="text" name="cp_fiscal" id="cp_fiscal">
                     </div>
-                </div>
-                <div class="form-row">
+
                     <div class="form-field">
-                        <label>8. Tipo localidad:</label>
-                        <input type="text" name="tipo_localidad">
+                        <label for="tipo_localidad">8. Tipo localidad.</label>
+                        <input type="text" name="tipo_localidad" id="tipo_localidad">
                     </div>
-                </div>
-                <div class="form-row">
+
                     <div class="form-field">
-                        <label>9. Nombre Del Apoderado Legal:</label>
-                        <input type="text" name="nombre_apoderado_legal">
+                        <label for="nombre_apoderado_legal">9. Nombre del Apoderado Legal.</label>
+                        <input type="text" name="nombre_apoderado_legal" id="nombre_apoderado_legal">
                     </div>
-                </div>
-                <div class="form-row">
+
                     <div class="form-field">
-                        <label>10. Forma de pago:</label>
-                        <input type="text" name="forma_pago">
+                        <label for="forma_pago">10. Forma de pago.</label>
+                        <input type="text" name="forma_pago" id="forma_pago">
                     </div>
-                    <div class="form-field">
-                        <label>11. Método de pago:</label>
-                        <input type="text" name="metodo_pago">
+
+                     <div class="form-field">
+                        <label for="metodo_pago">11. Método de pago.</label>
+                        <input type="text" name="metodo_pago" id="metodo_pago">
                     </div>
+
                     <div class="form-field">
-                        <label>12. Uso CFDI:</label>
-                        <input type="text" name="uso_cfdi">
+                        <label for="uso_cfdi">12. Uso CFDI.</label>
+                        <input type="text" name="uso_cfdi" id="uso_cfdi">
                     </div>
-                </div>
-                <div class="form-row">
+
                     <div class="form-field">
-                        <label>13. Régimen Fiscal:</label>
-                        <input type="text" name="regimen_fiscal">
+                        <label for="regimen_fiscal">13. Régimen Fiscal.</label>
+                        <input type="text" name="regimen_fiscal" id="regimen_fiscal">
                     </div>
-                </div>
-                <div class="form-row">
+
                     <div class="form-field">
-                        <label>14. Contacto de Cuentas por pagar:</label>
-                        <input type="text" name="contacto_cuentas">
+                        <label for="contacto_cuentas">14. Contacto de Cuentas por pagar.</label>
+                        <input type="text" name="contacto_cuentas" id="contacto_cuentas">
                     </div>
-                </div>
-                <div class="form-row">
+
                     <div class="form-field">
-                        <label>Email:</label>
-                        <input type="email" name="email_contacto">
+                        <label for="email_contacto">Email.</label>
+                        <input type="email" name="email_contacto" id="email_contacto">
                     </div>
+
                     <div class="form-field">
-                        <label>Teléfono:</label>
-                        <input type="text" name="telefono_contacto">
+                        <label for="telefono_contacto">Teléfono.</label>
+                        <input type="text" name="telefono_contacto" id="telefono_contacto">
                     </div>
                 </div>
             </div>
 
+            <!-- Búscador de códigos de tienda -->
             <div class="search-container">
                 <input type="text" placeholder="Buscar código tienda...">
-                <button type="button">Buscar Código Tienda</button>
+                <button type="button">Buscar</button>
             </div>
-            <H1></H1>
+
+            <!-- Segunda sección - recolección de residuos -->
             <div class="form-section">
-                <h3>Datos generales del sitio de recolección de residuos:</h3>
-                <div class="form-row">
+                <h3>Datos generales del sitio de recolección de residuos</h3>
+                <div class="form-grid">
+
                     <div class="form-field">
-                        <label>15. Nombre o Razón Social:</label>
-                        <input type="text" name="nombre_rec_residuos">
+                        <label for="nombre_rec_residuos">15. Nombre o Razón social.</label>
+                        <input type="text" name="nombre_rec_residuos" id="nombre_rec_residuos">
                     </div>
+
                     <div class="form-field">
-                        <label>16. Número Registro Ambiental:</label>
-                        <input type="text" name="registro_ambiental">
+                        <label for="registro_ambiental">16. Número Registro Ambiental.</label>
+                        <input type="text" name="registro_ambiental" id="registro_ambiental">
                     </div>
-                </div>
-                <div class="form-row">
+
                     <div class="form-field">
-                        <label>17. Dirección:</label>
-                        <input type="text" name="direccion_rec_residuos">
+                        <label for="direccion_rec_residuos">17. Dirección.</label>
+                        <input type="text" name="direccion_rec_residuos" id="direccion_rec_residuos">
                     </div>
+
                     <div class="form-field">
-                        <label>18. Colonia:</label>
-                        <input type="text" name="colonia_rec_residuos">
+                        <label for="colonia_rec_residuos">18. Colonia.</label>
+                        <input type="text" name="colonia_rec_residuos" id="colonia_rec_residuos">
                     </div>
-                </div>
-                <div class="form-row">
+
                     <div class="form-field">
-                        <label>19. Ciudad:</label>
-                        <input type="text" name="ciudad_rec_residuos">
+                        <label for="ciudad_rec_residuos">19. Ciudad.</label>
+                        <input type="text" name="ciudad_rec_residuos" id="ciudad_rec_residuos">
                     </div>
+
                     <div class="form-field">
-                        <label>20. Estado:</label>
-                        <input type="text" name="estado_rec_residuos">
+                        <label for="estado_rec_residuos">20. Estado.</label>
+                        <input type="text" name="estado_rec_residuos" id="estado_rec_residuos">
                     </div>
+
                     <div class="form-field">
-                        <label>21. CP:</label>
-                        <input type="text" name="cp_rec_residuos">
+                        <label for="cp_rec-residuos">21. CP.</label>
+                        <input type="text" name="cp_rec_residuos" id="cp_rec-residuos">
                     </div>
-                </div>
-                <div class="form-row">
+
                     <div class="form-field">
-                        <label>22. Horario de trabajo:</label>
-                        <input type="text" name="horario_trabajo">
+                        <label for="horario_trabajo">22. Horario de trabajo.</label>
+                        <input type="text" name="horario_trabajo" id="horario_trabajo">
                     </div>
+
                     <div class="form-field">
-                        <label>23. Nombre responsable entrega residuo:</label>
-                        <input type="text" name="nombre_responsable">
+                        <label for="nombre_responsable">23. Nombre responsable entrega residuo.</label>
+                        <input type="text" name="nombre_responsable" id="nombre_responsable">
                     </div>
-                </div>
-                <div class="form-row">
+
                     <div class="form-field">
-                        <label>24. Teléfono responsable entrega residuo:</label>
-                        <input type="text" name="telefono_responsable">
+                        <label for="telefono_responsable">24. Teléfono responsable entrega residuo.</label>
+                        <input type="text" name="telefono_responsable" id="telefono_responsable">
                     </div>
                 </div>
             </div>
 
             <div class="form-section">
-                <h3>Referencias específicas de la dirección de recolección:</h3>
-                <div class="form-row">
-                    <div class="form-field">
-                        <input type="text" name="referencias_recoleccion" style="width: 100%; min-width: auto;">
-                    </div>
+                <h3>Referencias específicas de la dirección de recolección</h3>
+                <div class="form-field">
+                    <label for="referencias_recoleccion">Detalles de referencia.</label>
+                    <input type="text" id="referencias_recoleccion" name="referencias_recoleccion" placeholder="Ingrese referencias específicas">
                 </div>
-                <h3>26. Link de ubicación en Google Maps:</h3>
-                <div class="form-row">
-                    <div class="form-field">
-                        <input type="text" name="google_maps_link" style="width: 100%; min-width: auto;">
-                    </div>
+
+                <h3 class="subtitulo-maps">Link de ubicación en Google Maps</h3>
+                <div class="form-field">
+                    <label for="google_maps_link">URL de Google Maps.</label>
+                    <input type="text" id="google_maps_link" name="google_maps_link" placeholder="Pegue aquí el enlace de ubicación">
                 </div>
             </div>
-            <H1></H1>
+
+            <!-- Botón para generar PDF -->
             <div class="button">
                 <button type="button" id="cotizar">Generar Cotización</button>
             </div>
