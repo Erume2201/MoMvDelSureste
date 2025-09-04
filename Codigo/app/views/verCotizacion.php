@@ -44,6 +44,9 @@ include __DIR__ . '../layout/sidebar.php'; // Esto solo carga el sidebar
                             <button type="button" class="btn btn-success btn-ver-cotizacion" data-bs-toggle="modal" data-bs-target="#pdfModal" data-pdf="<?php echo BASE_URL; ?>app/pdf/cotizacion-<?php echo str_pad($i, 3, '0', STR_PAD_LEFT); ?>.pdf">
                                 Ver Cotización-<?php echo str_pad($i, 3, '0', STR_PAD_LEFT); ?>
                             </button>
+                            <button type="button" class="btn btn-success btn-ver-cotizacion" data-bs-toggle="modal" data-bs-target="#pdfModal" disabled>
+                                Cancelar Cotización
+                            </button>
                         </div>
                     <?php endfor; ?>
                 </div>
