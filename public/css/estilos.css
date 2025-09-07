@@ -179,8 +179,12 @@ body {
 }
 
 /* Colores de borde para cada tarjeta de navegación */
-.nav-card.health { border-color: #ef9a9a; }
-.nav-card.weather { border-color: #9fa8da; }
+.nav-card.health {
+    border-color: #ef9a9a !important;
+}
+.nav-card.weather {
+    border-color: #9fa8da !important;
+}
 
 .nav-card i {
     /* Tamaño del ícono */
@@ -246,4 +250,73 @@ body {
 .chart-container {
     /* Permite que el contenedor del gráfico ocupe el espacio disponible */
     flex-grow: 1;
+}
+
+/* =========================================================
+   ESTILOS DE LA BARRA DE NAVEGACIÓN SUPERIOR
+   ========================================================= */
+.header-profile {
+    position: relative;
+    cursor: pointer;
+}
+
+/* =========================================================
+   ESTILOS DEL MENÚ DESPLEGABLE
+   ========================================================= */
+.dropdown-menu {
+    /* ... (El resto de tus estilos para el menú) ... */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white; /* Asegura que el fondo sea blanco */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    list-style: none;
+    padding: 10px;
+    margin-top: 5px;
+    width: 150px;
+    z-index: 1000;
+    display: none;
+}
+/* Menú desplegable */
+.dropdown-menu {
+    /* Clave: se posiciona en relación con el contenedor padre (.header-profile). */
+    position: absolute; 
+    
+    /* Posiciona el menú debajo del ícono. */
+    top: 100%;
+    
+    /* Alinea el menú a la derecha del ícono. */
+    right: 0;
+    
+    /* Asegura que el menú esté por encima de otros elementos. */
+    z-index: 1000;
+    
+    /* Estilo del menú: fondo, sombra, bordes, etc. */
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    list-style: none;
+    padding: 10px;
+    margin-top: 5px;
+    width: 150px;
+    
+    /* Oculta el menú por defecto. */
+    display: none;
+}
+
+/* Estilos de los elementos del menú */
+.dropdown-menu li a {
+    display: block;
+    padding: 8px 12px;
+    color: #333; /* Color de texto oscuro para que se vea bien */
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+    background-color: transparent; /* Asegura que el color de fondo por defecto sea transparente */
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f0f0f0; /* Color gris claro al pasar el mouse */
 }

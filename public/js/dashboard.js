@@ -1,3 +1,29 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const profileIcon = document.getElementById('profile-icon');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+
+    if (profileIcon && dropdownMenu) {
+        // Al hacer clic en el ícono, alterna la visibilidad del menú.
+        profileIcon.addEventListener('click', function(event) {
+            // Cambia el estilo de display para mostrar/ocultar el menú
+            if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
+                dropdownMenu.style.display = 'block'; // O 'flex' si usas un contenedor flex
+            } else {
+                dropdownMenu.style.display = 'none';
+            }
+            event.stopPropagation(); // Evita que el clic se propague al documento
+        });
+
+        // Oculta el menú si se hace clic en cualquier otro lugar de la página
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.header-profile')) {
+                dropdownMenu.style.display = 'none';
+            }
+        });
+    }
+});
+
+
 // Gráfico de Porcentaje (Línea)
 // Obtenemos el contexto del canvas con el ID 'percentageChart'
 const percentageCtx = document.getElementById('percentageChart').getContext('2d');
