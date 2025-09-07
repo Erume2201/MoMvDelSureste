@@ -23,10 +23,7 @@ include __DIR__ . '../layout/sidebar.php'; // Esto solo carga el sidebar
 
 <body>
     <div class="main-content">
-        <header>
-            <h1>Cotizaciones realizadas</h1>
-            <a href="index.php?module=cerrar_sesion">Cerrar Sesión</a>
-        </header>
+        
         <main>
             <div class="main-container">
 
