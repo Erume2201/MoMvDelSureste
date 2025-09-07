@@ -4,6 +4,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 // Captura el valor del modulo a acceder
 $module = $_GET['module'] ?? '';
+$correo = $_GET['correo1'] ?? '';
 
 
 // 1. Manejo del módulo de firma, que no requiere sesión.
@@ -18,7 +19,7 @@ if ($module === 'firmar_cotizacion') {
 if (!isset($_SESSION['s1'])) {
     if ($module === 'iniciar_sesion') {
         $_SESSION['s1'] = true;
-      //  $_SESSION['usuario'] = $correo;
+        $_SESSION['usuario'] = $correo;
         header("Location: index.php");
         exit;
     } else {

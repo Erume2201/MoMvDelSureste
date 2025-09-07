@@ -23,17 +23,26 @@ include __DIR__ . '../layout/sidebar.php'; // Esto solo carga el sidebar
 
 <body>
     <div class="main-content">
-        
         <main>
+            <header>
+                Cotizaciones
+            </header>
             <div class="main-container">
-
                 <div class="search-section">
                     <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Buscar cotización" aria-label="Buscar">
                         <button class="btn btn-outline-success" type="submit">Buscar</button>
+                        <select class="form-select ms-2" aria-label="Filtro de cotizaciones">
+                            <option selected>Todas las cotizaciones</option>
+                            <option value="pending">Cotizaciones pendientes</option>
+                            <option value="accepted">Cotizaciones aceptadas</option>
+                            <option value="paid">Cotizaciones pagadas</option>
+                            <option value="cancelled">Cotizaciones canceladas</option>
+                        </select>
                     </form>
                 </div>
                 <h1></h1>
+
                 <div class="cards-container">
                     <?php for ($i = 1; $i <= 20; $i++): ?>
                         <div class="card p-3 text-center">
