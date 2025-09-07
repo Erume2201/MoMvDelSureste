@@ -22,7 +22,7 @@ include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
             <div class="dashboard-container">
                 <header class="dashboard-header">
                     <div class="header-nav">
-                      <h1>Dashboard, Bienvenido:<?= htmlspecialchars($_SESSION['usuario']); ?></h1>
+                      <h1>Dashboard, Bienvenido: <?= htmlspecialchars($_SESSION['usuario']); ?></h1>
                         
                     </div>
                     <div class="header-profile">

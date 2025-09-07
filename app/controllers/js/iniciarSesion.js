@@ -1,20 +1,22 @@
 $(document).ready(function () {
     // Referencias a los elementos del formulario
     const correoInput = document.getElementById('exampleFormControlEmail1');
+    var passInput = document.getElementById('password');
     const iniciarS = document.getElementById('iniciar_sesion');
     const form = document.getElementById('my-form');
 
     // Función para manejar el inicio de sesión
     function handleLogin() {
         const correo = correoInput.value;
+        const pass = passInput.value;
 
-        if (correo.trim() !== '') {
+        if (correo.trim() !== '' && pass.trim() !== '') {
             // Codifica el correo para que sea seguro en la URL
-            const actionURL = 'index.php?module=iniciar_sesion&correo1=' + encodeURIComponent(correo);
+            const actionURL = 'index.php?module=iniciar_sesion&correo1=' + encodeURIComponent(correo)+'&pass='+encodeURIComponent(pass);
             window.location.href = actionURL;
         } else {
             // Muestra un mensaje si el campo está vacío
-            alert('Por favor, ingresa tu correo electrónico.');
+            alert('Por favor, ingresa tu correo electrónico o contraseña.');
         }
     }
 
