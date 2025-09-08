@@ -46,5 +46,131 @@ body.main-clientes {
 }
 
 h1 {
-    font-weight: 600;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* =========================
+   TABLA DE CLIENTES
+========================= */
+
+.clientes-table-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.table-header h3 {
+  margin: 0;
+  font-weight: 600;
+}
+/* Contenedor de buscador y botón */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Búscador de clientes */
+.search-box {
+  flex: 1;
+  margin: 0;
+}
+.search-box input {
+  width: 100%;
+  max-width: 250px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+.search-box input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Botón agregar clientes */
+.btn-agregar {
+  display: inline-block;
+  background: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.btn-agregar:hover {
+  background: #0056b3;
+  color: #ffffff;
+  transform: scale(1.05);
+  text-decoration: none;
+}
+.btn-agregar:active {
+  transform: scale(0.98);
+  box-shadow: 0 3px 8px rgba(0, 86, 179, 0.3);
+}
+
+.clientes-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+.clientes-table th, .clientes-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+}
+.clientes-table thead {
+  background: #f8f9fa;
+  font-weight: 600;
+}
+
+/* Botones de la tabla */
+.acciones button {
+  margin-right: 6px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.3s ease;
+}
+
+.btn-ver {
+  background: #17a2b8;
+  color: #fff;
+}
+.btn-ver:hover {
+  background: #117a8b;
+  transform: scale(1.05);
+}
+
+.btn-editar {
+  background: #ffc107;
+  color: #000;
+}
+.btn-editar:hover {
+  background: #e0a800;
+  color: #fff;
+}
+
+.btn-eliminar {
+  background: #dc3545;
+  color: #fff;
+}
+.btn-eliminar:hover {
+  background: #a71d2a;
+  transform: scale(1.05);
 }

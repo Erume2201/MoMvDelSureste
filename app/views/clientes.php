@@ -18,9 +18,63 @@ include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/clientes.css">
 </head>
 <body class="main-clientes">
-    
     <div class="main-content">
-        <h1>MÓDULO DE CLIENTES 😄</h1>
+        <div class="container">
+            <h1>VISUALIZACIÓN Y REGISTRO DE CLIENTES ✍🏼</h1>
+
+            <!-- Tabla -->
+            <div class="clientes-table-container">
+                <div class="table-header">
+                    <h3>Lista de clientes</h3>
+                    <div class="header-actions">
+                        <div class="search-box">
+                            <input type="text" id="buscar-cliente" placeholder="Buscar cliente...">
+                        </div>
+                        <a href="<?php echo BASE_URL; ?>app/views/clientes_add.php" class="btn-agregar" id="btn-agregar-cliente">+ Agregar cliente</a>
+                    </div>
+                </div>
+
+                <table class="clientes-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre o razón social</th>
+                            <th>RFC</th>
+                            <th>Ciudad</th>
+                            <th>Teléfono</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Ejemplo estático -->
+                        <tr>
+                            <td>1</td>
+                            <td>Empresa de Ejemplo S.A. de C.V.</td>
+                            <td>ABC123456XYZ</td>
+                            <td>Mérida</td>
+                            <td>999-123-4567</td>
+                            <td class="acciones">
+                                <button class="btn-ver">Ver</button>
+                                <button class="btn-editar">Editar</button>
+                                <button class="btn-eliminar">Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Empresa de Ejemplo Dos S.A. de C.V.</td>
+                            <td>XYZ987654ABC</td>
+                            <td>Villahemosa</td>
+                            <td>998-765-4321</td>
+                            <td class="acciones">
+                                <button class="btn-ver">Ver</button>
+                                <button class="btn-editar">Editar</button>
+                                <button class="btn-eliminar">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
     
 
