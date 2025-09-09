@@ -49,9 +49,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const urlParams = new URLSearchParams(window.location.search);
     const currentModule = urlParams.get("module");
 
-    if (currentModule) {
+    // Mapeo manual de módulos hijos a su módulo padre
+    const moduleMap = {
+        "clientes_add" : "clientes"
+    };
+
+    const moduleToActivate = moduleMap[currentModule] || currentModule;
+
+    if (moduleToActivate) {
         // Buscar enlace que apunte a este módulo
-        const activeLink = sidebar.querySelector(`a[href*="module=${currentModule}"]`);
+        const activeLink = sidebar.querySelector(`a[href*="module=${moduleToActivate}"]`);
         if (activeLink) {
             activeLink.classList.add("active"); // Para el estilo destacado
 

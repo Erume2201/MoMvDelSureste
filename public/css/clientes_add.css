@@ -33,17 +33,24 @@
    CONTENIDO PRINCIPAL Y FORMULARIO
 ========================= */
 body.main-clientes-add {
-    font-family: 'Poppins', sans-serif;
-    margin: 0; /* Asegura que no haya margen por defecto */
-    background-color: #f4f4f4;
-    color: #333; /* Color de texto general */
+  font-family: 'Poppins', sans-serif;
+  margin: 0; /* Asegura que no haya margen por defecto */
+  background-color: #f4f4f4;
+  color: #333; /* Color de texto general */
 }
 
 /* El `main-content` se desplaza para dejar espacio a la barra lateral */
 .main-content {
-    margin-left: 220px; /* Esta es la corrección clave */
-    padding: 20px;
-    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho */
+  margin-left: 220px; /* Esta es la corrección clave */
+  padding: 20px;
+  box-sizing: border-box; /* Asegura que el padding se incluya en el ancho */
+}
+
+/* Evita que el primer H1 “empuje” hacia abajo */
+.main-content .container > h1:first-child {
+  margin-top: 0;          /* elimina el margen superior por defecto */
+  margin-bottom: 16px;     /* mantén solo el inferior */
+  line-height: 1.2;
 }
 
 h1 {

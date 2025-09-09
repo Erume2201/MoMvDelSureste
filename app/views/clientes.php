@@ -30,7 +30,7 @@ include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
                         <div class="search-box">
                             <input type="text" id="buscar-cliente" placeholder="Buscar cliente...">
                         </div>
-                        <a href="<?php echo BASE_URL; ?>app/views/clientes_add.php" class="btn-agregar" id="btn-agregar-cliente">+ Agregar cliente</a>
+                        <a href="<?php echo BASE_URL; ?>index.php?module=clientes_add" class="btn-agregar" id="btn-agregar-cliente">+ Agregar cliente</a>
                     </div>
                 </div>
 
@@ -83,7 +83,7 @@ include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
     <!-- Librería de SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Script de los mensajes de alerta -->
-    <script src="public/js/alerts.js"></script>
+    <script src="<?php echo BASE_URL; ?>public/js/alerts.js"></script>
 
 </body>
 </html>
