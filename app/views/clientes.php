@@ -10,7 +10,7 @@ include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
     <meta charset="UTF-8">
     <title>Clientes</title>
     <!-- Icono en la pestaña -->
-    <link rel="icon" href="public/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="<?php echo BASE_URL; ?>public/img/favicon.ico" type="image/x-icon">
     <!-- Iconos de Boxicon -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- Llamando los estilos con la BASE_URL -->
