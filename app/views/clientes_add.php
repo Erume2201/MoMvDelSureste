@@ -124,22 +124,8 @@ include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
     <!-- ===SCRIPTS=== -->
     <script src="<?php echo BASE_URL; ?>public/js/sidebar.js"></script>
     <!-- Librería de SweetAlert2 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>   
     <!-- Script de los mensajes de alerta -->
-    <script>
-        document.getElementById("form-clientes").addEventListener("submit", function(e) {
-            e.preventDefault(); // Evita recargar
-            Swal.fire({
-                icon: 'success',
-                title: 'Cliente agregado',
-                text: 'El cliente se registró correctamente',
-                confirmButtonText: 'OK'
-            }).then(() => {
-                window.location.href = "<?php echo BASE_URL; ?>index.php?module=clientes";
-            });
-        });
-    </script>
     <script src="<?php echo BASE_URL; ?>public/js/alerts.js"></script>
 
 </body>

@@ -84,3 +84,5 @@
         </a>
     </div>
 </div>
+
+<script>const BASE_URL = "<?php echo BASE_URL; ?>";</script>
