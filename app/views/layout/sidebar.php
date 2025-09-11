@@ -41,25 +41,29 @@
         </div>
     </div>
 
-    <!-- Menú Cotizaciones -->
-    <div class="menu-item" data-group="cotizaciones">
-        <a href="javascript:void(0);" class="secciones submenu-toggle" data-group="cotizaciones-toggle" aria-expanded="false">
+    <!-- Menú Contratos -->
+    <div class="menu-item" data-group="Contratos">
+        <a href="javascript:void(0);" class="secciones submenu-toggle" data-group="Contratos-toggle" aria-expanded="false">
             <i class='bx bxs-briefcase'></i>
-            Cotizaciones
+            Contratos
             <i class='bx bx-chevron-down arrow'></i>
         </a>
-        <div class="submenu" id="submenu-cotizaciones">
+        <div class="submenu" id="submenu-Contratos">
             <a href="<?php echo BASE_URL; ?>index.php?module=cotizar" class="submenu-link" data-module="cotizar">
                 <i class='bx bxs-edit-alt'></i>
-                Cotizar
+                Generar contrato
             </a>
-            <a href="<?php echo BASE_URL; ?>index.php?module=ver_cotizaciones" class="submenu-link" data-module="ver_cotizaciones">
+            <a href="<?php echo BASE_URL; ?>index.php?module=ver_Contratos" class="submenu-link" data-module="ver_Contratos">
                 <i class='bx bxs-file'></i>
-                Visualizar
+                Visualizar contratos
             </a>
             <a href="<?php echo BASE_URL; ?>index.php?module=calendario" class="submenu-link" data-module="calendario">
                 <i class='bx bxs-calendar'></i>
-                Calendario
+                Calendario de recolección
+            </a>
+            <a href="<?php echo BASE_URL; ?>index.php?module=generarManifiestos" class="submenu-link" data-module="generarManifiesto">
+                <i class='bx bxs-calendar'></i>
+                Generar Manifiesto
             </a>
         </div>
     </div>
