@@ -49,3 +49,200 @@ h1 {
   font-weight: 600;
   text-align: center;
 }
+
+/* =========================
+   TABLA DE TIENDAS
+========================= */
+
+.tiendas-table-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.table-header h3 {
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Contenedor de buscador y botón */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Buscador de tienda */
+.search-box {
+  flex: 1;
+  margin: 0;
+}
+.search-box input {
+  width: 100%;
+  max-width: 250px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+.search-box input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Botón agregar tienda */
+.btn-agregar {
+  display: inline-block;
+  background: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.btn-agregar:hover {
+  background: #0056b3;
+  color: #ffffff;
+  transform: scale(1.05);
+  text-decoration: none;
+}
+.btn-agregar:active {
+  transform: scale(0.98);
+  box-shadow: 0 3px 8px rgba(0, 86, 179, 0.3);
+}
+
+/* Tabla */
+.tiendas-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+.tiendas-table th, .tiendas-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+}
+.tiendas-table thead {
+  background: #f8f9fa;
+  font-weight: 600;
+}
+
+/* Botones de la tabla */
+.acciones button {
+  background: none; /*El color lo dará el ícono*/
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  margin: 0 4px;
+  font-size: 18px; /*Tamaño del ícono*/
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.acciones button:hover {
+  transform: scale(1.2);
+}
+
+/* Colores por acción */
+.btn-ver i {
+  color: #17a2b8;
+}
+.btn-ver:hover i {
+  color: #117a8b;
+}
+
+.btn-editar i {
+  color: #ffc107;
+}
+.btn-editar:hover i {
+  color: #e0a800;
+}
+
+.btn-eliminar i {
+  color: #dc3545;
+}
+.btn-eliminar:hover i {
+  color: #a71d2a;
+}
+
+/* =========================
+  RESPONSIVE MOVIL
+========================= */
+
+@media (max-width: 768px) {
+
+  /* Quitar el margen del sidebar cuando se está en modo hamburguesa */
+  .main-content {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  /* Ajuste del encabezado */
+  h1 {
+    font-size: 16px;
+  }
+
+  .table-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .search-box input {
+    max-width: 100%;
+  }
+
+  /* Hacer que la tabla sea desplazable horizontalmente */
+  .tiendas-table-container {
+    overflow-x: auto;
+  }
+
+  .tiendas-table {
+    min-width: 700px; /*Aseguramos que tenga scroll en móvil*/
+  }
+
+  /* Botones de acciones más compactos */
+  .acciones {
+    display: flex;
+    gap: 4px;
+  }
+
+  .acciones button {
+    font-size: 16px; /*Íconos más pequeños*/
+    padding: 4px;
+  }
+}
+
+/* --- RESPONSIVE - EXTRA PEQUEÑO (teléfonos muy chicos) --- */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 14px;
+  }
+
+  .btn-agregar {
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .acciones {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .acciones button {
+    margin: 2px 0;
+    font-size: 14px;
+  }
+}
