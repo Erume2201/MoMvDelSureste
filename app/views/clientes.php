@@ -13,6 +13,8 @@ include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
     <link rel="icon" href="<?php echo BASE_URL; ?>public/img/favicon.ico" type="image/x-icon">
     <!-- Iconos de Boxicon -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!-- Llamando los estilos con la BASE_URL -->
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/sidebar.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/clientes.css">
@@ -42,6 +44,7 @@ include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
                             <th>RFC</th>
                             <th>Ciudad</th>
                             <th>Teléfono</th>
+                            <th>Correo</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -53,10 +56,11 @@ include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
                             <td>ABC123456XYZ</td>
                             <td>Mérida</td>
                             <td>999-123-4567</td>
+                            <td>ohyeah350@gmail.com</td>
                             <td class="acciones">
-                                <button class="btn-ver">Ver</button>
-                                <button class="btn-editar">Editar</button>
-                                <button class="btn-eliminar">Eliminar</button>
+                                <button class="btn-ver" title="Ver"><i class="fa-solid fa-eye"></i></button>
+                                <button class="btn-editar" title="Editar"><i class="fa-solid fa-pen-to-square"></i></button>
+                                <button class="btn-eliminar" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
                             </td>
                         </tr>
                         <tr>
@@ -65,10 +69,11 @@ include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
                             <td>XYZ987654ABC</td>
                             <td>Villahemosa</td>
                             <td>998-765-4321</td>
+                            <td>sexybith@hotmail.com</td>
                             <td class="acciones">
-                                <button class="btn-ver">Ver</button>
-                                <button class="btn-editar">Editar</button>
-                                <button class="btn-eliminar">Eliminar</button>
+                                <button class="btn-ver" title="Ver"><i class="fa-solid fa-eye"></i></button>
+                                <button class="btn-editar" title="Editar"><i class="fa-solid fa-pen-to-square"></i></button>
+                                <button class="btn-eliminar" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
                             </td>
                         </tr>
                     </tbody>

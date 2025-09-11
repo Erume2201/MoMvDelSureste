@@ -139,38 +139,36 @@ h1 {
 
 /* Botones de la tabla */
 .acciones button {
-  margin-right: 6px;
-  padding: 5px 10px;
+  background: none; /* El color lo dará el ícono */
   border: none;
-  border-radius: 6px;
   cursor: pointer;
-  font-size: 13px;
-  transition: 0.3s ease;
+  padding: 6px;
+  margin: 0 4px;
+  font-size: 18px; /* Tamaño del ícono */
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.acciones button:hover {
+  transform: scale(1.2);
 }
 
-.btn-ver {
-  background: #17a2b8;
-  color: #fff;
+/* Colores por acción */
+.btn-ver i {
+  color: #17a2b8;
 }
-.btn-ver:hover {
-  background: #117a8b;
-  transform: scale(1.05);
-}
-
-.btn-editar {
-  background: #ffc107;
-  color: #000;
-}
-.btn-editar:hover {
-  background: #e0a800;
-  color: #fff;
+.btn-ver:hover i {
+  color: #117a8b;
 }
 
-.btn-eliminar {
-  background: #dc3545;
-  color: #fff;
+.btn-editar i {
+  color: #ffc107;
 }
-.btn-eliminar:hover {
-  background: #a71d2a;
-  transform: scale(1.05);
+.btn-editar:hover i {
+  color: #e0a800;
+}
+
+.btn-eliminar i {
+  color: #dc3545;
+}
+.btn-eliminar:hover i {
+  color: #a71d2a;
 }
