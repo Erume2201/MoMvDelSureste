@@ -24,7 +24,7 @@ include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
         <div class="container">
             <h1>VISUALIZACIÓN Y REGISTRO DE CLIENTES ✍🏼</h1>
 
-            <!-- Tabla -->
+            <!-- Tabla de clientes-->
             <div class="clientes-table-container">
                 <div class="table-header">
                     <h3>Lista de clientes</h3>
@@ -78,6 +78,11 @@ include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
                         </tr>
                     </tbody>
                 </table>
+
+                <!-- Botón de imprimir -->
+                <div class="form-actions">
+                    <button type="submit" class="btn-imprimir"><i class="fa-solid fa-file-pdf"></i>Imprimir</button>
+                </div>
             </div>
         </div>
     </div>

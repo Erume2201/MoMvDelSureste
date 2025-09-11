@@ -13,6 +13,8 @@ include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
     <link rel="icon" href="<?php echo BASE_URL; ?>public/img/favicon.ico" type="image/x-icon">
     <!-- Iconos de Boxicon -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!-- Llamando los estilos con la BASE_URL -->
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/sidebar.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/clientes_add.css">
@@ -112,8 +114,8 @@ include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
 
                 <!-- Botónes -->
                 <div class="form-actions">
-                    <button type="submit" class="btn-guardar">💾 Agregar Cliente</button>
-                    <a href="<?php echo BASE_URL; ?>index.php?module=clientes" class="btn-cancelar">❌ Cancelar</a>
+                    <button type="submit" class="btn-guardar"><i class="fa-solid fa-user-plus"></i>Agregar Cliente</button>
+                    <a href="<?php echo BASE_URL; ?>index.php?module=clientes" class="btn-cancelar"><i class="fa-solid fa-xmark"></i>Cancelar</a>
                 </div>
 
             </form>
