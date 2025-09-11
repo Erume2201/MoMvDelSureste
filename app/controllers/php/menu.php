@@ -37,7 +37,7 @@ switch ($module) {
         session_destroy();
         header("Location: index.php");
         exit;
-    case 'ver_cotizaciones':
+    case 'ver_Contratos':
         require __DIR__ . '/../../views/verCotizacion.php';
         break;
     case 'cotizar':
