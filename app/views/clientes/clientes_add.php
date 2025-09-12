@@ -1,7 +1,7 @@
 <!-- Se incluyen archivos php -->
 <?php
-require_once __DIR__ . '/../config/config.php';
-include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
+require_once __DIR__ . '../../../config/config.php';
+include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
 ?>
 
 <!DOCTYPE html>

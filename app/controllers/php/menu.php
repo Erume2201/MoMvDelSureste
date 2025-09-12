@@ -44,13 +44,16 @@ switch ($module) {
         require __DIR__ . '/../../views/cotizar.php';
         break;
     case 'clientes':
-        require __DIR__ . '/../../views/clientes.php';
+        require __DIR__ . '/../../views/clientes/clientes.php';
         break;
     case 'clientes_add':
-        require __DIR__ . '/../../views/clientes_add.php';
+        require __DIR__ . '/../../views/clientes/clientes_add.php';
         break;
     case 'tiendas':
-        require __DIR__ . '/../../views/tiendas.php';
+        require __DIR__ . '/../../views/tiendas/tiendas.php';
+        break;
+    case 'tiendas_add':
+        require __DIR__ . '/../../views/tiendas/tiendas_add.php';
         break;
     default:
         // Si la sesión está activa y no se especifica un módulo, muestra el dashboard.

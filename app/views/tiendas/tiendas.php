@@ -1,7 +1,7 @@
 <!-- Se incluyen archivos php -->
 <?php
-require_once __DIR__ . '/../config/config.php';
-include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
+require_once __DIR__ . '../../../config/config.php';
+include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +32,7 @@ include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
                         <div class="search-box">
                             <input type="text" id="buscar-tienda" placeholder="Buscar tienda...">
                         </div>
-                        <a href="<?php echo BASE_URL; ?>index.php?module=tiendas" class="btn-agregar" id="btn-agregar-tienda">+ Agregar tienda</a>
+                        <a href="<?php echo BASE_URL; ?>index.php?module=tiendas_add" class="btn-agregar" id="btn-agregar-tienda">+ Agregar tienda</a>
                     </div>
                 </div>
 
