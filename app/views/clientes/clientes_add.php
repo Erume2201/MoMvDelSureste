@@ -17,7 +17,7 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!-- Llamando los estilos con la BASE_URL -->
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/sidebar.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/clientes_add.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/clientes/clientes_add.css">
 </head>
 <body class="main-clientes-add"">
     <div class="main-content">

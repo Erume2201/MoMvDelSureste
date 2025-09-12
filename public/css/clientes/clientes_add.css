@@ -46,13 +46,6 @@ body.main-clientes-add {
   box-sizing: border-box; /* Asegura que el padding se incluya en el ancho */
 }
 
-/* Evita que el primer H1 “empuje” hacia abajo */
-.main-content .container > h1:first-child {
-  margin-top: 0;          /* elimina el margen superior por defecto */
-  margin-bottom: 16px;     /* mantén solo el inferior */
-  line-height: 1.2;
-}
-
 h1 {
   font-weight: 600;
   text-align: center;
@@ -168,7 +161,7 @@ h1 {
   animation: shake 0.3s;
 }
 .btn-cancelar:hover i {
-  color: #ffffff; /* rojo más intenso al pasar el mouse */
+  color: #ffffff; 
 }
 .btn-cancelar:active {
   transform: scale(0.95);
