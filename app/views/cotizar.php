@@ -14,7 +14,8 @@ include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
     <!--icono en la pestaña-->
     <link rel="icon" href="public/img/favicon.ico" type="image/x-icon">
     <!-- Iconos de Boxicon -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
     <!-- Llamando los estilos con la BASE_URL -->
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/sidebar.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/cotizar.css">

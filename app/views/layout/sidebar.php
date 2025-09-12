@@ -39,11 +39,11 @@
                 Tiendas
             </a>
             <a href="<?php echo BASE_URL; ?>index.php?module=Operador" class="submenu-link" data-module="Operador">
-                <i class='bx bxs-store'></i>
+                <i class='bx  bx-steering-wheel'></i> 
                 Operadores
             </a>
             <a href="<?php echo BASE_URL; ?>index.php?module=Unidades" class="submenu-link" data-module="Unidades">
-                <i class='bx bxs-store'></i>
+                <i class='bx  bx-car'></i> 
                 Unidades
             </a>
         </div>
@@ -52,17 +52,17 @@
     <!-- Menú Contratos -->
     <div class="menu-item" data-group="Contratos">
         <a href="javascript:void(0);" class="secciones submenu-toggle" data-group="Contratos-toggle" aria-expanded="false">
-            <i class='bx bxs-briefcase'></i>
+            <i class='bx  bx-pencil-draw'></i> 
             Contratos
             <i class='bx bx-chevron-down arrow'></i>
         </a>
         <div class="submenu" id="submenu-Contratos">
             <a href="<?php echo BASE_URL; ?>index.php?module=cotizar" class="submenu-link" data-module="cotizar">
-                <i class='bx bxs-edit-alt'></i>
+                <i class='bx  bx-file-plus'></i> 
                 Generar contrato
             </a>
             <a href="<?php echo BASE_URL; ?>index.php?module=ver_Contratos" class="submenu-link" data-module="ver_Contratos">
-                <i class='bx bxs-file'></i>
+                <i class='bx  bx-file-detail'></i> 
                 Visualizar contratos
             </a>
             
@@ -72,17 +72,17 @@
     <!-- Menú Viajes -->
     <div class="menu-item" data-group="Viajes">
         <a href="javascript:void(0);" class="secciones submenu-toggle" data-group="Viajes-toggle" aria-expanded="false">
-            <i class='bx bxs-briefcase'></i>
+            <i class='bx  bx-van'></i> 
             Viajes
             <i class='bx bx-chevron-down arrow'></i>
         </a>
         <div class="submenu" id="submenu-Viajes">
             <a href="<?php echo BASE_URL; ?>index.php?module=calendario" class="submenu-link" data-module="calendario">
-                <i class='bx bxs-calendar'></i>
+                <i class='bx  bx-calendar-alt'></i> 
                 Calendario de recolección
             </a>
             <a href="<?php echo BASE_URL; ?>index.php?module=generarManifiestos" class="submenu-link" data-module="generarManifiesto">
-                <i class='bx bxs-calendar'></i>
+                <i class='bx  bx-calendar-plus'></i> 
                 Generar Manifiesto
             </a>
             
@@ -100,7 +100,7 @@
     <!-- Cerrar Sesión -->
     <div class="logout-item">
         <a href="#" id="btn-cerrar-sesion" class="logout-link">
-            <i class='bx bx-log-out'></i>
+            <i class="bx bx-arrow-out-left-square-half "></i>
             <span>Cerrar sesión</span>
         </a>
     </div>
