@@ -89,15 +89,13 @@
         </div>
     </div>
 
-   
-
-    <!-- Facturación -->
+    <!-- Facturación
     <div class="menu-item" data-group="facturacion">
         <a href="<?php echo BASE_URL; ?>index.php?module=facturacion" class="secciones" data-module="facturacion">
             <i class='bx bxs-credit-card'></i>
             Facturación
         </a>
-    </div>
+    </div> -->
 
     <!-- Cerrar Sesión -->
     <div class="logout-item">
