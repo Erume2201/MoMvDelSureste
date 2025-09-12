@@ -78,6 +78,11 @@ include __DIR__ . '../layout/sidebar.php'; // MENÚ LATERAL
                         </tr>
                     </tbody>                    
                 </table>
+
+                <!-- Botón de imprimir -->
+                <div class="form-actions">
+                    <button type="submit" class="btn-imprimir"><i class="fa-solid fa-file-pdf"></i>Imprimir</button>
+                </div>
             </div>
         </div>
     </div>
