@@ -175,8 +175,44 @@ h1 {
   color: #a71d2a;
 }
 
+/* Botones - Imprimir */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.btn-imprimir {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #007BFF, #0056b3);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+.btn-imprimir i {
+  font-size: 16px;
+}
+.btn-imprimir:hover {
+  background: linear-gradient(135deg, #0056b3, #003f88);
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(0, 86, 179, 0.3);
+}
+.btn-imprimir:active {
+  transform: scale(0.95);
+  box-shadow: 0 3px 8px rgba(0, 86, 179, 0.3);
+}
+
 /* =========================
-  RESPONSIVE MOVIL
+  RESPONSIVE MOVIL: TIENDAS
 ========================= */
 
 @media (max-width: 768px) {
@@ -192,14 +228,34 @@ h1 {
     font-size: 16px;
   }
 
+  /* Encabezado de la tabla en columna */
   .table-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    width: 100%;
+    gap: 8px;
+  }
+  .table-header h3 {
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    margin-bottom: 5px;
   }
 
+  .search-box {
+    width: 100%;
+  }
   .search-box input {
     max-width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .btn-agregar {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    padding: 12px;
   }
 
   /* Hacer que la tabla sea desplazable horizontalmente */
@@ -209,6 +265,18 @@ h1 {
 
   .tiendas-table {
     min-width: 700px; /*Aseguramos que tenga scroll en móvil*/
+  }
+
+  /* Botón imprimir ocupa todo el ancho */
+  .form-actions {
+    justify-content: center;
+  }
+
+  .btn-imprimir {
+    width: 100%;
+    justify-content: center;
+    font-size: 14px;
+    padding: 12px;
   }
 
   /* Botones de acciones más compactos */
@@ -229,7 +297,8 @@ h1 {
     font-size: 14px;
   }
 
-  .btn-agregar {
+  .btn-agregar,
+  .btn-imprimir {
     width: 100%;
     text-align: center;
     font-size: 13px;
