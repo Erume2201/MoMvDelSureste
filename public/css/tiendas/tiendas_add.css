@@ -1,0 +1,230 @@
+/*
+ * Este es el CSS que va DESPUÉS de tu CSS del `sidebar`.
+ */
+ /* TIPOGRAFÍA */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+/* =========================
+   CONTENIDO PRINCIPAL Y FORMULARIO
+========================= */
+body.main-tiendas-add {
+  font-family: 'Poppins', sans-serif;
+  margin: 0; /* Asegura que no haya margen por defecto */
+  background-color: #f4f4f4;
+  color: #333; /* Color de texto general */
+}
+
+/* El `main-content` se desplaza para dejar espacio a la barra lateral */
+.main-content {
+  margin-left: 220px; /* Esta es la corrección clave */
+  padding: 20px;
+  box-sizing: border-box; /* Asegura que el padding se incluya en el ancho */
+}
+
+h1 {
+  font-weight: 600;
+  text-align: center;
+}
+
+/* FORMULARIO DE AGREGAR TIENDA */
+.form-tiendas {
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+  max-width: 100%;
+  margin: 0 auto; /* Centra el formulario */
+}
+
+/* GRID para 2 columnas */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Campos que ocupan todo el ancho en el grid */
+.form-full {
+  grid-column: 1 / -1; /* Ocupa ambas columnas en el grid */
+}
+
+.form-tiendas label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.form-tiendas input {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.form-tiendas input:focus {
+  outline: none;
+  border-color: #05295f;
+  box-shadow: 0 0 6px rgba(5, 41, 95, 0.25);
+}
+
+.form-tiendas textarea {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  resize: vertical;  /* Permite al usuario ajustar el tamaño vertical */
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.form-actions textarea:focus {
+  outline: none;
+  border-color: #05295f;
+  box-shadow: 0 0 6px rgba(5, 41, 95, 0.25);
+}
+
+/* Animación shake [Botones] */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  50% { transform: translateX(3px); }
+  75% { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
+
+/* Botones */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.btn-guardar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #05295f;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 15px;
+  transition: transform 0.2s ease, background 0.3s;
+}
+.btn-guardar i {
+  font-size: 16px;
+}
+.btn-guardar:hover {
+  background: #0041a3;
+  transform: scale(1.05);
+}
+.btn-guardar:active {
+  transform: scale(0.95);
+  box-shadow: 0 3px 8px rgba(0, 86, 179, 0.3);
+}
+
+/* Botón cancelar */
+.btn-cancelar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ccc;
+  color: #000;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: transform 0.2s ease, background 0.3s, color 0.3s;
+}
+.btn-cancelar i {
+  font-size: 16px;
+  color: #dc3545;
+  transition: color 0.3s;
+}
+.btn-cancelar:hover {
+  background: #a71d2a;
+  color: #fff;
+  animation: shake 0.3s;
+}
+.btn-cancelar:hover i {
+  color: #ffffff;
+}
+.btn-cancelar:active {
+  transform: scale(0.95);
+  box-shadow: 0 3px 8px rgba(158, 2, 2, 0.3);
+}
+
+/* =========================
+  RESPONSIVE MOVIL
+========================= */
+
+@media (max-width: 768px) {
+  /* Ajuste del contenedor principal */
+  .main-content {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  /* El formulario se vuelva una columna */
+  .form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 15px;
+  }
+
+  /* Inputs y selects ocupan todo el ancho */
+  .form-grid input,
+  .form-grid select,
+  .form-grid textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  /* Botones principales */
+  .form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .form-actions button,
+  .form-actions a,
+  .form-actions input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+}
