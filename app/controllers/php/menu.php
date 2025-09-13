@@ -11,7 +11,7 @@ $pasw = $_GET['pass'] ?? '';
 // 1. Manejo del módulo de firma, que no requiere sesión.
 //    Si la URL es ?module=firmar_cotizacion, se carga la vista y se detiene la ejecución.
 if ($module === 'firmar_cotizacion') {
-    require __DIR__ . '/../../views/firmar.php';
+    require __DIR__ . '/../../views/firmaCliente/firmar.php';
     exit;
 }
 
@@ -25,7 +25,7 @@ if (!isset($_SESSION['s1'])) {
         exit;
     } else {
         // Para cualquier otro módulo no permitido sin sesión, se muestra el login.
-        require __DIR__ . '/../../views/login.php';
+        require __DIR__ . '/../../views/login/login.php';
         exit;
     }
 }
@@ -38,10 +38,10 @@ switch ($module) {
         header("Location: index.php");
         exit;
     case 'ver_Contratos':
-        require __DIR__ . '/../../views/verCotizacion.php';
+        require __DIR__ . '/../../views/contratos/verContratos.php';
         break;
     case 'cotizar':
-        require __DIR__ . '/../../views/cotizar.php';
+        require __DIR__ . '/../../views/contratos/generarContrato.php';
         break;
     case 'clientes':
         require __DIR__ . '/../../views/clientes/clientes.php';
@@ -57,7 +57,7 @@ switch ($module) {
         break;
     default:
         // Si la sesión está activa y no se especifica un módulo, muestra el dashboard.
-        require __DIR__ . '/../../views/dashboard.php';
+        require __DIR__ . '/../../views/dashboard/dashboard.php';
         break;
 }
 ?>

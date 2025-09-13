@@ -16,8 +16,8 @@ include __DIR__ . '../layout/sidebar.php'; // Esto solo carga el sidebar
     <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
     <!-- Llamando los estilos con la BASE_URL -->
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/sidebar.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/dashboard.css">
-    <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/estilos.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/contrato.css">
+    
     <!-- Asegúrate de incluir Bootstrap 5 en tu <head> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -45,9 +45,9 @@ include __DIR__ . '../layout/sidebar.php'; // Esto solo carga el sidebar
                 <h1></h1>
 
                 <div class="cards-container">
-                    <?php for ($i = 1; $i <= 20; $i++): ?>
+                    <?php for ($i = 1; $i <= 10; $i++): ?>
                         <div class="card p-3 text-center">
-                            <img src="<?php echo BASE_URL; ?>public/img/pdf.png" alt="Logo PDF" style="width:200px; height:auto; margin-bottom:5px;">
+                           <img src="<?php echo BASE_URL; ?>public/img/pdf.png" alt="Logo PDF" style="width:100px; height:auto; margin-bottom:2px; display: block; margin-left: auto; margin-right: auto;">
                             <button type="button" class="btn btn-success btn-ver-cotizacion" data-bs-toggle="modal" data-bs-target="#pdfModal" data-pdf="<?php echo BASE_URL; ?>app/pdf/cotizacion-<?php echo str_pad($i, 3, '0', STR_PAD_LEFT); ?>.pdf">
                                 Ver Cotización-<?php echo str_pad($i, 3, '0', STR_PAD_LEFT); ?>
                             </button>
