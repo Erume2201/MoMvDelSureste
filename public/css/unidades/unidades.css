@@ -1,0 +1,317 @@
+/*
+ * Este es el CSS que va DESPUÉS de tu CSS del `sidebar`.
+ */
+ /* TIPOGRAFÍA */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+/* =========================
+   CONTENIDO PRINCIPAL Y FORMULARIO
+========================= */
+body.main-unidades {
+    font-family: 'Poppins', sans-serif;
+    margin: 0; /* Asegura que no haya margen por defecto */
+    background-color: #f4f4f4;
+    color: #333; /* Color de texto general */
+}
+
+/* El `main-content` se desplaza para dejar espacio a la barra lateral */
+.main-content {
+    margin-left: 220px; /* Esta es la corrección clave */
+    padding: 20px;
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho */
+}
+
+h1 {
+  font-weight: 600;
+  text-align: center;
+}
+
+/* =========================
+   TABLA DE UNIDADES
+========================= */
+
+.unidades-table-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.table-header h3 {
+  margin: 0;
+  font-weight: 600;
+}
+/* Contenedor de buscador y botón */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Búscador de clientes */
+.search-box {
+  flex: 1;
+  margin: 0;
+}
+.search-box input {
+  width: 100%;
+  max-width: 250px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+.search-box input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* Botón agregar clientes */
+.btn-agregar {
+  display: inline-block;
+  background: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.btn-agregar:hover {
+  background: #0056b3;
+  color: #ffffff;
+  transform: scale(1.05);
+  text-decoration: none;
+}
+.btn-agregar:active {
+  transform: scale(0.98);
+  box-shadow: 0 3px 8px rgba(0, 86, 179, 0.3);
+}
+
+/* Tabla */
+.unidades-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+.unidades-table th, .unidades-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+.unidades-table thead {
+  background: #f8f9fa;
+  font-weight: 600;
+}
+
+/* Botones de la tabla */
+.acciones button {
+  background: none; /* El color lo dará el ícono */
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  margin: 0 4px;
+  font-size: 18px; /* Tamaño del ícono */
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.acciones button:hover {
+  transform: scale(1.2);
+}
+.acciones button:active {
+  transform: scale(0.95);
+}
+
+/* Colores por acción */
+.btn-ver i {
+  color: #17a2b8;
+}
+.btn-ver:hover i {
+  color: #117a8b;
+}
+
+.btn-editar i {
+  color: #ffc107;
+}
+.btn-editar:hover i {
+  color: #e0a800;
+}
+
+.btn-eliminar i {
+  color: #dc3545;
+}
+.btn-eliminar:hover i {
+  color: #a71d2a;
+}
+
+/* Botones - Imprimir */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.btn-imprimir {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn-imprimir i {
+    font-size: 16px;
+}
+.btn-imprimir:hover {
+    background: linear-gradient(135deg, #0056b3, #003f88);
+    transform: scale(1.05);
+}
+.btn-imprimir:active {
+    transform: scale(0.95);
+    box-shadow: 0 6px 14px rgba(0, 86, 179, 0.3);
+}
+
+/* =========================
+  RESPONSIVE MOVIL: CLIENTES
+========================= */
+
+@media (max-width: 768px) {
+
+  /* Quitar el margen del sidebar cuando se está en modo hamburguesa */
+  .main-content {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  /* Ajuste del encabezado */
+  h1 {
+    font-size: 16px;
+  }
+
+  /* Encabezado de la tabla en columna */
+  .table-header {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 8px;
+  }
+  .table-header h3 {
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+  .search-box input {
+    max-width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .btn-agregar {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    padding: 12px;
+  }
+
+/* Hacer que la tabla sea desplazable horizontalmente */
+  .unidades-table-container {
+    overflow-x: auto;
+  }
+
+  .unidades-table {
+    min-width: 700px; /*Aseguramos que tenga scroll en móvil*/
+  }
+
+  /* Botón imprimir ocupa todo el ancho */
+  .form-actions {
+    justify-content: center;
+  }
+
+  .btn-imprimir {
+    width: 100%;
+    justify-content: center;
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  /* Botones de acciones más compactos */
+  .acciones {
+    display: flex;
+    gap: 4px;
+  }
+
+  .acciones button {
+    font-size: 16px; /*Íconos más pequeños*/
+    padding: 4px;
+  }
+}
+
+/* --- RESPONSIVE - EXTRA PEQUEÑO (teléfonos muy chicos) --- */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 14px;
+  }
+
+  .btn-agregar,
+  .btn-imprimir {
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .acciones {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .acciones button {
+    margin: 2px 0;
+    font-size: 14px;
+  }
+}
