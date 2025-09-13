@@ -52,7 +52,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Mapeo manual de módulos hijos a su módulo padre
     const moduleMap = {
         "clientes_add" : "clientes",
-        "tiendas_add" : "tiendas"
+        "tiendas_add" : "tiendas",
+        "operadores_add" : "operadores",
+        "unidades_add" : "unidades"
     };
 
     const moduleToActivate = moduleMap[currentModule] || currentModule;

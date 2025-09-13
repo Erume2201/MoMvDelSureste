@@ -58,6 +58,15 @@ switch ($module) {
     case 'operadores':
         require __DIR__ . '/../../views/operadores/operadores.php';
         break;
+    case 'operadores_add':
+        require __DIR__ . '/../../views/operadores/operadores_add.php';
+        break;
+    case 'unidades':
+        require __DIR__ . '/../../views/unidades/unidades.php';
+        break;
+    case 'unidades_add':
+        require __DIR__ . '/../../views/unidades/unidades_add.php';
+        break;
     default:
         // Si la sesión está activa y no se especifica un módulo, muestra el dashboard.
         require __DIR__ . '/../../views/dashboard/dashboard.php';

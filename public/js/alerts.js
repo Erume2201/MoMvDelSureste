@@ -107,4 +107,46 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
+
+    // Formulario: agregar tienda
+    const formTiendas = document.getElementById("form-tiendas");
+
+    if (formTiendas) {
+        formTiendas.addEventListener("submit", function (e) {
+            e.preventDefault();
+            alertaExito({
+                titulo: "Tienda agregada",
+                texto: "La tienda se registró correctamente",
+                redirigir: "index.php?module=tiendas",
+            });
+        });
+    }
+
+    // Formulario: agregar operador
+    const formOperadores = document.getElementById("form-operadores");
+
+    if (formOperadores) {
+        formOperadores.addEventListener("submit", function (e) {
+            e.preventDefault();
+            alertaExito({
+                titulo: "Operador agregado",
+                texto: "El operador se registró correctamente",
+                redirigir: "index.php?module=operadores",
+            });
+        });
+    }
+
+    // Formulario: agregar unidad
+    const formUnidades = document.getElementById("form-unidades");
+
+    if (formUnidades) {
+        formUnidades.addEventListener("submit", function (e) {
+            e.preventDefault();
+            alertaExito({
+                titulo: "Unidad agregada",
+                texto: "La unidad se registró correctamente",
+                redirigir: "index.php?module=unidades",
+            });
+        });
+    }
 });
