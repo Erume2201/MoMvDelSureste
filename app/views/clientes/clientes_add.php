@@ -33,82 +33,82 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
 
                     <div class="form-group">
                         <label for="nombre">Nombre o Razón social.</label>
-                        <input type="text" id="nombre" name="nombre" require>
+                        <input type="text" id="nombre" name="nombre" required>
                     </div>
 
                     <div class="form-group">
                         <label for="rfc">RFC.</label>
-                        <input type="text" id="rfc" name="rfc" maxlength="13" require>
+                        <input type="text" id="rfc" name="rfc" maxlength="13" required>
                     </div>
 
                     <div class="form-group">
                         <label for="domicilio">Domicilio Fiscal.</label>
-                        <input type="text" id="domicilio" name="domicilio" require>
+                        <input type="text" id="domicilio" name="domicilio" required>
                     </div>
 
                     <div class="form-group">
                         <label for="colonia">Colonia.</label>
-                        <input type="text" id="colonia" name="colonia" require>
+                        <input type="text" id="colonia" name="colonia" required>
                     </div>
 
                     <div class="form-group">
                         <label for="ciudad">Ciudad.</label>
-                        <input type="text" id="ciudad" name="ciudad" require>
+                        <input type="text" id="ciudad" name="ciudad" required>
                     </div>
 
                     <div class="form-group">
                         <label for="estado">Estado.</label>
-                        <input type="text" id="estado" name="estado" require>
+                        <input type="text" id="estado" name="estado" required>
                     </div>
 
                     <div class="form-group">
                         <label for="cp">Código postal.</label>
-                        <input type="text" id="cp" name="cp" require>
+                        <input type="text" id="cp" name="cp" required>
                     </div>
 
                     <div class="form-group">
                         <label for="tipo_localidad">Tipo de localidad.</label>
-                        <input type="text" id="tipo_localidad" name="tipo_localidad" require>
+                        <input type="text" id="tipo_localidad" name="tipo_localidad" required>
                     </div>
 
                     <div class="form-group">
                         <label for="apoderado">Nombre del apoderado legal.</label>
-                        <input type="text" id="apoderado" name="apoderado" require>
+                        <input type="text" id="apoderado" name="apoderado" required>
                     </div>
 
                     <div class="form-group">
                         <label for="forma_pago">Forma de pago.</label>
-                        <input type="text" id="forma_pago" name="forma_pago" require>
+                        <input type="text" id="forma_pago" name="forma_pago" required>
                     </div>
 
                     <div class="form-group">
                         <label for="metodo_pago">Método de pago.</label>
-                        <input type="text" id="metodo_pago" name="metodo_pago" require>
+                        <input type="text" id="metodo_pago" name="metodo_pago" required>
                     </div>
 
                     <div class="form-group">
                         <label for="uso_cfdi">Uso CFDI.</label>
-                        <input type="text" id="uso_cfdi" name="uso_cfdi" require>
+                        <input type="text" id="uso_cfdi" name="uso_cfdi" required>
                     </div>
 
                     <div class="form-group">
                         <label for="regimen">Régimen fiscal.</label>
-                        <input type="text" id="regimen" name="regimen" require>
+                        <input type="text" id="regimen" name="regimen" required>
                     </div>
 
                     <div class="form-group">
                         <label for="contacto">Contacto de cuentas por pagar.</label>
-                        <input type="text" id="contacto" name="contacto" require>
+                        <input type="text" id="contacto" name="contacto" required>
                     </div>
 
                     <div class="form-group">
                         <label for="email">Email.</label>
-                        <input type="email" id="email" name="email" require>
+                        <input type="email" id="email" name="email" required>
                     </div>
 
                     <div class="form-group">
                         <label for="telefono">Teléfono.</label>
-                        <input type="tel" id="telefono" name="telefono" require>
+                        <input type="tel" id="telefono" name="telefono" required>
                     </div>
 
                 </div>
