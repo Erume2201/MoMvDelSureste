@@ -55,6 +55,9 @@ switch ($module) {
     case 'tiendas_add':
         require __DIR__ . '/../../views/tiendas/tiendas_add.php';
         break;
+    case 'operadores':
+        require __DIR__ . '/../../views/operadores/operadores.php';
+        break;
     default:
         // Si la sesión está activa y no se especifica un módulo, muestra el dashboard.
         require __DIR__ . '/../../views/dashboard/dashboard.php';

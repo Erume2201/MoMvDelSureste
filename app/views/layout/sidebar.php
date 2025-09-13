@@ -38,11 +38,11 @@
                 <i class='bx bxs-store'></i>
                 Tiendas
             </a>
-            <a href="<?php echo BASE_URL; ?>index.php?module=Operador" class="submenu-link" data-module="Operador">
+            <a href="<?php echo BASE_URL; ?>index.php?module=operadores" class="submenu-link" data-module="Operador">
                 <i class='bx  bx-steering-wheel'></i> 
                 Operadores
             </a>
-            <a href="<?php echo BASE_URL; ?>index.php?module=Unidades" class="submenu-link" data-module="Unidades">
+            <a href="<?php echo BASE_URL; ?>index.php?module=unidades" class="submenu-link" data-module="Unidades">
                 <i class='bx  bx-car'></i> 
                 Unidades
             </a>
