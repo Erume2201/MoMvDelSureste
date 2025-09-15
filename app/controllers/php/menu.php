@@ -37,6 +37,12 @@ switch ($module) {
         session_destroy();
         header("Location: index.php");
         exit;
+    case 'usuarios':
+        require __DIR__ . '/../../views/usuarios/usuarios.php';
+        break;
+    case 'usuarios_add':
+        require __DIR__ . '/../../views/usuarios/usuarios_add.php';
+        break;
     case 'ver_Contratos':
         require __DIR__ . '/../../views/contratos/verContratos.php';
         break;

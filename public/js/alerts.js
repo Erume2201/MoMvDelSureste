@@ -149,4 +149,18 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
+
+    // Formulario: agregar usuario
+    const formUsuarios = document.getElementById("form-usuarios");
+
+    if (formUsuarios) {
+        formUsuarios.addEventListener("submit", function (e) {
+            e.preventDefault();
+            alertaExito({
+                titulo: "Usuario agregado",
+                texto: "El usuario se registró correctamente",
+                redirigir: "index.php?module=usuarios",
+            });
+        });
+    }
 });
