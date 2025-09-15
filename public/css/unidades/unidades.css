@@ -186,29 +186,29 @@ h1 {
 }
 
 .btn-imprimir {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: linear-gradient(135deg, #007BFF, #0056b3);
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #007BFF, #0056b3);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 .btn-imprimir i {
-    font-size: 16px;
+  font-size: 16px;
 }
 .btn-imprimir:hover {
-    background: linear-gradient(135deg, #0056b3, #003f88);
-    transform: scale(1.05);
+  background: linear-gradient(135deg, #0056b3, #003f88);
+  transform: scale(1.05);
 }
 .btn-imprimir:active {
-    transform: scale(0.95);
-    box-shadow: 0 6px 14px rgba(0, 86, 179, 0.3);
+  transform: scale(0.95);
+  box-shadow: 0 6px 14px rgba(0, 86, 179, 0.3);
 }
 
 /* =========================
