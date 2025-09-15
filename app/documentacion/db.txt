@@ -1,7 +1,7 @@
 -- -----------------------------------------------------
 -- Esquema: gestion_recoleccion
--- Base de datos para la gestión de contratos y recolección de residuos.
--- Se utiliza una intercalación compatible con versiones de MySQL 5.7 o anteriores.
+-- Este esquema es la base de datos para el sistema de gestión de contratos y recolección.
+-- Se utiliza una intercalación (collation) compatible con MySQL 5.7 y versiones anteriores.
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `gestion_recoleccion` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE `gestion_recoleccion`;
@@ -10,6 +10,7 @@ USE `gestion_recoleccion`;
 -- Tabla `usuarios`
 -- Almacena la información de los usuarios del sistema (empleados).
 -- Se incluye un hash para la contraseña por seguridad.
+-- Los campos 'email' y 'rfc' son únicos para evitar duplicados.
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `id_usuario` INT NOT NULL AUTO_INCREMENT,
@@ -26,10 +27,31 @@ ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Tabla `clientes`
--- Contiene los datos fiscales y de facturación de la empresa principal.
+-- Contiene los datos generales de la empresa cliente.
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `clientes` (
   `id_cliente` INT NOT NULL AUTO_INCREMENT,
+  `nombre_razon_social` VARCHAR(255) NOT NULL,
+  `numero_registro_ambiental` VARCHAR(50) NULL,
+  `direccion` VARCHAR(255) NULL,
+  `colonia` VARCHAR(100) NULL,
+  `ciudad` VARCHAR(100) NULL,
+  `estado` VARCHAR(50) NULL,
+  `cp` VARCHAR(10) NULL,
+  `horario_trabajo` VARCHAR(255) NULL,
+  `nombre_responsable_entrega` VARCHAR(100) NULL,
+  `telefono_responsable_entrega` VARCHAR(20) NULL,
+  PRIMARY KEY (`id_cliente`))
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Tabla `tiendas`
+-- Almacena la información fiscal de cada sucursal o "tienda" del cliente.
+-- Se enlaza con la tabla 'clientes' a través de la clave foránea 'id_cliente'.
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `tiendas` (
+  `id_tienda` INT NOT NULL AUTO_INCREMENT,
+  `id_cliente` INT NOT NULL,
   `nombre_razon_social` VARCHAR(255) NOT NULL,
   `rfc` VARCHAR(13) NULL,
   `domicilio_fiscal` VARCHAR(255) NULL,
@@ -46,27 +68,6 @@ CREATE TABLE IF NOT EXISTS `clientes` (
   `contacto_cuentas_pagar` VARCHAR(100) NULL,
   `email` VARCHAR(150) NULL,
   `telefono` VARCHAR(20) NULL,
-  PRIMARY KEY (`id_cliente`))
-ENGINE = InnoDB;
-
--- -----------------------------------------------------
--- Tabla `tiendas`
--- Almacena los datos operacionales de cada ubicación o sitio de recolección.
--- Se vincula con la tabla 'clientes'.
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tiendas` (
-  `id_tienda` INT NOT NULL AUTO_INCREMENT,
-  `id_cliente` INT NOT NULL,
-  `nombre_sitio` VARCHAR(255) NOT NULL,
-  `numero_registro_ambiental` VARCHAR(50) NULL,
-  `direccion` VARCHAR(255) NULL,
-  `colonia` VARCHAR(100) NULL,
-  `ciudad` VARCHAR(100) NULL,
-  `estado` VARCHAR(50) NULL,
-  `cp` VARCHAR(10) NULL,
-  `horario_trabajo` VARCHAR(255) NULL,
-  `nombre_responsable_entrega` VARCHAR(100) NULL,
-  `telefono_responsable_entrega` VARCHAR(20) NULL,
   `coordenadas_google_maps` VARCHAR(255) NULL,
   `detalles_referencias` TEXT NULL,
   PRIMARY KEY (`id_tienda`),
@@ -80,8 +81,8 @@ ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Tabla `contratos`
--- Registra los detalles de cada contrato, uniendo a un cliente con una tienda.
--- Se incluye un campo de estado para rastrear el ciclo de vida del contrato.
+-- Registra los detalles de cada contrato, vinculando a un cliente con una tienda específica.
+-- Define la frecuencia y fechas de recolección.
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `contratos` (
   `id_contrato` INT NOT NULL AUTO_INCREMENT,
@@ -92,7 +93,6 @@ CREATE TABLE IF NOT EXISTS `contratos` (
   `fecha_inicial_recoleccion` DATE NOT NULL,
   `frecuencia_recoleccion` ENUM('semanal', 'quincenal', 'mensual') NOT NULL,
   `dia_fijo_recoleccion` ENUM('Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo') NOT NULL,
-  `estatus_contrato` ENUM('pendiente', 'activo', 'inactivo', 'vencido', 'cancelado') NOT NULL DEFAULT 'pendiente',
   PRIMARY KEY (`id_contrato`),
   INDEX `fk_contratos_clientes1_idx` (`id_cliente` ASC),
   INDEX `fk_contratos_tiendas1_idx` (`id_tienda` ASC),
@@ -124,6 +124,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Tabla `vehiculos`
 -- Almacena los datos de los vehículos de recolección.
+-- Los campos 'numero_economico', 'placas' y 'numero_serie' son únicos.
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `vehiculos` (
   `id_vehiculo` INT NOT NULL AUTO_INCREMENT,

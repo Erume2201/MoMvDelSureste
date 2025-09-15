@@ -20,7 +20,7 @@ if ($module === 'firmar_cotizacion') {
 if (!isset($_SESSION['s1'])) {
     if ($module === 'iniciar_sesion') {
         $_SESSION['s1'] = true;
-        $_SESSION['usuario'] = $correo;
+        //$_SESSION['usuario'] = $correo;
         header("Location: index.php");
         exit;
     } else {

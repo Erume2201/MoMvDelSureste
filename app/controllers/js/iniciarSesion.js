@@ -1,39 +1,68 @@
 $(document).ready(function () {
-    // Referencias a los elementos del formulario
+    // Almacena referencias a los elementos del DOM para un acceso más rápido y eficiente.
     const correoInput = document.getElementById('exampleFormControlEmail1');
-    var passInput = document.getElementById('password');
+    const passInput = document.getElementById('password');
     const iniciarS = document.getElementById('iniciar_sesion');
     const form = document.getElementById('my-form');
 
-    // Función para manejar el inicio de sesión
+    /**
+     * @function handleLogin
+     * @description Maneja la lógica para el inicio de sesión.
+     * Recoge los datos del formulario, valida que no estén vacíos y
+     * envía una solicitud AJAX al servidor para la autenticación.
+     */
     function handleLogin() {
-        const correo = correoInput.value;
-        const pass = passInput.value;
-
-        if (correo.trim() !== '' && pass.trim() !== '') {
-            // Codifica el correo para que sea seguro en la URL
-            const actionURL = 'index.php?module=iniciar_sesion&correo1=' + encodeURIComponent(correo)+'&pass='+encodeURIComponent(pass);
-            window.location.href = actionURL;
+        // Verifica que ambos campos tengan contenido.
+        if (correoInput.value !== '' && passInput.value !== '') {
+            // Realiza una solicitud AJAX de tipo POST.
+            $.ajax({
+                url: "app/controllers/php/validarInicio.php",
+                // Tipo de solicitud HTTP.
+                type: "POST",
+                data: {
+                    correo1: correoInput.value,
+                    pass2: passInput.value,
+                    dataType: "json",
+                },
+                // Función que se ejecuta si la solicitud se completa con éxito.
+                success: function(Response) {
+                        let datos = JSON.parse(Response);
+                        console.log(datos);
+                        if (datos.success === true) {
+                            // Si el inicio de sesión fue exitoso, redirige al usuario al panel de control.
+                            window.location.href = 'index.php?module=iniciar_sesion';
+                        } else {
+                            // Si 'success' es falso, muestra el mensaje de error del servidor.
+                            alert(datos.message);
+                        }
+                },
+                // Función que se ejecuta si la solicitud AJAX falla (ej. error de red).
+                error: function() {
+                    alert('Error de conexión con el servidor.');
+                }
+            });
         } else {
-            // Muestra un mensaje si el campo está vacío
-            alert('Por favor, ingresa tu correo electrónico o contraseña.');
+            // Si los campos están vacíos, muestra una alerta al usuario.
+            alert('Por favor, ingresa tu correo electrónico y contraseña.');
         }
+       
+
     }
 
-    // Evita el envío del formulario al presionar Enter en cualquier campo del formulario
+    // Previene el envío del formulario cuando se presiona la tecla 'Enter'.
     if (form) {
         form.addEventListener('keydown', function (event) {
             if (event.key === 'Enter') {
-                event.preventDefault(); // Previene el envío por defecto
-                handleLogin(); // Llama a la función de inicio de sesión
+                event.preventDefault(); // Detiene el comportamiento predeterminado del formulario.
+                handleLogin(); // Llama a la función de inicio de sesión.
             }
         });
     }
 
-    // Maneja el clic en el botón de inicio de sesión
+    // Escucha el evento 'click' en el botón de inicio de sesión.
     if (iniciarS) {
         iniciarS.addEventListener("click", function () {
-            handleLogin(); // Llama a la función de inicio de sesión
+            handleLogin(); // Llama a la función de inicio de sesión.
         });
     }
 });

@@ -1,17 +1,25 @@
 <?php
-class Database {
-    private $host = "localhost";
-    private $dbname = "mi_base";
-    private $user = "root";
-    private $pass = "";
+class ConexionDatos {
+    protected $servidor = "localhost";
+    protected $usuario = "root";
+    protected $password = "";
+    protected $db = "gestion_recoleccion";
+    public $conexion;
 
-    public function conectar() {
-        try {
-            $pdo = new PDO("mysql:host={$this->host};dbname={$this->dbname};charset=utf8", $this->user, $this->pass);
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            return $pdo;
-        } catch (PDOException $e) {
-            die("Error en la conexión: " . $e->getMessage());
+    // Constructor
+    function __construct() {
+       $this->conexion = $this->obtenerConexion();
+    }
+
+    // Función para obtener una conexión a la base de datos MySQL
+    public function obtenerConexion() {
+        // Establecer una conexión con la base de datos
+        $this->conexion = mysqli_connect($this->servidor, $this->usuario, $this->password, $this->db);
+        if (!$this->conexion) {
+            die('Error de conexión: ' . mysqli_connect_error());
         }
+        // Retornar la conexión
+        return $this->conexion;
     }
 }
+?>
