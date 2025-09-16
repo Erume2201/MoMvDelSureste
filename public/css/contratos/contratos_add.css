@@ -1,0 +1,263 @@
+ /* TIPOGRAFÍA */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/* =========================
+   CONTENIDO PRINCIPAL Y FORMULARIO
+========================= */
+body.main-contratos {
+    font-family: 'Poppins', sans-serif;
+    margin: 0; /* Asegura que no haya margen por defecto */
+    background-color: #f4f4f4;
+    color: #333; /* Color de texto general */
+}
+
+/* El `main-content` se desplaza para dejar espacio a la barra lateral */
+.main-content {
+    margin-left: 220px; /* Espacio del sidebar */
+    padding: 20px;
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho */
+}
+
+/* El contenedor del formulario se centra dentro del `main-content` */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.titulo-contrato {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+.titulo-contrato h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0;
+}
+
+/* Flecha en la izquierda */
+.btn-flecha {
+    color: #2c3e50;
+    padding-left: 5px;
+    font-size: 28px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin-right: auto; /* la manda a la izquierda */
+}
+.btn-flecha:hover {
+    color: #000000;
+    transform: scale(1.05);
+}
+.btn-flecha:active {
+    transform: scale(0.95);
+}
+/* Espaciador "fantasma" del lado derecho */
+.espaciador {
+    width: 20px; /* mismo ancho que la flecha para equilibrar */
+    margin-left: auto;
+}
+
+/* Subtítulos */
+.main-content .container h3 {
+    font-size: 1.3rem;
+    font-weight: 600; /* semibold */
+    color: #34495e;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eaeaea; /* línea sutil */
+}
+
+/* Apariencia de cada sección */
+.form-section {
+    background-color: #fafafa;
+    border: 1px solid #e0e0e0;
+    padding: 20px 25px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Grid para inputs (2 columnas en escritorio) */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 18px 20px; /* Espacio vertical y horizontal */
+}
+
+/* Cada campo individual */
+.form-field {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels arriba */
+.form-field label {
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    color: #444;
+}
+
+/* Inputs generales */
+.form-field input[type="text"], 
+.form-field input[type="email"],
+.form-field input[type="number"] {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    background-color: #fff;
+}
+
+/* Inputs deshabilitados personalizados */
+input[disabled] {
+    background-color: #fff !important;  /* Se ve blanco, no gris */
+    color: #333;  /* Texto normal */
+    cursor: not-allowed; /* Cursor de bloqueado */
+    opacity: 1; /* Quitar efecto de opacidad */
+    user-select: none;
+}
+
+.search-container {
+    text-align: right;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.search-container input, .search-container button {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.search-container button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.search-container button:hover {
+    background-color: #0056b3;
+}
+
+/* H3 del maps */
+.subtitulo-maps {
+    margin-top: 20px;
+}
+
+/* Animación shake [Botones] */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  50% { transform: translateX(3px); }
+  75% { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 25px;
+  padding: 5px 20px
+}
+
+/* Estilo base del botón */
+.btn-generar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+/* Hover dinámico */
+.btn-generar:hover {
+    background: linear-gradient(135deg, #0056b3, #003f88);
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0, 86, 179, 0.3);
+}
+/* Efecto al hacer clic */
+.btn-generar:active {
+    transform: scale(0.98);
+    box-shadow: 0 3px 8px rgba(0, 86, 179, 0.3);
+}
+.btn-generar i {
+    font-size: 16px;
+}
+
+/* Botón cancelar */
+.btn-cancelar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ccc;
+  color: #000;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: transform 0.2s ease, background 0.3s, color 0.3s;
+}
+.btn-cancelar i {
+  font-size: 16px;
+  color: #dc3545; /* ícono rojo */
+  transition: color 0.3s;
+}
+.btn-cancelar:hover {
+  background: #a71d2a;
+  color: #fff;
+  animation: shake 0.3s;
+}
+.btn-cancelar:hover i {
+  color: #ffffff; 
+}
+.btn-cancelar:active {
+  transform: scale(0.95);
+  box-shadow: 0 3px 8px rgba(158, 2, 2, 0.3);
+}
+
+/* =========================
+  RESPONSIVE MOVIL
+========================= */
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  /* Ocultar la flecha en dispositivos pequeños */
+  .btn-flecha {
+    display: none;
+  }
+
+  /* Botones principales */
+  .form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+  }
+}
