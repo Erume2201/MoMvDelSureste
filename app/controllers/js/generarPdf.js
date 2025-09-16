@@ -1,5 +1,5 @@
 window.onload = function() {
-    const botonGenerarPDF = document.getElementById('cotizar');
+    const botonGenerarPDF = document.getElementById('contrato');
 
     if (botonGenerarPDF) {
         botonGenerarPDF.addEventListener('click', function() {

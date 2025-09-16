@@ -57,7 +57,7 @@
             <i class='bx bx-chevron-down arrow'></i>
         </a>
         <div class="submenu" id="submenu-Contratos">
-            <a href="<?php echo BASE_URL; ?>index.php?module=cotizar" class="submenu-link" data-module="cotizar">
+            <a href="<?php echo BASE_URL; ?>index.php?module=contratos" class="submenu-link" data-module="cotizar">
                 <i class='bx  bx-file-plus'></i> 
                 Generar contrato
             </a>

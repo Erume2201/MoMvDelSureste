@@ -46,9 +46,6 @@ switch ($module) {
     case 'ver_Contratos':
         require __DIR__ . '/../../views/contratos/verContratos.php';
         break;
-    case 'cotizar':
-        require __DIR__ . '/../../views/contratos/generarContrato.php';
-        break;
     case 'clientes':
         require __DIR__ . '/../../views/clientes/clientes.php';
         break;
@@ -72,6 +69,12 @@ switch ($module) {
         break;
     case 'unidades_add':
         require __DIR__ . '/../../views/unidades/unidades_add.php';
+        break;
+    case 'contratos':
+        require __DIR__ . '/../../views/contratos/contratos.php';
+        break;
+    case 'contratos_add':
+        require __DIR__ . '/../../views/contratos/contratos_add.php';
         break;
     default:
         // Si la sesión está activa y no se especifica un módulo, muestra el dashboard.
