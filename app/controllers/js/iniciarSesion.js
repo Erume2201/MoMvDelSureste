@@ -45,8 +45,6 @@ $(document).ready(function () {
             // Si los campos están vacíos, muestra una alerta al usuario.
             alert('Por favor, ingresa tu correo electrónico y contraseña.');
         }
-       
-
     }
 
     // Previene el envío del formulario cuando se presiona la tecla 'Enter'.
@@ -66,6 +64,3 @@ $(document).ready(function () {
         });
     }
 });
-
-
-
