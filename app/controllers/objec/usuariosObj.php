@@ -19,21 +19,19 @@ class Usuario {
     }
     // Método para validar el inicio de sesión
    public function validarInicioSesion() {
-    // Obtenemos todos los datos del usuario por su correo
-    $query = SQL::getUsuario(); 
-    $paramTypes = "s"; // enteros i : cadenas s
-    $params = array($this->email);
-    $respuesta = $this->crud->ConsultaPreparada($query, $paramTypes, $params);
+    // Consulta SQL desde SQL.php
+    $query = SQL::getUsuario();
+    
+    // Ejecuta consulta con el nuevo CRUD (PDO)
+    $fila = $this->crud->selectOne($query, [$this->email]);
 
     // Si se encontró un usuario
-    if (!empty($respuesta) && count($respuesta) > 0) {
-        $fila = $respuesta[0];
+    if ($fila) {
         $contrasena_db = $fila['contrasena_hash'];
-        
-        // Compara la contraseña ingresada directamente con la que está en texto plano en la base de datos
-        // **ADVERTENCIA:** Esto es inseguro y solo para pruebas
-        if ($this -> contrasena_hash === $contrasena_db) {
-            // Si la contraseña es correcta, devuelve los datos del usuario
+
+        // 🚩 Aquí se debería usar password_verify() si se guarda hash en la BD
+        // pero está en texto plano por ahora:
+        if ($this->contrasena_hash === $contrasena_db) {
             return array(
                 "success" => true,
                 "message" => "Inicio de sesión exitoso.",
@@ -48,7 +46,7 @@ class Usuario {
 
     // Si no se encuentra el usuario o la contraseña es incorrecta
     return array("success" => false, "message" => "Correo o contraseña incorrectos.");
-}
+    }
 
     // Métodos Get y Set para id_usuario
     public function getIdUsuario() {
