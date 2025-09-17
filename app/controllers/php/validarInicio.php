@@ -20,13 +20,27 @@ if (isset($_POST['correo1']) && isset($_POST['pass2'])) {
     $instanciaUsuario -> setContrasenaHash($pass);
 
     $resultado = $instanciaUsuario->validarInicioSesion();
-    echo json_encode($resultado, JSON_UNESCAPED_UNICODE);
+
+    // Asegurarnos de que siempre devuelva rol si el login es correcto
+    if ($resultado['success'] === true) {
+        echo json_encode([
+            "success" => true,
+            "message" => "Bienvenido " . $resultado['usuario']['nombre'],
+            "nombre" => $resultado['usuario']['nombre'],
+            "rol" => $resultado['usuario']['rol'] // Aquí agregamos el rol
+        ], JSON_UNESCAPED_UNICODE);
+    } else {
+        echo json_encode([
+            "success" => false,
+            "message" => $resultado['message'] ?? "Credenciales incorrectas."
+        ], JSON_UNESCAPED_UNICODE);
+    }
     exit;
 } else {
-    echo json_encode(array(
-        "success" => false, 
+    echo json_encode([
+        "success" => false,
         "message" => "Datos de usuario o contraseña no recibidos."
-    ), JSON_UNESCAPED_UNICODE);
+    ], JSON_UNESCAPED_UNICODE);
     exit;
 }
 ?>

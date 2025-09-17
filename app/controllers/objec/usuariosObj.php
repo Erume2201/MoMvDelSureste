@@ -18,34 +18,33 @@ class Usuario {
         $this->crud= $crudInicio;  //accedemos a la funcion que queremos en CRUD 
     }
     // Método para validar el inicio de sesión
-   public function validarInicioSesion() {
-    // Consulta SQL desde SQL.php
-    $query = SQL::getUsuario();
-    
-    // Ejecuta consulta con el nuevo CRUD (PDO)
-    $fila = $this->crud->selectOne($query, [$this->email]);
+    public function validarInicioSesion() {
+        // Consulta SQL desde SQL.php
+        $query = SQL::getUsuario();
+        
+        // Ejecuta consulta con el nuevo CRUD (PDO)
+        $fila = $this->crud->selectOne($query, [$this->email]);
 
-    // Si se encontró un usuario
-    if ($fila) {
-        $contrasena_db = $fila['contrasena_hash'];
+        // Si se encontró un usuario
+        if ($fila) {
+            $contrasena_db = $fila['contrasena_hash']; // lo que está guardado en BD (hash)
 
-        // 🚩 Aquí se debería usar password_verify() si se guarda hash en la BD
-        // pero está en texto plano por ahora:
-        if ($this->contrasena_hash === $contrasena_db) {
-            return array(
-                "success" => true,
-                "message" => "Inicio de sesión exitoso.",
-                "usuario" => array(
-                    "id_usuario" => $fila['id_usuario'],
-                    "nombre" => $fila['nombre'],
-                    "rol" => $fila['rol']
-                )
-            );
+            // Verificamos con password_verify
+            if (password_verify($this->contrasena_hash, $contrasena_db)) {
+                return array(
+                    "success" => true,
+                    "message" => "Inicio de sesión exitoso.",
+                    "usuario" => array(
+                        "id_usuario" => $fila['id_usuario'],
+                        "nombre" => $fila['nombre'],
+                        "rol" => $fila['rol']
+                    )
+                );
+            }
         }
-    }
 
-    // Si no se encuentra el usuario o la contraseña es incorrecta
-    return array("success" => false, "message" => "Correo o contraseña incorrectos.");
+        // Si no se encuentra el usuario o la contraseña es incorrecta
+        return array("success" => false, "message" => "Correo o contraseña incorrectos.");
     }
 
     // Métodos Get y Set para id_usuario
