@@ -74,6 +74,38 @@ function confirmarAccion({
 // USOS ESPECÍFICOS DEL SISTEMA
 // ==========================
 
+// helpers para sweetalert2 (usar junto a la función confirmarAccion ya existente)
+// Toast compacto (top-right)
+function showToast(message, icon = 'success', timer = 1500) {
+    if (typeof Swal === 'undefined') {
+        alert(message); // fallback simple
+        return;
+    }
+    Swal.fire({
+        toast:true,
+        position: 'top-end',
+        icon: icon,
+        title: message,
+        showConfirmButton: false,
+        timer: timer,
+        timerProgressBar: true
+    });
+}
+
+// Modal de alerta (error/aviso)
+function showAlert(title = 'Atención', text = '', icon = 'error') {
+    if (typeof Swal === 'undefined') {
+        alert(title + (text ? '\n\n' + text : ''));
+        return;
+    }
+    Swal.fire({
+        title: title,
+        text: text,
+        icon: icon,
+        confirmButtonText: 'OK'
+    });
+}
+
 // Confirmación específica para cerrar sesión.
 document.addEventListener("DOMContentLoaded", () => {
     const btnCerrarSesion = document.getElementById("btn-cerrar-sesion");

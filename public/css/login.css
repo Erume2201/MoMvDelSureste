@@ -144,8 +144,6 @@ small, a{
     transform: scale(0.95); /* Hundimiento suave */
 }
 
-
-
 /* ______________________________________ */
 
 /* Layout de pantalla dividida */
@@ -183,10 +181,6 @@ small, a{
     max-width: 60%;
     z-index: 2;
 }
-
-
-
-
 
 /* Responsivo: solo el formulario visible en pantallas pequeñas */
 @media (max-width: 992px) {
