@@ -33,7 +33,7 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
                     </ul>
                 </div>
                 <div class="header-nav">
-                    <h1>Dashboard, Bienvenido: <?= htmlspecialchars($_SESSION['usuario']); ?></h1>
+                    <h1>Dashboard, Bienvenido: <?= htmlspecialchars($_SESSION['nombre_usuario']); ?></h1>
                 </div>
             </header>
 
