@@ -32,18 +32,24 @@ class Usuario {
         // 🚩 Aquí se debería usar password_verify() si se guarda hash en la BD
         // pero está en texto plano por ahora:
         if ($this->contrasena_hash === $contrasena_db) {
+             // Inicia la sesión si no está iniciada
+                if (session_status() == PHP_SESSION_NONE) {
+                    session_start();
+                }
+            // Guarda los datos del usuario en la sesión
+                $_SESSION['id_usuario'] = $fila['id_usuario'];
+                $_SESSION['nombre_usuario'] = $fila['nombre'];
+                $_SESSION['rol_usuario'] = $fila['rol'];
+
             return array(
                 "success" => true,
                 "message" => "Inicio de sesión exitoso.",
                 "usuario" => array(
-                    "id_usuario" => $fila['id_usuario'],
                     "nombre" => $fila['nombre'],
-                    "rol" => $fila['rol']
                 )
             );
         }
     }
-
     // Si no se encuentra el usuario o la contraseña es incorrecta
     return array("success" => false, "message" => "Correo o contraseña incorrectos.");
     }
