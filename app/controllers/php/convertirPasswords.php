@@ -12,10 +12,15 @@ foreach ($usuarios as $u) {
     $plainPass = $u['contrasena_hash']; // texto plano actual
     $hashed = password_hash($plainPass, PASSWORD_DEFAULT);
 
-    // Actualizar a hash
-    $crud->update("UPDATE usuarios SET contrasena_hash = ? WHERE id_usuario = ?", [$hashed, $id]);
+    // Si la contraseña no es un hash válido (ej. longitud de 60 caracteres), hashearla.
+    // La condición es una forma simple de evitar hashear hashes.
+    if (strlen($plainPass) < 60) {
+        $hashed = password_hash($plainPass, PASSWORD_DEFAULT);
 
-    echo "Usuario $id convertido correctamente<br>";
+        // Actualizar a hash
+        $crud->update("UPDATE usuarios SET contrasena_hash = ? WHERE id_usuario = ?", [$hashed, $id]);
+
+        echo "Usuario $id convertido correctamente<br>";
+    }
 }
-
 echo "<hr>Conversión completa. Ahora todas las contraseñas están con hash.";
