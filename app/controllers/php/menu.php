@@ -31,7 +31,7 @@ $permissions = [
         'tiendas', 'tiendas_add',
         'operadores', 'operadores_add',
         'unidades', 'unidades_add',
-        'contratos', 'contratos_add', 'ver_Contratos',
+        'contratos', 'contratos_add', 'contratos_ver',
         // En futuro: viajes
     ],
     'supervisor' => [
@@ -39,7 +39,7 @@ $permissions = [
         'tiendas', 'tiendas_add',
         'operadores',
         'unidades',
-        'ver_Contratos'
+        'contratos_ver'
     ],
     'operador' => [
         'operadores'
@@ -79,9 +79,14 @@ switch ($module) {
     // Contratos
     case 'contratos':
     case 'contratos_add':
-    case 'ver_Contratos':
+    case 'contratos_ver':
         if (tieneAcceso($rol, $module, $permissions)) {
-            require __DIR__ . "/../../views/$module/" . basename($module) . ".php";
+            // Dividir el nombre del módulo en carpeta y archivo
+            $parts = explode('_', $module, 2);
+            $carpeta = $parts[0]; // usuarios, clientes, tiendas, etc
+            $archivo = $module . '.php'; // usuarios_add.php, clientes_add.php, etc
+
+            require __DIR__ . "/../../views/$carpeta/$archivo";
         } else {
             require __DIR__ . '/../../views/errors/acceso_denegado.php';
         }

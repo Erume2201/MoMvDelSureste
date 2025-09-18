@@ -56,7 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "operadores_add" : "operadores",
         "unidades_add" : "unidades",
         "usuarios_add" : "usuarios",
-        "contratos_add" : "contratos"
+        "contratos_add" : "contratos",
+        "contratos_ver" : "contratos_ver"
     };
 
     const moduleToActivate = moduleMap[currentModule] || currentModule;

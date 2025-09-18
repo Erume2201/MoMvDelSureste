@@ -61,7 +61,7 @@
                 <i class='bx  bx-file-plus'></i> 
                 Generar contrato
             </a>
-            <a href="<?php echo BASE_URL; ?>index.php?module=ver_Contratos" class="submenu-link" data-module="ver_Contratos">
+            <a href="<?php echo BASE_URL; ?>index.php?module=contratos_ver" class="submenu-link" data-module="ver_Contratos">
                 <i class='bx  bx-file-detail'></i> 
                 Visualizar contratos
             </a>
