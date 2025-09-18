@@ -22,52 +22,71 @@ if (!isset($_SESSION['s1'])) {
     }
 }
 
-// 3. Lógica de enrutamiento para usuarios con sesión activa.
-//    Solo se ejecuta si la sesión está iniciada.
+// 3. Definición de permisos por rol
+// Se puede ajustar roles y módulos según crezcan
+$permissions = [
+    'administrador' => [
+        'usuarios', 'usuarios_add',
+        'clientes', 'clientes_add',
+        'tiendas', 'tiendas_add',
+        'operadores', 'operadores_add',
+        'unidades', 'unidades_add',
+        'contratos', 'contratos_add', 'ver_Contratos',
+        // En futuro: viajes
+    ],
+    'supervisor' => [
+        'clientes', 'clientes_add',
+        'tiendas', 'tiendas_add',
+        'operadores',
+        'unidades',
+        'ver_Contratos'
+    ],
+    'operador' => [
+        'operadores'
+    ]
+];
+
+// Rol actual de la sesión
+$rol = $_SESSION['rol'] ?? 'operador'; // por defecto operador si no está definido
+
+// Función para verificar permisos
+function tieneAcceso($rol, $modulo, $permissions) {
+    return isset($permissions[$rol]) && in_array($modulo, $permissions[$rol]);
+}
+
+// 4. Enrutamiento con validación de permisos 
 switch ($module) {
     case 'cerrar_sesion':
         session_destroy();
         header("Location: index.php");
         exit;
+
+    // Usuarios
     case 'usuarios':
-        require __DIR__ . '/../../views/usuarios/usuarios.php';
-        break;
     case 'usuarios_add':
-        require __DIR__ . '/../../views/usuarios/usuarios_add.php';
-        break;
-    case 'ver_Contratos':
-        require __DIR__ . '/../../views/contratos/verContratos.php';
-        break;
+    // Clientes
     case 'clientes':
-        require __DIR__ . '/../../views/clientes/clientes.php';
-        break;
     case 'clientes_add':
-        require __DIR__ . '/../../views/clientes/clientes_add.php';
-        break;
+    // Tiendas
     case 'tiendas':
-        require __DIR__ . '/../../views/tiendas/tiendas.php';
-        break;
     case 'tiendas_add':
-        require __DIR__ . '/../../views/tiendas/tiendas_add.php';
-        break;
+    // Operadores
     case 'operadores':
-        require __DIR__ . '/../../views/operadores/operadores.php';
-        break;
     case 'operadores_add':
-        require __DIR__ . '/../../views/operadores/operadores_add.php';
-        break;
+    // Unidades
     case 'unidades':
-        require __DIR__ . '/../../views/unidades/unidades.php';
-        break;
     case 'unidades_add':
-        require __DIR__ . '/../../views/unidades/unidades_add.php';
-        break;
+    // Contratos
     case 'contratos':
-        require __DIR__ . '/../../views/contratos/contratos.php';
-        break;
     case 'contratos_add':
-        require __DIR__ . '/../../views/contratos/contratos_add.php';
+    case 'ver_Contratos':
+        if (tieneAcceso($rol, $module, $permissions)) {
+            require __DIR__ . "/../../views/$module/" . basename($module) . ".php";
+        } else {
+            require __DIR__ . '/../../views/errors/acceso_denegado.php';
+        }
         break;
+        
     default:
         // Si la sesión está activa y no se especifica un módulo, muestra el dashboard.
         require __DIR__ . '/../../views/dashboard/dashboard.php';
