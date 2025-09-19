@@ -87,6 +87,22 @@ public function SetUser() {
     
 }
 
+/**
+     * regresa todos los usuarios de la db
+     * @return array|false returna un array o false
+     */
+    public function getAllUsers() {
+        try {
+            $query = SQL::getUsuarios(); 
+            // Use the selectAll() method from your CRUD class to fetch all results
+            $users = $this->crud->select($query);
+            return $users;
+        } catch (Exception $e) {
+            error_log("Error al obtener usuarios: " . $e->getMessage());
+            return false;
+        }
+    }
+
 
 
 

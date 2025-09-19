@@ -8,8 +8,12 @@ class SQL{
     return "INSERT INTO usuarios (id_usuario, nombre, apellidos, rfc, email, contrasena_hash, rol) 
             VALUES (NULL, ?, ?, ?, ?, ?, ?);";
 }
-public static function getRfcGmail(){
-    return "SELECT COUNT(*) AS total FROM usuarios WHERE email = ? OR rfc = ?";
-}
+   public static function getRfcGmail(){
+      return "SELECT COUNT(*) AS total FROM usuarios WHERE email = ? OR rfc = ?";
+   }
+
+    public static function getUsuarios(){
+      return "SELECT id_usuario, nombre, apellidos, rfc, email, rol FROM usuarios;";
+   }
    }
 ?>

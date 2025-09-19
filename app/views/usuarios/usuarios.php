@@ -6,6 +6,7 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Usuarios</title>
@@ -20,6 +21,7 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/sidebar.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/usuarios/usuarios.css">
 </head>
+
 <body class="main-usuarios">
     <div class="main-content">
         <div class="container">
@@ -65,17 +67,7 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
                             </td>
                         </tr>
                         <tr>
-                            <td>2</td>
-                            <td>Ricardo Arturo</td>
-                            <td>García García</td>
-                            <td>0108PS7231</td>
-                            <td>richard3300@gmail.com</td>
-                            <td>Supervisor</td>
-                            <td class="acciones">
-                                <button class="btn-ver" title="Ver"><i class="fa-solid fa-eye"></i></button>
-                                <button class="btn-editar" title="Editar"><i class="fa-solid fa-pen-to-square"></i></button>
-                                <button class="btn-eliminar" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
-                            </td>
+                            <td colspan="7" style="text-align: center;">Cargando usuarios...</td>
                         </tr>
                     </tbody>
                 </table>
@@ -84,10 +76,14 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
                 <div class="form-actions">
                     <button type="submit" class="btn-imprimir"><i class="fa-solid fa-file-pdf"></i>Imprimir</button>
                 </div>
+                <nav aria-label="Page navigation example" style="margin: 20px 0; text-align:center;">
+                    <ul class="pagination justify-content-center">
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
-    
+
 
     <!-- ===SCRIPTS=== -->
     <script src="<?php echo BASE_URL; ?>public/js/sidebar.js"></script>
@@ -95,6 +91,9 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Script de los mensajes de alerta -->
     <script src="<?php echo BASE_URL; ?>public/js/alerts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="<?php echo BASE_URL; ?>app/controllers/js/addUser/getUsuario.js"></script>
 
 </body>
+
 </html>
