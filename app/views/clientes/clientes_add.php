@@ -78,22 +78,39 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
 
                     <div class="form-group">
                         <label for="forma_pago">Forma de pago.</label>
-                        <input type="text" id="forma_pago" name="forma_pago" required>
+                        <select name="forma_pago" id="forma_pago" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="01">01 - Efectivo</option>
+                            <option value="02">02 - Cheque nominativo</option>
+                            <option value="03">03 - Transferencia electrónica de fondos</option>
+                        </select>
                     </div>
 
                     <div class="form-group">
                         <label for="metodo_pago">Método de pago.</label>
-                        <input type="text" id="metodo_pago" name="metodo_pago" required>
+                        <select name="metodo_pago" id="metodo_pago" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="PUE">PUE - Pago en una sola exhibición</option>
+                            <option value="PPD">PPD - Pago en parcialidades o diferido</option>
+                        </select>
                     </div>
 
                     <div class="form-group">
                         <label for="uso_cfdi">Uso CFDI.</label>
-                        <input type="text" id="uso_cfdi" name="uso_cfdi" required>
+                        <select name="uso_cfdi" id="uso_cfdi" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="G01">G01 - Adquisición de mercancías</option>
+                            <option value="P01">P01 - Por definir</option>
+                        </select>
                     </div>
 
                     <div class="form-group">
                         <label for="regimen">Régimen fiscal.</label>
-                        <input type="text" id="regimen" name="regimen" required>
+                        <select name="regimen" id="regimen" required>
+                            <option value="">Seleccione una opción</option>
+                            <option value="601">601 - General de Ley Personas Morales</option>
+                            <option value="605">605 - Sueldos y Salarios</option>
+                        </select>
                     </div>
 
                     <div class="form-group">
@@ -123,7 +140,6 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
         </div>
     </div>
     
-
     <!-- ===SCRIPTS=== -->
     <script src="<?php echo BASE_URL; ?>public/js/sidebar.js"></script>
     <!-- Librería de SweetAlert2 -->
