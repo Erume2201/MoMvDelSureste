@@ -29,13 +29,6 @@ class Usuario {
             // Verificamos con password_verify
             if (password_verify($this->contrasena_hash, $contrasena_db)) {
                 // Inicia sesión si no está iniciada
-                if (session_status() == PHP_SESSION_NONE) {
-                    session_start();
-                }
-                // Guarda la sesión
-                $_SESSION['id_usuario'] = $fila['id_usuario'];
-                $_SESSION['nombre_usuario'] = $fila['nombre'];
-                $_SESSION['rol_usuario'] = $fila['rol'];
                 return array(
                     "success" => true,
                     "message" => "Inicio de sesión exitoso.",
