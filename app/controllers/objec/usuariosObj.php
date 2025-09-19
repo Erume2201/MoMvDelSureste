@@ -1,6 +1,6 @@
 <?php
-require '../../config/CRUD.php';
-require '../../config/SQL.php';
+require __DIR__ . '/../../config/CRUD.php';
+require __DIR__ . '/../../config/SQL.php';
 class Usuario {
     // Atributos que corresponden a las columnas de la tabla 'usuarios'
     private $crud;
@@ -21,27 +21,21 @@ class Usuario {
     public function validarInicioSesion() {
         // Consulta SQL desde SQL.php
         $query = SQL::getUsuario();
-        
         // Ejecuta consulta con el nuevo CRUD (PDO)
         $fila = $this->crud->selectOne($query, [$this->email]);
-
         // Si se encontró un usuario
         if ($fila) {
             $contrasena_db = $fila['contrasena_hash']; // lo que está guardado en BD (hash)
-
             // Verificamos con password_verify
             if (password_verify($this->contrasena_hash, $contrasena_db)) {
-
                 // Inicia sesión si no está iniciada
                 if (session_status() == PHP_SESSION_NONE) {
                     session_start();
                 }
-
                 // Guarda la sesión
                 $_SESSION['id_usuario'] = $fila['id_usuario'];
                 $_SESSION['nombre_usuario'] = $fila['nombre'];
                 $_SESSION['rol_usuario'] = $fila['rol'];
-
                 return array(
                     "success" => true,
                     "message" => "Inicio de sesión exitoso.",
@@ -57,6 +51,52 @@ class Usuario {
         // Si no se encuentra el usuario o la contraseña es incorrecta
         return array("success" => false, "message" => "Correo o contraseña incorrectos.");
     }
+
+public function SetUser() {
+    // Consulta para verificar si ya existe el email o RFC
+    $query1 = SQL::getRfcGmail(); // SELECT COUNT(*) AS total FROM usuarios WHERE email = ? OR rfc = ?
+    $validacionCampos = $this->crud->selectOne($query1, [$this->email, $this->rfc]);
+
+    // Verificamos si ya existe algún usuario
+    if ($validacionCampos['total'] > 0) {
+        return [
+            'success' => false,
+            'dato' => $validacionCampos,
+            'error' => 'El usuario o RFC ya registrados.'
+        ];
+    }else {
+        // No existe, insertamos el nuevo usuario
+    $queryInsert = SQL::setUser();
+    $insertar = $this->crud->insert($queryInsert, [
+        $this->nombre,
+        $this->apellidos,
+        $this->rfc,
+        $this->email,
+        $this->contrasena_hash,
+        $this->rol
+    ]);
+
+    // Retornamos el resultado del insert
+    if ($insertar) {
+        return [
+            'success' => true,
+            'mensaje' => 'Usuario registrado con éxito',
+            'id_usuario' => $insertar
+        ];
+    } else {
+        return [
+            'success' => false,
+            'error' => 'No se pudo registrar el usuario. Intente nuevamente.'
+        ];
+    }
+    }
+
+    
+}
+
+
+
+
 
     // Métodos Get y Set para id_usuario
     public function getIdUsuario() {

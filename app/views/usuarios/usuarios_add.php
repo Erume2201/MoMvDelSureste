@@ -6,6 +6,7 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Agregar Usuarios</title>
@@ -20,8 +21,9 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/sidebar.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/usuarios/usuarios_add.css">
 </head>
-<body class="main-usuarios-add"">
-    <div class="main-content">
+
+<body class="main-usuarios-add">
+    <div class=" main-content">
         <div class="container">
             <h1>➕ Agregar Usuario</h1>
 
@@ -57,29 +59,43 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
                     </div>
 
                     <div class="form-group">
-                        <label for="rol_usuario">Rol.</label>
-                        <input type="text" id="rol_usuario" name="rol_usuario" required>
+                        <label for="rol_usuario">Rol</label>
+                        <select id="rol_usuario" name="rol_usuario" required>
+                            <option value="">-- Selecciona un rol --</option>
+                            <option value="administrador">Administrador</option>
+                            <option value="supervisor">Supervisor</option>
+                            <option value="operador">Operador</option>
+                        </select>
                     </div>
+
 
                 </div>
 
-                <!-- Botónes -->
                 <div class="form-actions">
-                    <button type="submit" class="btn-guardar"><i class="fa-solid fa-user-plus"></i>Agregar usuario</button>
-                    <a href="<?php echo BASE_URL; ?>index.php?module=usuarios" class="btn-cancelar"><i class="fa-solid fa-xmark"></i>Cancelar</a>
+                    <button type="submit" id="btn-guardar" class="btn-guardar">
+                        <i class="fa-solid fa-user-plus"></i> Agregar usuario
+                    </button>
+                    <button type="button" id="btn-cancelar" class="btn-cancelar">
+                        <i class="fa-solid fa-xmark"></i> Cancelar
+                    </button>
                 </div>
 
             </form>
         </div>
     </div>
-    
+
 
     <!-- ===SCRIPTS=== -->
     <script src="<?php echo BASE_URL; ?>public/js/sidebar.js"></script>
+    <!-- === SCRIPTS === -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Librería de SweetAlert2 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>   
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Script de los mensajes de alerta -->
-    <script src="<?php echo BASE_URL; ?>public/js/alerts.js"></script>
+   <script src="<?php echo BASE_URL; ?>public/js/alerts.js"></script>
+    <!-- Scrip agregar usuario -->
+    <script src="<?php echo BASE_URL; ?>app/controllers/js/addUser/addUser.js"></script>
 
 </body>
+
 </html>

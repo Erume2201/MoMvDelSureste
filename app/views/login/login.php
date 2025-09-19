@@ -79,6 +79,6 @@ require_once __DIR__ . '/../../config/config.php';
     <!-- Tus helpers de alertas (contiene showAlert, showToast y confirmarAccion) -->
     <script src="<?php echo BASE_URL; ?>public/js/alerts.js"></script>
     <!-- Script de login -->
-    <script src="<?php echo BASE_URL; ?>app/controllers/js/iniciarSesion.js"></script>
+    <script src="<?php echo BASE_URL; ?>app/controllers/js/iniciarSesion/iniciarSesion.js"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@ header('Content-Type: application/json; charset=utf-8');
 
 session_start(); // importante para poder guardar sesión
 
-require '../objec/usuariosObj.php';
+require '../../objec/usuariosObj.php';
 
 // Validar que lleguen los datos
 if (isset($_POST['correo1']) && isset($_POST['pass2'])) {

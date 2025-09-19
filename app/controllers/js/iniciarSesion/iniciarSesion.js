@@ -50,7 +50,7 @@ $(document).ready(function () {
         iniciarBtn.prop('disabled', true);
 
         $.ajax({
-            url: "app/controllers/php/validarInicio.php",
+            url: "app/controllers/php/validarInicio/validarInicio.php",
             type: "POST",
             dataType: "json", // Le pide a jQuery que parseé la respuesta JSON
             data: {
