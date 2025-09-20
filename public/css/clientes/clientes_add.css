@@ -1,33 +1,6 @@
-/*
- * Este es el CSS que va DESPUÉS de tu CSS del `sidebar`.
- */
+
  /* TIPOGRAFÍA */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-
-.poppins-light {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-}
-
-.poppins-regular {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-}
-
-.poppins-medium {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-}
-
-.poppins-semibold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-}
-
-.poppins-bold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-}
 
 /* =========================
    CONTENIDO PRINCIPAL Y FORMULARIO
@@ -79,9 +52,23 @@ h1 {
   color: #333;
 }
 
+/* Contenedor del select con el ícono */
+.select-container {
+  position: relative; /* La posición relativa es clave para que el ícono sea absoluto */
+  width: 100%;
+}
+/* Ícono de Font Awesome dentro del contenedor */
+.select-container i {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;   /* Esto permite que los clics pasen al select subyacente */
+  color: #999;
+}
+
 /* MODIFICACIÓN: APLICAR ESTILO A input Y select */
-.form-clientes input,
-.form-clientes select {
+.form-clientes input {
   padding: 10px 12px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -89,21 +76,32 @@ h1 {
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 .form-clientes select {
-  /* Estilos específicos para select para que se vea más limpio */
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background-color: #fff;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16"><path d="M7.247 11.14l-4.796-5.485C2.203 5.424 2 5.107 2 4.792c0-.315.203-.632.451-.933L4.99 3.093l.006-.006a1.002 1.002 0 0 1 1.414 0l.006.006L8 5.766l2.339-2.673a1.002 1.002 0 0 1 1.414 0l.006.006 2.538 2.915a1.002 1.002 0 0 1 .253.308c.203.302.451.62.451.933 0 .315-.203.632-.451.933l-4.796 5.485c-.248.3-.578.451-.933.451s-.685-.15-.933-.451z"/></svg>');
-  background-repeat: no-repeat;
-  background-position: right 10px center;
-  background-size: 16px;
-  padding-right: 30px; /* Evita que el texto se superponga con el ícono */
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 .form-clientes input:focus,
 .form-clientes select:focus {
   outline: none;
   border-color: #05295f;
   box-shadow: 0 0 6px rgba(5, 41, 95, 0.25);
+}
+
+/* Estilo para las opciones al desplegar el select */
+.form-clientes select option {
+  background-color: #fff;
+  color: #333;
+  padding: 8px 12px;
+}
+.form-clientes select option:hover {
+  background-color: #f0f4f8;
 }
 
 /* Animación shake [Botones] */
