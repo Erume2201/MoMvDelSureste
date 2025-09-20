@@ -45,6 +45,70 @@ function alertaError({ titulo = "¡Error!", texto = ""}) {
     });
 }
 
+// ==========================
+// ALERTAS SEGÚN URL PARAMS
+// ==========================
+
+document.addEventListener("DOMContentLoaded", () => {
+    const urlParams = new URLSearchParams(window.location.search);
+
+    if (urlParams.has("msg")) {
+        const msg = urlParams.get("msg");
+
+        switch (msg) {
+            case "cliente_agregado":
+                alertaExito({titulo: "Cliente agregado", texto:"El cliente se registró correctamente."});
+                break;
+            case "tienda_agregada":
+                alertaExito({titulo: "Tienda agregada", texto:"La tienda se registró correctamente."});
+                break;
+            case "operador_agregado":
+                alertaExito({titulo: "Operador agregado", texto:"El operador se registró correctamente."});
+                break;
+            case "unidad_agregada":
+                alertaExito({titulo: "Unidad agregada", texto:"La unidad se registró correctamente."});
+                break;
+            case "usuario_agregado":
+                alertaExito({titulo: "Usuario agregado", texto:"El usuario se registró correctamente."});
+            break;
+        }
+    }
+
+    if (urlParams.has("error")) {
+        alertaError({
+            titulo: "Error",
+            texto: urlParams.get("error"),
+        });
+    }
+});
+
+// ==========================
+// CONFIRMACIÓN CERRAR SESIÓN
+// ==========================
+document.addEventListener("DOMContentLoaded", () => {
+    const btnCerrarSesion = document.getElementById("btn-cerrar-sesion");
+
+    if (btnCerrarSesion) {
+        btnCerrarSesion.addEventListener("click", (e) => {
+            e.preventDefault();
+            Swal.fire({
+                title: "¿Deseas cerrar sesión?",
+                text: "Tu sesión actual se cerrará y volverás al inicio",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Sí",
+                cancelButtonText: "Cancelar",
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "index.php?module=cerrar_sesion";
+                }
+            });
+        });
+    }
+});
+
 // Confirmación genérica
 function confirmarAccion({
     titulo = "¿Estás seguro?",
@@ -105,94 +169,3 @@ function showAlert(title = 'Atención', text = '', icon = 'error') {
         confirmButtonText: 'OK'
     });
 }
-
-// Confirmación específica para cerrar sesión.
-document.addEventListener("DOMContentLoaded", () => {
-    const btnCerrarSesion = document.getElementById("btn-cerrar-sesion");
-
-    if (btnCerrarSesion) {
-        btnCerrarSesion.addEventListener("click", (e) => {
-            e.preventDefault();
-            confirmarAccion({
-                titulo: "¿Deseas cerrar sesión?",
-                texto: "Tu sesión actual se cerrará y volverás al inicio",
-                icono: "warning",
-                textoConfirmar: "Sí",
-                textoCancelar: "Cancelar",
-                callback: () => {
-                    window.location.href = "index.php?module=cerrar_sesion";
-                }
-            });
-        });
-    }
-
-    // Formulario: agregar cliente
-    const formClientes = document.getElementById("form-clientes");
-
-    if (formClientes) {
-        formClientes.addEventListener("submit", function (e) {
-            e.preventDefault();
-            alertaExito({
-                titulo: "Cliente agregado",
-                texto: "El cliente se registró correctamente",
-                redirigir: "index.php?module=clientes",
-            });
-        });
-    }
-
-    // Formulario: agregar tienda
-    const formTiendas = document.getElementById("form-tiendas");
-
-    if (formTiendas) {
-        formTiendas.addEventListener("submit", function (e) {
-            e.preventDefault();
-            alertaExito({
-                titulo: "Tienda agregada",
-                texto: "La tienda se registró correctamente",
-                redirigir: "index.php?module=tiendas",
-            });
-        });
-    }
-
-    // Formulario: agregar operador
-    const formOperadores = document.getElementById("form-operadores");
-
-    if (formOperadores) {
-        formOperadores.addEventListener("submit", function (e) {
-            e.preventDefault();
-            alertaExito({
-                titulo: "Operador agregado",
-                texto: "El operador se registró correctamente",
-                redirigir: "index.php?module=operadores",
-            });
-        });
-    }
-
-    // Formulario: agregar unidad
-    const formUnidades = document.getElementById("form-unidades");
-
-    if (formUnidades) {
-        formUnidades.addEventListener("submit", function (e) {
-            e.preventDefault();
-            alertaExito({
-                titulo: "Unidad agregada",
-                texto: "La unidad se registró correctamente",
-                redirigir: "index.php?module=unidades",
-            });
-        });
-    }
-
-    // Formulario: agregar usuario
-    const formUsuarios = document.getElementById("form-usuarios");
-
-    if (formUsuarios) {
-        formUsuarios.addEventListener("submit", function (e) {
-            e.preventDefault();
-            alertaExito({
-                titulo: "Usuario agregado",
-                texto: "El usuario se registró correctamente",
-                redirigir: "index.php?module=usuarios",
-            });
-        });
-    }
-});
