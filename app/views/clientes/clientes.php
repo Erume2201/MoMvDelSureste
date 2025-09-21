@@ -1,7 +1,11 @@
 <!-- Se incluyen archivos php -->
 <?php
 require_once __DIR__ . '../../../config/config.php';
+require_once __DIR__ . '../../../config/CRUD.php';
 include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
+
+$crud = new CRUD();
+$clientes = $crud->select("SELECT * FROM clientes ORDER BY id_cliente ASC");
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +41,7 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
                     </div>
                 </div>
 
-                <table class="clientes-table">
+                <table class="clientes-table" id="clientes-table">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -50,33 +54,28 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Ejemplo estático -->
-                        <tr>
-                            <td>1</td>
-                            <td>Empresa de Ejemplo S.A. de C.V.</td>
-                            <td>ABC123456XYZ</td>
-                            <td>Mérida</td>
-                            <td>999-123-4567</td>
-                            <td>ohyeah350@gmail.com</td>
-                            <td class="acciones">
-                                <button class="btn-ver" title="Ver"><i class="fa-solid fa-eye"></i></button>
-                                <button class="btn-editar" title="Editar"><i class="fa-solid fa-pen-to-square"></i></button>
-                                <button class="btn-eliminar" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Empresa de Ejemplo Dos S.A. de C.V.</td>
-                            <td>XYZ987654ABC</td>
-                            <td>Villahemosa</td>
-                            <td>998-765-4321</td>
-                            <td>sexybith@hotmail.com</td>
-                            <td class="acciones">
-                                <button class="btn-ver" title="Ver"><i class="fa-solid fa-eye"></i></button>
-                                <button class="btn-editar" title="Editar"><i class="fa-solid fa-pen-to-square"></i></button>
-                                <button class="btn-eliminar" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
-                            </td>
-                        </tr>
+                        <?php if (!empty($clientes)): ?>
+                            <?php $contador = 1; ?>
+                            <?php foreach ($clientes as $cliente): ?>
+                                <tr>
+                                    <td><?php echo $contador++; ?></td>
+                                    <td><?php echo htmlspecialchars($cliente['nombre_cliente']); ?></td>
+                                    <td><?php echo htmlspecialchars($cliente['rfc']); ?></td>
+                                    <td><?php echo htmlspecialchars($cliente['ciudad']); ?></td>
+                                    <td><?php echo htmlspecialchars($cliente['telefono']); ?></td>
+                                    <td><?php echo htmlspecialchars($cliente['email']); ?></td>
+                                    <td class="acciones">
+                                        <button class="btn-ver" title="Ver"><i class="fa-solid fa-eye"></i></button>
+                                        <button class="btn-editar" title="Editar"><i class="fa-solid fa-pen-to-square"></i></button>
+                                        <button class="btn-eliminar" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <tr>
+                                <td colspan="7">No hay clientes registrados.</td>
+                            </tr>
+                        <?php endif; ?>
                     </tbody>
                 </table>
 
@@ -95,6 +94,8 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Script de los mensajes de alerta -->
     <script src="<?php echo BASE_URL; ?>public/js/alerts.js"></script>
+    <!-- Script que controla el buscador -->
+    <script src="<?php echo BASE_URL; ?>public/js/clientes/clientes.js"></script>
 
 </body>
 </html>

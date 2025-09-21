@@ -30,8 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Insertar en BD con CRUD
         $crud = new CRUD();
         $sql = "INSERT INTO clientes
-                (nombre_razon_social, rfc, domicilio_fiscal, colonia, ciudad, estado, codigo_postal, tipo_localidad, nombre_apoderado_legal, 
-                forma_pago, metodo_pago, uso_cfdi, regimen_fiscal, contacto_cuentas_pagar, email, telefono)
+                (nombre_cliente, rfc, domicilio_fiscal, colonia, ciudad, estado, codigo_postal, tipo_localidad, nombre_apoderado, 
+                forma_pago, metodo_pago, uso_cfdi, regimen_fiscal, contacto_cuentas, email, telefono)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         $params = [$nombre, $rfc, $domicilio, $colonia, $ciudad, $estado, $cp, $tipo_localidad, 
