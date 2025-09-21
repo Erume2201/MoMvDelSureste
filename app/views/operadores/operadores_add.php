@@ -25,7 +25,7 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
             <h1>➕ Agregar Operadores</h1>
 
             <!-- Formulario -->
-            <form id="form-operadores" class="form-operadores">
+            <form id="form-operadores" class="form-operadores" action="<?php echo BASE_URL; ?>app/controllers/php/addOperadores/operadores_add_action.php" method="POST">
 
                 <!-- Campos en 2 columnas -->
                 <div class="form-grid">
@@ -47,7 +47,18 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
 
                     <div class="form-group">
                         <label for="tipo_licencia">Tipo de licencia.</label>
-                        <input type="text" id="tipo_licencia" name="tipo_licencia" required>
+                        <div class="select-container">
+                            <select name="tipo_licencia" id="tipo_licencia" required>
+                                <option value="">Seleccione una opción</option>
+                                <option value="A">A - Motocicletas y ciclomotores</option>
+                                <option value="B">B - Automóviles y camionetas particulares</option>
+                                <option value="C">C - Transporte de pasajeros (hasta 10 personas)</option>
+                                <option value="D">D - Transporte de servicio público</option>
+                                <option value="E">E - Carga de gran tamaño y doble articulación</option>
+                                <option value="F">F - Vehículos especiales</option>
+                            </select>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
                     </div>
 
                 </div>

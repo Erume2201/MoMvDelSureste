@@ -1,7 +1,11 @@
 <!-- Se incluyen archivos php -->
 <?php
 require_once __DIR__ . '../../../config/config.php';
+require_once __DIR__ . '../../../config/CRUD.php';
 include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
+
+$crud = new CRUD();
+$operadores = $crud->select("SELECT * FROM operadores ORDER BY id_operador ASC");
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +41,7 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
                     </div>
                 </div>
 
-                <table class="operadores-table">
+                <table class="operadores-table" id="operadores-table">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -49,31 +53,27 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Ejemplo estático -->
-                        <tr>
-                            <td>1</td>
-                            <td>Jaimito</td>
-                            <td>Montiel Guzmán</td>
-                            <td>Carga pesada</td>
-                            <td>Tipo C</td>
-                            <td class="acciones">
-                                <button class="btn-ver" title="Ver"><i class="fa-solid fa-eye"></i></button>
-                                <button class="btn-editar" title="Editar"><i class="fa-solid fa-pen-to-square"></i></button>
-                                <button class="btn-eliminar" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Juan Manuel</td>
-                            <td>Torres López</td>
-                            <td>Carro particular</td>
-                            <td>Tipo A</td>
-                            <td class="acciones">
-                                <button class="btn-ver" title="Ver"><i class="fa-solid fa-eye"></i></button>
-                                <button class="btn-editar" title="Editar"><i class="fa-solid fa-pen-to-square"></i></button>
-                                <button class="btn-eliminar" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
-                            </td>
-                        </tr>
+                        <?php if(!empty($operadores)): ?>
+                            <?php $contador = 1; ?>
+                            <?php foreach ($operadores as $operador): ?>
+                                <tr>
+                                    <td><?php echo $contador++; ?></td>
+                                    <td><?php echo htmlspecialchars($operador['nombre']); ?></td>
+                                    <td><?php echo htmlspecialchars($operador['apellidos']); ?></td>
+                                    <td><?php echo htmlspecialchars($operador['licencia']); ?></td>
+                                    <td><?php echo htmlspecialchars($operador['tipo_licencia']); ?></td>
+                                    <td class="acciones">
+                                        <button class="btn-ver" title="Ver"><i class="fa-solid fa-eye"></i></button>
+                                        <button class="btn-editar" title="Editar"><i class="fa-solid fa-pen-to-square"></i></button>
+                                        <button class="btn-eliminar" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <tr>
+                                <td colspan="7">No hay clientes registrados.</td>
+                            </tr>
+                        <?php endif; ?>
                     </tbody>
                 </table>
 
