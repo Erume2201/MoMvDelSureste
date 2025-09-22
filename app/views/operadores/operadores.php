@@ -91,5 +91,7 @@ $operadores = $crud->select("SELECT * FROM operadores ORDER BY id_operador ASC")
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Script de los mensajes de alerta -->
     <script src="<?php echo BASE_URL; ?>public/js/alerts.js"></script>
+    <!-- Script que controla el buscador -->
+    <script src="<?php echo BASE_URL; ?>public/js/operadores/operadores.js"></script>
 </body>
 </html>
