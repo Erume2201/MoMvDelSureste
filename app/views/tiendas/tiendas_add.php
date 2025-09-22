@@ -32,63 +32,100 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
                 <div class="form-grid">
 
                     <div class="form-group">
-                        <label for="nombre ">Nombre o razón social.</label>
-                        <input type="text" id="nombre" name="nombre" required>
+                        <label for="nombre_tienda">Nombre o razón social.</label>
+                        <input type="text" id="nombre_tienda" name="nombre_tienda" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="numero ">Número de registro ambiental.</label>
-                        <input type="text" id="numero" name="numero" required>
+                        <label for="numero_ambiental">Número de registro ambiental.</label>
+                        <input type="text" id="numero_ambiental" name="numero_ambiental" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="direccion ">Dirección.</label>
+                        <label for="direccion">Dirección.</label>
                         <input type="text" id="direccion" name="direccion" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="colonia ">Colonia.</label>
+                        <label for="colonia">Colonia.</label>
                         <input type="text" id="colonia" name="colonia" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="ciudad ">Ciudad.</label>
+                        <label for="ciudad">Ciudad.</label>
                         <input type="text" id="ciudad" name="ciudad" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="estado ">Estado.</label>
-                        <input type="text" id="estado" name="estado" required>
+                        <label for="estado">Estado.</label>
+                        <div class="select-container">
+                            <select id="estado" name="estado" required>
+                                <option value="">Seleccione un estado</option>
+                                <option value="Aguascalientes">Aguascalientes</option>
+                                <option value="Baja California">Baja California</option>
+                                <option value="Baja California Sur">Baja California Sur</option>
+                                <option value="Campeche">Campeche</option>
+                                <option value="Chiapas">Chiapas</option>
+                                <option value="Chihuahua">Chihuahua</option>
+                                <option value="Ciudad de México">Ciudad de México</option>
+                                <option value="Coahuila">Coahuila</option>
+                                <option value="Colima">Colima</option>
+                                <option value="Durango">Durango</option>
+                                <option value="Estado de México">Estado de México</option>
+                                <option value="Guanajuato">Guanajuato</option>
+                                <option value="Guerrero">Guerrero</option>
+                                <option value="Hidalgo">Hidalgo</option>
+                                <option value="Jalisco">Jalisco</option>
+                                <option value="Michoacán">Michoacán</option>
+                                <option value="Morelos">Morelos</option>
+                                <option value="Nayarit">Nayarit</option>
+                                <option value="Nuevo León">Nuevo León</option>
+                                <option value="Oaxaca">Oaxaca</option>
+                                <option value="Puebla">Puebla</option>
+                                <option value="Querétaro">Querétaro</option>
+                                <option value="Quintana Roo">Quintana Roo</option>
+                                <option value="San Luis Potosí">San Luis Potosí</option>
+                                <option value="Sinaloa">Sinaloa</option>
+                                <option value="Sonora">Sonora</option>
+                                <option value="Tabasco">Tabasco</option>
+                                <option value="Tamaulipas">Tamaulipas</option>
+                                <option value="Tlaxcala">Tlaxcala</option>
+                                <option value="Veracruz">Veracruz</option>
+                                <option value="Yucatán">Yucatán</option>
+                                <option value="Zacatecas">Zacatecas</option>
+                            </select>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="cp ">CP.</label>
-                        <input type="text" id="cp" name="cp" required>
+                        <label for="cp_tienda">Código postal.</label>
+                        <input type="number" id="cp_tienda" name="cp_tienda" maxlength="5" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="horario_trabajo ">Horario de trabajo.</label>
+                        <label for="horario_trabajo">Horario de trabajo.</label>
                         <input type="text" id="horario_trabajo" name="horario_trabajo" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="nombre_responsable ">Nombre responsable entrega residuo.</label>
+                        <label for="nombre_responsable">Nombre responsable entrega residuo.</label>
                         <input type="text" id="nombre_responsable" name="nombre_responsable" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="telefono_responsable ">Teléfono responsable entrega residuo.</label>
-                        <input type="text" id="telefono_responsable" name="telefono_responsable" required>
+                        <label for="telefono_responsable">Teléfono responsable entrega residuo.</label>
+                        <input type="tel" id="telefono_responsable" name="telefono_responsable" maxlength="10" required>
                     </div>
 
                     <div class="form-group form-full">
-                        <label for="referencias_recoleccion ">Detalles de referencia.</label>
-                        <textarea name="referencias_recoleccion" id="referencias_recoleccion" rows="3" required></textarea>
+                        <label for="refes_recoleccion">Detalles de referencia.</label>
+                        <textarea name="refes_recoleccion" id="refes_recoleccion" rows="3" required></textarea>
                     </div>
 
                     <div class="form-group form-full">
-                        <label for="google_maps_link ">URL de Google Maps.</label>
-                        <input type="url" id="google-maps-link" name="google-maps-link" required>
+                        <label for="coordenadas_gmaps">URL de Google Maps.</label>
+                        <input type="url" id="coordenadas_gmaps" name="coordenadas_gmaps" required>
                     </div>
 
                 </div>

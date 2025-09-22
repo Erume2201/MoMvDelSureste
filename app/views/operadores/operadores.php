@@ -71,7 +71,7 @@ $operadores = $crud->select("SELECT * FROM operadores ORDER BY id_operador ASC")
                             <?php endforeach; ?>
                         <?php else: ?>
                             <tr>
-                                <td colspan="7">No hay clientes registrados.</td>
+                                <td colspan="6">No hay operadores registrados.</td>
                             </tr>
                         <?php endif; ?>
                     </tbody>
