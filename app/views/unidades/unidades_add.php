@@ -26,14 +26,24 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
             <h1>➕ Agregar Unidad</h1>
 
             <!-- Formulario -->
-            <form id="form-unidades" class="form-unidades">
+            <form id="form-unidades" class="form-unidades" action="<?php echo BASE_URL; ?>app/controllers/php/addUnidades/unidades_add_action.php" method="POST">
 
                 <!-- Campos en 2 columnas -->
                 <div class="form-grid">
 
                     <div class="form-group">
                         <label for="tipo_unidad">Tipo de unidad.</label>
-                        <input type="text" id="tipo_unidad" name="tipo_unidad" required>
+                        <div class="select-container">   
+                            <select id="tipo_unidad" name="tipo_unidad" required>
+                                <option value="">Seleccione un tipo</option>
+                                <option value="Camión">Camión</option>
+                                <option value="Camioneta">Camioneta</option>
+                                <option value="Vehículo Ligero">Vehículo Ligero</option>
+                                <option value="Tractocamión">Tractocamión</option>
+                                <option value="Trailer">Trailer</option>
+                            </select>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
                     </div>
 
                     <div class="form-group">
@@ -48,7 +58,7 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
 
                     <div class="form-group">
                         <label for="numero_serie">Número de serie.</label>
-                        <input type="text" id="numero_serie" name="numero_serie" required>
+                        <input type="text" id="numero_serie" name="numero_serie" maxlength="17" required>
                     </div>
 
                     <div class="form-group">

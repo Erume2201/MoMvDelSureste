@@ -1,7 +1,11 @@
 <!-- Se incluyen archivos php -->
 <?php
 require_once __DIR__ . '../../../config/config.php';
+require_once __DIR__ . '../../../config/CRUD.php';
 include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
+
+$crud = new CRUD();
+$unidades = $crud->select("SELECT * FROM unidades ORDER BY id_unidad ASC");
 ?>
 
 <!DOCTYPE html>
@@ -31,13 +35,13 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
                     <h3>Lista de unidades</h3>
                     <div class="header-actions">
                         <div class="search-box">
-                            <input type="text" id="buscar-unidades" placeholder="Buscar unidades...">
+                            <input type="text" id="buscar-unidad" placeholder="Buscar unidades...">
                         </div>
                         <a href="<?php echo BASE_URL; ?>index.php?module=unidades_add" class="btn-agregar" id="btn-agregar-unidad">+ Agregar unidad</a>
                     </div>
                 </div>
 
-                <table class="unidades-table">
+                <table class="unidades-table" id="unidades-table">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -50,33 +54,28 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Ejemplo estático -->
-                        <tr>
-                            <td>1</td>
-                            <td>De carga</td>
-                            <td>ABC123456XYZ</td>
-                            <td>DC-MAR23-56</td>
-                            <td>1GNEK19J12AOP65</td>
-                            <td>Si</td>
-                            <td class="acciones">
-                                <button class="btn-ver" title="Ver"><i class="fa-solid fa-eye"></i></button>
-                                <button class="btn-editar" title="Editar"><i class="fa-solid fa-pen-to-square"></i></button>
-                                <button class="btn-eliminar" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Particular</td>
-                            <td>XYZ987654ABC</td>
-                            <td>OZY-90-MAN</td>
-                            <td>9TNEK19J12AOP65</td>
-                            <td>Si</td>
-                            <td class="acciones">
-                                <button class="btn-ver" title="Ver"><i class="fa-solid fa-eye"></i></button>
-                                <button class="btn-editar" title="Editar"><i class="fa-solid fa-pen-to-square"></i></button>
-                                <button class="btn-eliminar" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
-                            </td>
-                        </tr>
+                        <?php if(!empty($unidades)): ?>
+                            <?php $contador = 1; ?>
+                            <?php foreach ($unidades as $unidad): ?>
+                                <tr>
+                                    <td><?php echo $contador++; ?></td>
+                                    <td><?php echo htmlspecialchars($unidad['tipo_unidad']); ?></td>
+                                    <td><?php echo htmlspecialchars($unidad['numero_economico']); ?></td>
+                                    <td><?php echo htmlspecialchars($unidad['placas']); ?></td>
+                                    <td><?php echo htmlspecialchars($unidad['numero_serie']); ?></td>
+                                    <td><?php echo htmlspecialchars($unidad['poliza_seguro']); ?></td>
+                                    <td class="acciones">
+                                        <button class="btn-ver" title="Ver"><i class="fa-solid fa-eye"></i></button>
+                                        <button class="btn-editar" title="Editar"><i class="fa-solid fa-pen-to-square"></i></button>
+                                        <button class="btn-eliminar" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <tr>
+                                <td colspan="7">No hay unidades registradas.</td>
+                            </tr>
+                        <?php endif; ?>
                     </tbody>
                 </table>
 
@@ -94,5 +93,7 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Script de los mensajes de alerta -->
     <script src="<?php echo BASE_URL; ?>public/js/alerts.js"></script>
+    <!-- Script que controla el buscador -->
+    <script src="<?php echo BASE_URL; ?>public/js/unidades/unidades.js"></script>
 </body>
 </html>
