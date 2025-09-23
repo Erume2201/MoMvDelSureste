@@ -1,6 +1,7 @@
 <!-- Se incluyen archivos php -->
 <?php
 require_once __DIR__ . '../../../config/config.php';
+require_once __DIR__ . '../../../config/CRUD.php';
 include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
 ?>
 
@@ -8,7 +9,7 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Agregar Tiendas</title>
+    <title>Agregar Tienda</title>
     <!-- Icono en la pestaña -->
     <link rel="icon" href="<?php echo BASE_URL; ?>public/img/favicon.ico" type="image/x-icon">
     <!-- Iconos de Boxicon -->
@@ -26,7 +27,7 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
             <h1>➕ Agregar Tienda</h1>
 
             <!-- Formulario -->
-            <form id="form-tiendas" class="form-tiendas">
+            <form id="form-tiendas" class="form-tiendas" action="<?php echo BASE_URL; ?>app/controllers/php/addTiendas/tiendas_add_action.php" method="POST">
 
                 <!-- Campos en 2 columnas -->
                 <div class="form-grid">
@@ -35,6 +36,15 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
                         <label for="nombre_tienda">Nombre o razón social.</label>
                         <input type="text" id="nombre_tienda" name="nombre_tienda" required>
                     </div>
+
+                    <div class="form-group">
+                        <label for="buscar_cliente">Cliente al que pertenece la tienda.</label>
+                        <div class="search-container">
+                            <input type="text" id="buscar_cliente" placeholder="Buscar cliente..." autocomplete="off">
+                            <div id="resultados_busqueda" class="resultados-busqueda"></div>
+                            <input type="hidden" name="id_cliente" id="id_cliente" required>
+                        </div>
+                    </div>                  
 
                     <div class="form-group">
                         <label for="numero_ambiental">Número de registro ambiental.</label>
@@ -139,12 +149,13 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
         </div>
     </div>
 
-
     <!-- ===SCRIPTS=== -->
     <script src="<?php echo BASE_URL; ?>public/js/sidebar.js"></script>
     <!-- Librería de SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Script de los mensajes de alerta -->
     <script src="<?php echo BASE_URL; ?>public/js/alerts.js"></script>
+    <!-- Script que controla el buscador de clientes dentro del formulario -->
+    <script src="<?php echo BASE_URL; ?>public/js/tiendas/tiendas_add.js"></script>
 </body>
 </html>
