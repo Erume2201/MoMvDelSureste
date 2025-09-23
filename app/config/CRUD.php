@@ -55,4 +55,3 @@ class CRUD {
         return $stmt->rowCount();
     }
 }
-?>
