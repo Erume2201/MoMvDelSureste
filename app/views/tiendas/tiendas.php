@@ -1,7 +1,12 @@
 <!-- Se incluyen archivos php -->
 <?php
 require_once __DIR__ . '../../../config/config.php';
+require_once __DIR__ . '../../../config/CRUD.php';
 include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
+
+$crud = new CRUD();
+$sql = "SELECT t.*, c.nombre_cliente FROM tiendas t JOIN clientes c ON t.id_cliente = c.id_cliente ORDER BY t.id_tienda ASC";
+$tiendas = $crud->select($sql);
 ?>
 
 <!DOCTYPE html>
@@ -37,46 +42,43 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
                     </div>
                 </div>
 
-                <table class="tiendas-table">
+                <table class="tiendas-table" id="tiendas-table">
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Nombre</th>
-                            <th>Número</th>
+                            <th>Tienda</th>
+                            <th>Cliente</th>
+                            <th>Dirección</th>
                             <th>Ciudad</th>
                             <th>Estado</th>
-                            <th>CP</th>
+                            <th>Responsable</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Ejemplo estático -->
-                        <tr>
-                            <td>1</td>
-                            <td>Tienda de Ejemplo S.A. de C.V.</td>
-                            <td>00001</td>
-                            <td>Mérida</td>
-                            <td>Yucatán</td>
-                            <td>99670</td>
-                            <td class="acciones">
-                                <button class="btn-ver" title="Ver"><i class="fa-solid fa-eye"></i></button>
-                                <button class="btn-editar" title="Editar"><i class="fa-solid fa-pen-to-square"></i></button>
-                                <button class="btn-eliminar" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Tienda de Ejemplo Dos S.A. de C.V.</td>
-                            <td>00002</td>
-                            <td>Villahemosa</td>
-                            <td>Tabasco</td>
-                            <td>64900</td>
-                            <td class="acciones">
-                                <button class="btn-ver" title="Ver"><i class="fa-solid fa-eye"></i></button>
-                                <button class="btn-editar" title="Editar"><i class="fa-solid fa-pen-to-square"></i></button>
-                                <button class="btn-eliminar" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
-                            </td>
-                        </tr>
+                        <?php if (!empty($tiendas)): ?>
+                            <?php $contador = 1; ?>
+                            <?php foreach ($tiendas as $tienda): ?>
+                                <tr>
+                                    <td><?php echo $contador++; ?></td>
+                                    <td><?php echo htmlspecialchars($tienda['nombre_tienda']); ?></td>
+                                    <td><?php echo htmlspecialchars($tienda['nombre_cliente']); ?></td>
+                                    <td><?php echo htmlspecialchars($tienda['direccion']); ?></td>
+                                    <td><?php echo htmlspecialchars($tienda['ciudad']); ?></td>
+                                    <td><?php echo htmlspecialchars($tienda['estado']); ?></td>
+                                    <td><?php echo htmlspecialchars($tienda['nombre_responsable']); ?></td>
+                                    <td class="acciones">
+                                        <button class="btn-ver" title="Ver"><i class="fa-solid fa-eye"></i></button>
+                                        <button class="btn-editar" title="Editar"><i class="fa-solid fa-pen-to-square"></i></button>
+                                        <button class="btn-eliminar" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <tr>
+                                <td colspan="8">No hay tiendas registradas.</td>
+                            </tr>
+                        <?php endif; ?>
                     </tbody>                    
                 </table>
 
@@ -95,5 +97,7 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Script de los mensajes de alerta -->
     <script src="<?php echo BASE_URL; ?>public/js/alerts.js"></script>
+    <!-- Script que controla el buscador -->
+    <script src="<?php echo BASE_URL; ?>public/js/tiendas/tiendas.js"></script>
 </body>
 </html>

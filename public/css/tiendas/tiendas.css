@@ -1,33 +1,7 @@
-/*
- * Este es el CSS que va DESPUÉS de tu CSS del `sidebar`.
- */
+
  /* TIPOGRAFÍA */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-.poppins-light {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-}
-
-.poppins-regular {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-}
-
-.poppins-medium {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-}
-
-.poppins-semibold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-}
-
-.poppins-bold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-}
 /* =========================
    CONTENIDO PRINCIPAL Y FORMULARIO
 ========================= */
@@ -124,19 +98,31 @@ h1 {
   box-shadow: 0 3px 8px rgba(0, 86, 179, 0.3);
 }
 
-/* Tabla */
+/* TABLA */
 .tiendas-table {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
 }
 .tiendas-table th, .tiendas-table td {
-  padding: 12px 15px;
+  padding: 11px 12px;
   border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+/* Columna de acciones */
+.tiendas-table th:last-child,
+.tiendas-table td.acciones {
+  white-space: nowrap; /* Evita saltos de línea */
+  width: 130px; /* Ajusta según los botones que tengas */
+  text-align: center; /* Centra los íconos */
+}
+.tiendas-table th {
+  font-size: 16px;
 }
 .tiendas-table thead {
   background: #f8f9fa;
   font-weight: 600;
+  font-size: 16px;
 }
 
 /* Botones de la tabla */
@@ -146,11 +132,14 @@ h1 {
   cursor: pointer;
   padding: 6px;
   margin: 0 4px;
-  font-size: 18px; /*Tamaño del ícono*/
+  font-size: 16px; /*Tamaño del ícono*/
   transition: transform 0.2s ease, color 0.2s ease;
 }
 .acciones button:hover {
   transform: scale(1.2);
+}
+.acciones button:active {
+  transform: scale(0.95);
 }
 
 /* Colores por acción */

@@ -1,3 +1,5 @@
+// Script para el buscador del formulario de agregar tiendas
+
 document.addEventListener('DOMContentLoaded', function() {
     const buscarClienteInput = document.getElementById('buscar_cliente');
     const resultadosBusquedaDiv = document.getElementById('resultados_busqueda');
