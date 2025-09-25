@@ -39,7 +39,7 @@ $(document).ready(function () {
                 formulario[0].reset();
                 window.location.href = 'index.php?module=usuarios';
             } else {
-                alert(respuesta.mensaje);
+                alert(respuesta.error);
             }
         })
         .fail(function (jqXHR, textStatus, errorThrown) {

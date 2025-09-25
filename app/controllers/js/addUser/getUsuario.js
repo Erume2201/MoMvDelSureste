@@ -5,7 +5,7 @@ $(document).ready(function() {
     // Contenedor de la paginación.
     const paginationContainer = $('.pagination');
     // Número de elementos a mostrar por página.
-    const itemsPerPage = 15;
+    const itemsPerPage = 5;
     // Variable para almacenar todos los datos de los usuarios obtenidos del servidor.
     let usersData = [];
 
@@ -44,7 +44,7 @@ $(document).ready(function() {
      */
     function renderTable(page = 1) {
         // Limpia el contenido actual de la tabla.
-        //tableBody.empty();
+        tableBody.empty();
         
         // Calcula los índices de inicio y fin para la paginación.
         const start = (page - 1) * itemsPerPage;
