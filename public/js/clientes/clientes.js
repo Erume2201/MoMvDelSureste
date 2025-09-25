@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const mensaje = document.createElement("tr");
 
     // Fila para "sin resultados"
-    mensaje.innerHTML = `<td colspan="10" style="text-align:center; color:red;">No se encontraron resultados</td>`;
+    mensaje.innerHTML = `<td colspan="7" style="text-align:center; color:red; font-size:18px;">No se encontraron resultados 😥</td>`;
     mensaje.style.display = "none";
     tabla.appendChild(mensaje);
 

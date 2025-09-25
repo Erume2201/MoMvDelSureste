@@ -41,6 +41,7 @@ $clientes = $crud->select("SELECT * FROM clientes ORDER BY id_cliente ASC");
                     </div>
                 </div>
 
+                <!-- Tabla dinámica -->
                 <table class="clientes-table" id="clientes-table">
                     <thead>
                         <tr>
