@@ -23,6 +23,9 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
 <body class="main-clientes-add"">
     <div class="main-content">
         <div class="container">
+            <a href="<?php echo BASE_URL; ?>index.php?module=clientes" class="btn-flecha" title="Regresar">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
             <h1>➕ Agregar Cliente</h1>
 
             <!-- Formulario -->

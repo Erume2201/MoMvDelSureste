@@ -22,6 +22,9 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
 <body class="main-operadores-add">
     <div class="main-content">
         <div class="container">
+            <a href="<?php echo BASE_URL; ?>index.php?module=operadores" class="btn-flecha" title="Regresar">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
             <h1>➕ Agregar Operadores</h1>
 
             <!-- Formulario -->

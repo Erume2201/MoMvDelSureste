@@ -25,11 +25,12 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
 <body class="main-usuarios-add">
     <div class=" main-content">
         <div class="container">
+            <a href="<?php echo BASE_URL; ?>index.php?module=usuarios" class="btn-flecha" title="Regresar">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
             <h1>➕ Agregar Usuario</h1>
-
             <!-- Formulario -->
             <form id="form-usuarios" class="form-usuarios">
-
                 <!-- Campos en 2 columnas -->
                 <div class="form-grid">
 
@@ -92,7 +93,7 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
     <!-- Librería de SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Script de los mensajes de alerta -->
-   <script src="<?php echo BASE_URL; ?>public/js/alerts.js"></script>
+    <script src="<?php echo BASE_URL; ?>public/js/alerts.js"></script>
     <!-- Scrip agregar usuario -->
     <script src="<?php echo BASE_URL; ?>app/controllers/js/addUser/addUser.js"></script>
 
