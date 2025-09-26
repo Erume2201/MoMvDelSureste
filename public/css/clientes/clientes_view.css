@@ -18,11 +18,6 @@ body.main-clientes-view {
   box-sizing: border-box; /* Asegura que el padding se incluya en el ancho */
 }
 
-h1 {
-  font-weight: 600;
-  text-align: center;
-}
-
 /* El contenedor de centra */
 .container {
   max-width: 800px;
