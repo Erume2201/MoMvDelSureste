@@ -24,8 +24,13 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
 <body class="main-tiendas-add">
     <div class="main-content">
         <div class="container">
-            <h1>➕ Agregar Tienda</h1>
-
+            <div class="titulo-add">
+                <a href="<?php echo BASE_URL; ?>index.php?module=tiendas" class="btn-flecha" title="Regresar">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
+                <h1>➕ Agregar Tienda</h1>
+                <span class="espaciador"></span> <!-- Truco para balancear el flex -->
+            </div>
             <!-- Formulario -->
             <form id="form-tiendas" class="form-tiendas" action="<?php echo BASE_URL; ?>app/controllers/php/addTiendas/tiendas_add_action.php" method="POST">
 
