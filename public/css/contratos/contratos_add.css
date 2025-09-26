@@ -20,59 +20,59 @@ body.main-contratos {
 
 /* El contenedor del formulario se centra dentro del `main-content` */
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .titulo-contrato {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
 }
 .titulo-contrato h2 {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 700;
-    color: #2c3e50;
-    margin: 0;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0;
 }
 
 /* Flecha en la izquierda */
 .btn-flecha {
-    color: #2c3e50;
-    padding-left: 5px;
-    font-size: 28px;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    margin-right: auto; /* la manda a la izquierda */
+  color: #2c3e50;
+  padding-left: 5px;
+  font-size: 28px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin-right: auto; /* la manda a la izquierda */
 }
 .btn-flecha:hover {
-    color: #000000;
-    transform: scale(1.05);
+  color: #000000;
+  transform: scale(1.05);
 }
 .btn-flecha:active {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
 /* Espaciador "fantasma" del lado derecho */
 .espaciador {
-    width: 20px; /* mismo ancho que la flecha para equilibrar */
-    margin-left: auto;
+  width: 20px; /* mismo ancho que la flecha para equilibrar */
+  margin-left: auto;
 }
 
 /* Subtítulos */
 .main-content .container h3 {
-    font-size: 1.3rem;
-    font-weight: 600; /* semibold */
-    color: #34495e;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #eaeaea; /* línea sutil */
+  font-size: 1.3rem;
+  font-weight: 600; /* semibold */
+  color: #34495e;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eaeaea; /* línea sutil */
 }
 
 /* Apariencia de cada sección */

@@ -29,7 +29,7 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
             <h1>➕ Agregar Cliente</h1>
 
             <!-- Formulario -->
-            <form id="form-clientes" class="form-clientes" action="<?php echo BASE_URL; ?>app/controllers/php/addClientes/clientes_add_action.php" method="POST">
+            <form id="form-clientes" class="form-clientes" action="<?php echo BASE_URL; ?>app/controllers/php/actionClientes/clientes_add_action.php" method="POST">
 
                 <!-- Campos en 2 columnas -->
                 <div class="form-grid">
