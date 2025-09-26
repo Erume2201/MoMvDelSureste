@@ -30,36 +30,100 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
                 <a href="<?php echo BASE_URL; ?>index.php?module=clientes" class="btn-flecha" title="Regresar">
                     <i class="fa-solid fa-arrow-left"></i>
                 </a>
-                <h1>DETALLE DE CLIENTE <?= e($cliente['nombre_cliente']) ?></h1>
+                <h1>DETALLE DE CLIENTE: <?= e($cliente['nombre_cliente']) ?></h1>
                 <span class="espaciador"></span> <!-- Truco para balancear el flex -->
             </div>
 
             <div class="view-section">
-                <h3>Información</h3>
-                <div>
-                    <table>
-                        <tbody>
-                            <tr><th>Nombre / Razón social</th><td><?= e($cliente['nombre_cliente']) ?></td></tr>
-                            <tr><th>RFC</th><td><?= e($cliente['rfc']) ?></td></tr>
-                            <tr><th>Domicilio fiscal</th><td><?= e($cliente['domicilio_fiscal']) ?></td></tr>
-                            <tr><th>Colonia</th><td><?= e($cliente['colonia']) ?></td></tr>
-                            <tr><th>Ciudad</th><td><?= e($cliente['ciudad']) ?></td></tr>
-                            <tr><th>Estado</th><td><?= e($cliente['estado']) ?></td></tr>
-                            <tr><th>Código postal</th><td><?= e($cliente['codigo_postal']) ?></td></tr>
-                            <tr><th>Tipo localidad</th><td><?= e($cliente['tipo_localidad']) ?></td></tr>
-                            <tr><th>Nombre apoderado</th><td><?= e($cliente['nombre_apoderado']) ?></td></tr>
-                            <tr><th>Forma de pago</th><td><?= e($cliente['forma_pago']) ?></td></tr>
-                            <tr><th>Método de pago</th><td><?= e($cliente['metodo_pago']) ?></td></tr>
-                            <tr><th>Uso CFDI</th><td><?= e($cliente['uso_cfdi']) ?></td></tr>
-                            <tr><th>Régimen fiscal</th><td><?= e($cliente['regimen_fiscal']) ?></td></tr>
-                            <tr><th>Contacto cuentas</th><td><?= e($cliente['contacto_cuentas']) ?></td></tr>
-                            <tr><th>Email</th><td><?= e($cliente['email']) ?></td></tr>
-                            <tr><th>Teléfono</th><td><?= e($cliente['telefono']) ?></td></tr>
-                        </tbody>
-                    </table>
+                <h3><i class="fa-solid fa-address-card icon-title"></i> Datos de identificación y contacto</h3>
+                <div class="data-grid grid-2-cols">
+                    <div class="data-item">
+                        <span class="label">Nombre / Razón social</span>
+                        <p class="value"><?= e($cliente['nombre_cliente']) ?></p>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">RFC</span>
+                        <p class="value"><?= e($cliente['rfc']) ?></p>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">Nombre apoderado</span>
+                        <p class="value"><?= e($cliente['nombre_apoderado']) ?></p>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">Contacto cuentas</span>
+                        <p class="value"><?= e($cliente['contacto_cuentas']) ?></p>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">Email</span>
+                        <p class="value"><?= e($cliente['email']) ?></p>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">Teléfono</span>
+                        <p class="value"><?= e($cliente['telefono']) ?></p>
+                    </div>
                 </div>
             </div>
-            
+
+            <div class="view-section">
+                <h3><i class="fa-solid fa-map-marker-alt icon-title"></i> Ubicación</h3>
+                <div class="data-grid grid-2-cols">
+                    <div class="data-item">
+                        <span class="label">Domicilio fiscal</span>
+                        <p class="value"><?= e($cliente['domicilio_fiscal']) ?></p>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">Colonia</span>
+                        <p class="value"><?= e($cliente['colonia']) ?></p>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">Ciudad</span>
+                        <p class="value"><?= e($cliente['ciudad']) ?></p>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">Estado</span>
+                        <p class="value"><?= e($cliente['estado']) ?></p>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">Código postal</span>
+                        <p class="value"><?= e($cliente['codigo_postal']) ?></p>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">Tipo localidad</span>
+                        <p class="value"><?= e($cliente['tipo_localidad']) ?></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="view-section">
+                <h3><i class="fa-solid fa-money-bill-wave icon-title"></i> Datos Fiscales y de Pago</h3>
+                <div class="data-grid grid-2-cols">
+                    <div class="data-item">
+                        <span class="label">Forma de pago</span>
+                        <p class="value">
+                            <?= e(FORMA_PAGO_MAP[$cliente['forma_pago']] ?? $cliente['forma_pago']) ?>
+                        </p>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">Método de pago</span>
+                        <p class="value">
+                            <?= e(METODO_PAGO_MAP[$cliente['metodo_pago']] ?? $cliente['metodo_pago']) ?>
+                        </p>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">Uso CFDI</span>
+                        <p class="value">
+                            <?= e(USO_CFDI_MAP[$cliente['uso_cfdi']] ?? $cliente['uso_cfdi']) ?>
+                        </p>
+                    </div>
+                    <div class="data-item">
+                        <span class="label">Régimen fiscal</span>
+                        <p class="value">
+                            <?= e(REGIMEN_FISCAL_MAP[$cliente['regimen_fiscal']] ?? $cliente['regimen_fiscal']) ?>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <!-- Botón de imprimir -->
@@ -74,7 +138,5 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Script de los mensajes de alerta -->
     <script src="<?php echo BASE_URL; ?>public/js/alerts.js"></script>
-    <!-- Script que controla el buscador -->
-    <script src="<?php echo BASE_URL; ?>public/js/clientes/clientes_view.js"></script>
 </body>
 </html>
