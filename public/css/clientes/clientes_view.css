@@ -1,0 +1,117 @@
+/* TIPOGRAFÍA */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/* =========================
+   CONTENIDO PRINCIPAL DE INFORMACIÓN DE CLIENTE
+========================= */
+body.main-clientes-view {
+  font-family: 'Poppins', sans-serif;
+  margin: 0; /* Asegura que no haya margen por defecto */
+  background-color: #f4f4f4;
+  color: #333; /* Color de texto general */
+}
+
+/* El `main-content` se desplaza para dejar espacio a la barra lateral */
+.main-content {
+  margin-left: 220px; /* Esta es la corrección clave */
+  padding: 20px;
+  box-sizing: border-box; /* Asegura que el padding se incluya en el ancho */
+}
+
+h1 {
+  font-weight: 600;
+  text-align: center;
+}
+
+/* El contenedor de centra */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.titulo-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+.titulo-view h1 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0;
+}
+
+/* Flecha en la izquierda */
+.btn-flecha {
+  color: #2c3e50;
+  padding-left: 5px;
+  font-size: 22px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin-right: auto; /* la manda a la izquierda */
+}
+.btn-flecha:hover {
+  color: #000000;
+  transform: scale(1.05);
+}
+.btn-flecha:active {
+  transform: scale(0.95);
+}
+/* Espaciador "fantasma" del lado derecho */
+.espaciador {
+  width: 20px; /* mismo ancho que la flecha para equilibrar */
+  margin-left: auto;
+}
+
+/* Subtítulos */
+.main-content .container h3 {
+  font-size: 1.3rem;
+  font-weight: 600; /* semibold */
+  color: #34495e;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eaeaea; /* línea sutil */
+}
+
+/* Botones - Imprimir */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.btn-imprimir {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #007BFF, #0056b3);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+.btn-imprimir i {
+  font-size: 16px;
+}
+.btn-imprimir:hover {
+  background: linear-gradient(135deg, #0056b3, #003f88);
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(0, 86, 179, 0.3);
+}
+.btn-imprimir:active {
+  transform: scale(0.95);
+  box-shadow: 0 3px 8px rgba(0, 86, 179, 0.3);
+}
