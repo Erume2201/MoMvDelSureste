@@ -69,7 +69,6 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
                         </select>
                     </div>
 
-
                 </div>
 
                 <div class="form-actions">

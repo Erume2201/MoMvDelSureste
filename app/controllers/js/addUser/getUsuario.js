@@ -9,32 +9,31 @@ $(document).ready(function() {
     // Variable para almacenar todos los datos de los usuarios obtenidos del servidor.
     let usersData = [];
 
-    // ---
-    
-    // === Funciones de renderizado ===
-    /**
-     * Genera la estructura HTML de una fila de usuario.
-     * @param {Object} user - Objeto con los datos de un usuario.
-     * @param {number} index - Índice del usuario en el array paginado.
-     * @returns {string} - Cadena de texto con el HTML de la fila.
-     */
-    function renderUserRow(user, index) {
-        return `
-            <tr>
-                <td>${index + 1}</td>
-                <td>${user.nombre}</td>
-                <td>${user.apellidos}</td>
-                <td>${user.rfc}</td>
-                <td>${user.email}</td>
-                <td>${user.rol}</td>
-                <td class="acciones">
-                    <button class="btn-ver" title="Ver"><i class="fa-solid fa-eye"></i></button>
-                    <button class="btn-editar" title="Editar"><i class="fa-solid fa-pen-to-square"></i></button>
-                    <button class="btn-eliminar" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
-                </td>
-            </tr>
-        `;
-    }
+/**
+ * Genera la estructura HTML de una fila de usuario.
+ * @param {Object} user - Objeto con los datos de un usuario.
+ * @param {number} index - Índice del usuario en el array paginado.
+ * @returns {string} - Cadena de texto con el HTML de la fila.
+ */
+function renderUserRow(user, index) {
+    // Asegúrate de usar la propiedad user.id_usuario en el data-id
+    return `
+        <tr>
+            <td>${index + 1}</td>
+            <td>${user.nombre}</td>
+            <td>${user.apellidos}</td>
+            <td>${user.rfc}</td>
+            <td>${user.email}</td>
+            <td>${user.rol}</td>
+            <td>${user.id_usuario}</td>
+            <td class="acciones"> 
+                <button class="btn-ver" title="Ver" data-id="${user.id_usuario}"><i class="fa-solid fa-eye"></i></button>
+                <button class="btn-editar" title="Editar" data-id="${user.id_usuario}"><i class="fa-solid fa-pen-to-square"></i></button>
+                <button class="btn-eliminar" title="Eliminar" data-id="${user.id_usuario}"><i class="fa-solid fa-trash"></i></button>
+            </td>
+        </tr>
+    `;
+}
 
     // ---
 
@@ -123,4 +122,106 @@ $(document).ready(function() {
         // Muestra un mensaje de error en la tabla.
         tableBody.html('<tr><td colspan="7">Ocurrió un problema al conectar con el servidor.</td></tr>');
     });
+
+
+
+
+    // === Variables del Modal Editar Ricardo shto===
+const modalEditar = $('#modalEditar');
+const formEditarUsuario = $('#formEditarUsuario');
+
+/**
+ * Busca un usuario en el array global usersData por su id_usuario.
+ */
+function getUserById(id) {
+    // Es crucial que la búsqueda coincida con la propiedad 'id_usuario' de tus datos
+    return usersData.find(user => user.id_usuario.toString() === id.toString());
+}
+
+
+
+
+
+// -------------------------------------------------------------
+// EVENTO PARA EDITAR USUARIO
+// -------------------------------------------------------------
+
+// 1. Manejo del Clic en el botón EDITAR (Delegación de eventos)
+tableBody.on('click', '.btn-editar', function() {
+    const userId = $(this).data('id'); 
+    const user = getUserById(userId);
+    if (user) {
+        // Cargar datos en el formulario
+        $('#edit-id').val(user.id_usuario);
+        $('#edit-nombre').val(user.nombre);
+        $('#edit-apellidos').val(user.apellidos);
+        $('#edit-rfc').val(user.rfc);
+        $('#edit-email').val(user.email);
+        $('#edit-rol').val(user.rol); // Selecciona la opción del <select>
+
+        modalEditar.css('display', 'block');
+    } else {
+        Swal.fire('Error', 'No se encontró el usuario para editar.', 'error');
+    }
+});
+
+
+// 2. Manejo del Envío del Formulario de Edición (AJAX)
+formEditarUsuario.on('submit', function(e) {
+    e.preventDefault();
+    
+    // Serializa todos los datos del formulario (incluyendo el id_usuario oculto)
+    const formData = $(this).serialize(); 
+
+    $.ajax({
+        url: 'app/controllers/php/addUser/updateUser.php',
+        type: 'POST',
+        data: formData,
+        dataType: 'json'
+    })
+    .done(function(respuesta) {
+        console.table(respuesta);
+        if (respuesta && respuesta.success === true) {
+            modalEditar.css('display', 'none'); // Cierra el modal
+            Swal.fire('¡Actualizado!', 'El usuario ha sido actualizado correctamente.', 'success');
+           reloadUsersData(); 
+        } else {
+            Swal.fire('Error', respuesta.message || 'No se pudo actualizar al usuario.', 'error');
+        }
+    })
+    .fail(function() {
+        modalEditar.css('display', 'none');
+        Swal.fire('Error', 'Ocurrió un problema al conectar con el servidor.', 'error');
+    });
+});
+
+
+// 3. Lógica para cerrar el modal de Editar
+// Asumo que tu botón de cierre tiene la clase '.close-btn'
+modalEditar.find('.close-btn').on('click', function() {
+    modalEditar.css('display', 'none');
+});
+
+// Cierra el modal al hacer clic fuera
+$(window).on('click', function(event) {
+    if ($(event.target).is('#modalEditar')) {
+        modalEditar.css('display', 'none');
+    }
+});
+
+// Función de ejemplo para recargar los datos (Implementación básica)
+function reloadUsersData() {
+    // Esta función debe repetir la lógica de tu AJAX inicial
+    $.ajax({
+        url: 'app/controllers/php/addUser/getUser.php',
+        type: 'GET',
+        dataType: 'json'
+    })
+    .done(function(respuesta) {
+        if (respuesta && respuesta.success === true) {
+            usersData = respuesta.data;
+            renderTable(1); // Recarga la tabla en la primera página
+        }
+    });
+}
 });

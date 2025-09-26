@@ -15,5 +15,11 @@ class SQL{
     public static function getUsuarios(){
       return "SELECT id_usuario, nombre, apellidos, rfc, email, rol FROM usuarios;";
    }
+
+   public static function updateUser(){
+      return " UPDATE usuarios 
+        SET nombre = ?, apellidos = ?, rfc = ?, email = ?, rol = ?
+        WHERE id_usuario = ?;";
+   }
    }
 ?>

@@ -20,6 +20,7 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
     <!-- Llamando los estilos con la BASE_URL -->
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/sidebar.css">
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/usuarios/usuarios.css">
+    <link rel="stylesheet" href="<?php echo BASE_URL; ?>public/css/modales/modal.css">
 </head>
 
 <body class="main-usuarios">
@@ -48,24 +49,11 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
                             <th>RFC</th>
                             <th>Email</th>
                             <th>Rol</th>
+                            <th>Id usuario</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Ejemplo estático -->
-                        <tr>
-                            <td>1</td>
-                            <td>Efren</td>
-                            <td>Olán López</td>
-                            <td>0108GT629</td>
-                            <td>efre_ol78@gmail.com</td>
-                            <td>Administrador</td>
-                            <td class="acciones">
-                                <button class="btn-ver" title="Ver"><i class="fa-solid fa-eye"></i></button>
-                                <button class="btn-editar" title="Editar"><i class="fa-solid fa-pen-to-square"></i></button>
-                                <button class="btn-eliminar" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
-                            </td>
-                        </tr>
                         <tr>
                             <td colspan="7" style="text-align: center;">Cargando usuarios...</td>
                         </tr>
@@ -83,15 +71,49 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
             </div>
         </div>
     </div>
+    <!-- Modal de editar -->
+    <div id="modalEditar" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn" data-modal="modalEditar">&times;</span>
+            <h2>Editar Usuario</h2>
+            <form id="formEditarUsuario">
+                <input type="hidden" id="edit-id" name="id_usuario">
+
+                <label for="edit-nombre">Nombre(s):</label>
+                <input type="text" id="edit-nombre" name="nombre" required>
+
+                <label for="edit-apellidos">Apellidos:</label>
+                <input type="text" id="edit-apellidos" name="apellidos" required>
+
+                <label for="edit-rfc">RFC:</label>
+                <input type="text" id="edit-rfc" name="rfc" required>
+
+                <label for="edit-email">Email:</label>
+                <input type="email" id="edit-email" name="email" required>
+
+                <label for="edit-rol">Rol:</label>
+                <select id="edit-rol" name="rol" required>
+                    <option value="Administrador">Administrador</option>
+                    <option value="supervisor">Empleado</option>
+                    <option value="operador">Operador</option>
+                </select>
+
+                <div style="text-align: right; margin-top: 20px;">
+                    <button type="submit" class="btn-guardar">Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
 
     <!-- ===SCRIPTS=== -->
     <script src="<?php echo BASE_URL; ?>public/js/sidebar.js"></script>
     <!-- Librería de SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Script de los mensajes de alerta -->
     <script src="<?php echo BASE_URL; ?>public/js/alerts.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
     <script src="<?php echo BASE_URL; ?>app/controllers/js/addUser/getUsuario.js"></script>
 
 </body>

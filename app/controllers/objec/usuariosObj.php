@@ -55,7 +55,7 @@ public function SetUser() {
         return [
             'success' => false,
             'dato' => $validacionCampos,
-            'error' => 'El usuario o RFC ya registrados.'
+            'error' => 'El usuario, RFC o correo ya registrados.'
         ];
     }else {
         // No existe, insertamos el nuevo usuario
@@ -104,7 +104,35 @@ public function SetUser() {
     }
 
 
+/**
+     * regresa si se actualiza o no el usuario
+     * @return array|false returna un array o false
+     */
+    public function updateUser() {
+    $queryUpdate = SQL::updateUser();
+    $updateUser = $this->crud->update($queryUpdate, [
+        $this->nombre,
+        $this->apellidos,
+        $this->rfc,
+        $this->email,
+        $this->rol,
+        $this->id_usuario
+    ]);
 
+    // Retornamos el resultado del insert
+    if ($updateUser) {
+        return [
+            'success' => true,
+            'mensaje' => 'Usuario actualizado con éxito',
+            'id_usuario' => $updateUser
+        ];
+    } else {
+        return [
+            'success' => false,
+            'error' => 'No se logro actualizar el usuario. Intente nuevamente.'
+        ];
+    }
+    }
 
 
     // Métodos Get y Set para id_usuario
