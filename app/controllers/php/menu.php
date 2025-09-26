@@ -27,7 +27,7 @@ if (!isset($_SESSION['s1'])) {
 $permissions = [
     'administrador' => [
         'usuarios', 'usuarios_add',
-        'clientes', 'clientes_add',
+        'clientes', 'clientes_add', 'clientes_view',
         'tiendas', 'tiendas_add',
         'operadores', 'operadores_add',
         'unidades', 'unidades_add',
@@ -67,6 +67,7 @@ switch ($module) {
     // Clientes
     case 'clientes':
     case 'clientes_add':
+    case 'clientes_view':
     // Tiendas
     case 'tiendas':
     case 'tiendas_add':

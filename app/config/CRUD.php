@@ -1,6 +1,6 @@
 <?php
 // Obtenemos el archivo conexion.php para poder obtener la conexión
-require_once "ConexionDatos.php";
+require_once __DIR__ . '/ConexionDatos.php';
 
 class CRUD {
     private $conexion; 
