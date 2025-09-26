@@ -66,7 +66,8 @@ $clientes = $crud->select("SELECT * FROM clientes ORDER BY id_cliente ASC");
                                     <td><?php echo htmlspecialchars($cliente['telefono']); ?></td>
                                     <td><?php echo htmlspecialchars($cliente['email']); ?></td>
                                     <td class="acciones">
-                                        <button class="btn-ver" title="Ver"><i class="fa-solid fa-eye"></i></button>
+                                        <a href="<?php echo BASE_URL; ?>index.php?module=clientes_view&id=<?= $cliente['id_cliente'] ?>" title="Ver"><i class="fa-solid fa-eye"></i></a>
+                                        <!-- <button class="btn-ver" title="Ver"><i class="fa-solid fa-eye"></i></button> -->
                                         <button class="btn-editar" title="Editar"><i class="fa-solid fa-pen-to-square"></i></button>
                                         <button class="btn-eliminar" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
                                     </td>
@@ -88,7 +89,6 @@ $clientes = $crud->select("SELECT * FROM clientes ORDER BY id_cliente ASC");
         </div>
     </div>
     
-
     <!-- ===SCRIPTS=== -->
     <script src="<?php echo BASE_URL; ?>public/js/sidebar.js"></script>
     <!-- Librería de SweetAlert2 -->
