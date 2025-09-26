@@ -32,7 +32,7 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
                 <span class="espaciador"></span> <!-- Truco para balancear el flex -->
             </div>
             <!-- Formulario -->
-            <form id="form-tiendas" class="form-tiendas" action="<?php echo BASE_URL; ?>app/controllers/php/addTiendas/tiendas_add_action.php" method="POST">
+            <form id="form-tiendas" class="form-tiendas" action="<?php echo BASE_URL; ?>app/controllers/php/actionTiendas/tiendas_add_action.php" method="POST">
 
                 <!-- Campos en 2 columnas -->
                 <div class="form-grid">
