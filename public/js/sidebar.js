@@ -56,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "tiendas_add" : "tiendas",
         "tiendas_view" : "tiendas",
         "operadores_add" : "operadores",
+        "operadores_view" : "operadores",
         "unidades_add" : "unidades",
         "usuarios_add" : "usuarios",
         "contratos_add" : "contratos",

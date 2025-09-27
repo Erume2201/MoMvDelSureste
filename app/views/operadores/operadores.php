@@ -63,9 +63,11 @@ $operadores = $crud->select("SELECT * FROM operadores ORDER BY id_operador ASC")
                                     <td><?php echo htmlspecialchars($operador['licencia']); ?></td>
                                     <td><?php echo htmlspecialchars($operador['tipo_licencia']); ?></td>
                                     <td class="acciones">
-                                        <button class="btn-ver" title="Ver"><i class="fa-solid fa-eye"></i></button>
-                                        <button class="btn-editar" title="Editar"><i class="fa-solid fa-pen-to-square"></i></button>
-                                        <button class="btn-eliminar" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+                                        <a href="<?php echo BASE_URL; ?>index.php?module=operadores_view&id=<?= $operador['id_operador'] ?>" class="btn-ver" title="Ver"><i class="fa-solid fa-eye"></i></a>
+                                        
+                                        <a href="<?php echo BASE_URL; ?>index.php?module=operadores_edit&id=<?= $operador['id_operador'] ?>" class="btn-editar" title="Editar"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        
+                                        <button class="btn-eliminar" title="Eliminar" data-id="<?= $operador['id_operador'] ?>"><i class="fa-solid fa-trash"></i></button>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

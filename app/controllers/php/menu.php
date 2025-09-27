@@ -29,7 +29,7 @@ $permissions = [
         'usuarios', 'usuarios_add',
         'clientes', 'clientes_add', 'clientes_view',
         'tiendas', 'tiendas_add', 'tiendas_view',
-        'operadores', 'operadores_add',
+        'operadores', 'operadores_add', 'operadores_view',
         'unidades', 'unidades_add',
         'contratos', 'contratos_add', 'contratos_ver',
         // En futuro: viajes
@@ -75,6 +75,7 @@ switch ($module) {
     // Operadores
     case 'operadores':
     case 'operadores_add':
+    case 'operadores_view':
     // Unidades
     case 'unidades':
     case 'unidades_add':

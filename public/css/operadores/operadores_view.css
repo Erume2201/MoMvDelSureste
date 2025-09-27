@@ -1,0 +1,230 @@
+/* TIPOGRAFÍA */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/* =========================
+   CONTENIDO PRINCIPAL DE INFORMACIÓN DE CLIENTE
+========================= */
+body.main-operadores-view {
+  font-family: 'Poppins', sans-serif;
+  margin: 0; /* Asegura que no haya margen por defecto */
+  background-color: #f4f4f4;
+  color: #333; /* Color de texto general */
+}
+
+/* El `main-content` se desplaza para dejar espacio a la barra lateral */
+.main-content {
+  margin-left: 220px; /* Esta es la corrección clave */
+  padding: 20px;
+  box-sizing: border-box; /* Asegura que el padding se incluya en el ancho */
+}
+
+/* El contenedor de centra */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.titulo-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+.titulo-view h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0;
+}
+
+/* Flecha en la izquierda */
+.btn-flecha {
+  color: #2c3e50;
+  padding-left: 5px;
+  font-size: 22px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin-right: auto; /* la manda a la izquierda */
+}
+.btn-flecha:hover {
+  color: #000000;
+  transform: scale(1.05);
+}
+.btn-flecha:active {
+  transform: scale(0.95);
+}
+/* Espaciador "fantasma" del lado derecho */
+.espaciador {
+  width: 20px; /* mismo ancho que la flecha para equilibrar */
+  margin-left: auto;
+}
+
+/* Subtítulos */
+.main-content .container h3 {
+  font-size: 1.3rem;
+  font-weight: 600; /* semibold */
+  color: #34495e;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eaeaea; /* línea sutil */
+}
+
+/* =========================
+   ESTILOS DE LA SECCIÓN DE VISUALIZACIÓN
+========================= */
+
+/* Estilo para los títulos de sección con ícono */
+.view-section h3 {
+    display: flex;
+    align-items: center;
+}
+.view-section h3 .icon-title {
+    margin-right: 10px;
+    color: #007BFF; /* Color primario */
+}
+
+/* Contenedor principal del grid */
+.data-grid {
+    display: grid;
+    gap: 20px; /* Espacio entre los elementos */
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+/* Definición de columnas según la clase */
+.grid-2-cols {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 2 columnas más grandes */
+}
+
+/* Estilos de cada campo individual */
+.data-item {
+    padding: 10px 15px;
+    background-color: #fff;
+    border-left: 4px solid #007BFF; /* Resalte en el borde izquierdo */
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilo de la etiqueta (título del campo) */
+.data-item .label {
+    display: block;
+    font-size: 0.8rem;
+    color: #7f8c8d; /* Gris tenue */
+    font-weight: 500;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Estilo del valor del campo */
+.data-item .value {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600; /* Hace que el valor destaque */
+    color: #2c3e50;
+    word-wrap: break-word; /* Para URLs o textos largos */
+}
+
+/* Botones - Imprimir */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.btn-imprimir {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #007BFF, #0056b3);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+.btn-imprimir i {
+  font-size: 16px;
+}
+.btn-imprimir:hover {
+  background: linear-gradient(135deg, #0056b3, #003f88);
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(0, 86, 179, 0.3);
+}
+.btn-imprimir:active {
+  transform: scale(0.95);
+  box-shadow: 0 3px 8px rgba(0, 86, 179, 0.3);
+}
+
+/* =========================
+   RESPONSIVE MÓVIL (Max-width: 768px)
+========================= */
+
+@media (max-width: 768px) {
+    /* 1. Ajuste del Contenedor Principal (Similar al formulario) */
+    .main-content {
+        /* Elimina el margen lateral que hace espacio para la sidebar */
+        margin-left: 0;
+        /* Ajusta el padding para que no sea tan grande */
+        padding: 15px; 
+    }
+
+    /* 2. Ajuste del Contenedor de la Vista */
+    .container {
+        /* Quita el máximo de ancho para que ocupe casi toda la pantalla */
+        max-width: 100%;
+        padding: 20px 15px; /* Más padding en el vertical y menos en el horizontal */
+    }
+
+    /* 3. Colapsar los Grids de Datos a una Sola Columna */
+    .data-grid {
+        /* Forzamos una sola columna para cualquier grid */
+        grid-template-columns: 1fr !important; 
+        gap: 15px; /* Reduce el espacio para mejor visualización */
+        padding: 10px;
+    }
+
+    /* 4. Estilos de los Elementos de Datos */
+    .data-item {
+        /* Ajustes menores para que se vean bien en una pantalla estrecha */
+        padding: 12px 15px;
+        border-left-width: 5px; /* El borde se ve mejor un poco más grueso */
+    }
+
+    .data-item .value {
+        font-size: 0.95rem; /* Un poco más pequeño para ahorrar espacio */
+    }
+
+    /* 5. Ajuste de Botones (Similar al formulario) */
+    .form-actions {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .btn-imprimir {
+        width: 100%;
+        justify-content: center; /* Centra el ícono y texto */
+        padding: 14px;
+        font-size: 1rem;
+    }
+    
+    /* 6. Títulos */
+    .titulo-view h1 {
+        font-size: 1.5rem; /* Reducir el tamaño del título principal */
+    }
+}
