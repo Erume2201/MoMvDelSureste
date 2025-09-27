@@ -27,7 +27,6 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
     <div class="main-content">
         <div class="container">
             <h1>VISUALIZACIÓN Y REGISTRO DE USUARIOS 💻</h1>
-
             <!-- Tabla de usuarios-->
             <div class="usuarios-table-container">
                 <div class="table-header">
@@ -94,7 +93,7 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
                 <label for="edit-rol">Rol:</label>
                 <select id="edit-rol" name="rol" required>
                     <option value="Administrador">Administrador</option>
-                    <option value="supervisor">Empleado</option>
+                    <option value="supervisor">Supervisor</option>
                     <option value="operador">Operador</option>
                 </select>
 

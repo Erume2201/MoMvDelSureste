@@ -3,24 +3,14 @@
    Define el diseño base, fuentes y colores del fondo.
 ========================================================= */
 body {
-    /* Elimina el margen por defecto del navegador */
     margin: 0;
-    /* Define la fuente principal para toda la página */
     font-family: 'Roboto', sans-serif;
-    /* Color de fondo del body para el estilo visual */
     background-color: #e0f2f1;
-    /* Elimina cualquier padding por defecto */
     padding: 0;
 }
 
 /* Contenedor principal del dashboard, centra y da estilo de tarjeta */
 .dashboard-container {
-    /* Limita el ancho para que no ocupe toda la pantalla */
-    max-width: 1200px;
-    /* Centra el contenedor horizontalmente con auto */
-    margin: 20px auto;
-    /* Fondo blanco para el contenido del dashboard */
-    background-color: white;
     /* Sombra para dar un efecto de elevación y profundidad */
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     /* Bordes redondeados para un aspecto suave */
