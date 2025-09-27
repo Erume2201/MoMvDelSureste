@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Realizar la petición AJAX
-        fetch(`${BASE_URL}app/controllers/php/addTiendas/get_clientes.php?term=${searchTerm}`)
+        fetch(`${BASE_URL}app/controllers/php/actionTiendas/get_clientes.php?term=${searchTerm}`)
             .then(response => response.json())
             .then(data => {
                 limpiarResultados();
