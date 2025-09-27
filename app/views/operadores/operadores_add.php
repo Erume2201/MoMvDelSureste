@@ -28,7 +28,7 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
             <h1>➕ Agregar Operadores</h1>
 
             <!-- Formulario -->
-            <form id="form-operadores" class="form-operadores" action="<?php echo BASE_URL; ?>app/controllers/php/addOperadores/operadores_add_action.php" method="POST">
+            <form id="form-operadores" class="form-operadores" action="<?php echo BASE_URL; ?>app/controllers/php/actionOperadores/operadores_add_action.php" method="POST">
 
                 <!-- Campos en 2 columnas -->
                 <div class="form-grid">

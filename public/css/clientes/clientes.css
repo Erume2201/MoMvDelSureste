@@ -107,6 +107,9 @@ h1 {
   padding: 12px 15px;
   border-bottom: 1px solid #ddd;
 }
+.operadores-table td.acciones {
+  text-align: center;
+}
 .clientes-table thead {
   background: #f8f9fa;
   font-weight: 600;
