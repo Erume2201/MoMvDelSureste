@@ -14,16 +14,16 @@ $crud = new CRUD();
 $sql = "SELECT t.*, c.nombre_cliente
         FROM tiendas t
         JOIN clientes c ON t.id_cliente = c.id_cliente
-        WHERE t.id_cliente = $id
+        WHERE t.id_tienda = $id
         LIMIT 1";
-$tienda = $crud->select($sql);
+// Usamos selectOne que devuelve el array asociativo directamente!
+$tienda = $crud->selectOne($sql);
 
-if (!$tienda) {
+// Verificar si se obtuvo algún resultado
+if (empty($tienda)) {
     header("Location: index.php?module=tiendas&error=no_encontrado");
     exit;
 }
-
-$tienda = $tienda[0]; // extraer el primer resultado
 
 // Helper para escapar salida
 function e($v) {

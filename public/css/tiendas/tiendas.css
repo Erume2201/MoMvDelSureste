@@ -126,7 +126,10 @@ h1 {
 }
 
 /* Botones de la tabla */
-.acciones button {
+.acciones button,
+.acciones a {
+  display: inline-block;
+  text-decoration: none;
   background: none; /*El color lo dará el ícono*/
   border: none;
   cursor: pointer;
@@ -135,32 +138,40 @@ h1 {
   font-size: 16px; /*Tamaño del ícono*/
   transition: transform 0.2s ease, color 0.2s ease;
 }
-.acciones button:hover {
+.acciones button:hover,
+.acciones a:hover {
   transform: scale(1.2);
 }
-.acciones button:active {
+.acciones button:active,
+.acciones a:active {
   transform: scale(0.95);
 }
 
 /* Colores por acción */
-.btn-ver i {
+.btn-ver i,
+.btn-ver {
   color: #17a2b8;
 }
-.btn-ver:hover i {
+.btn-ver:hover i,
+.btn-ver:hover {
   color: #117a8b;
 }
 
-.btn-editar i {
+.btn-editar i,
+.btn-editar {
   color: #ffc107;
 }
-.btn-editar:hover i {
+.btn-editar:hover i,
+.btn-editar:hover {
   color: #e0a800;
 }
 
-.btn-eliminar i {
+.btn-eliminar i,
+.btn-eliminar {
   color: #dc3545;
 }
-.btn-eliminar:hover i {
+.btn-eliminar:hover i,
+.btn-eliminar:hover {
   color: #a71d2a;
 }
 
@@ -274,7 +285,8 @@ h1 {
     gap: 4px;
   }
 
-  .acciones button {
+  .acciones button,
+  .acciones a {
     font-size: 16px; /*Íconos más pequeños*/
     padding: 4px;
   }
@@ -299,7 +311,8 @@ h1 {
     align-items: flex-start;
   }
 
-  .acciones button {
+  .acciones button,
+  .acciones a {
     margin: 2px 0;
     font-size: 14px;
   }
