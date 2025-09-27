@@ -81,3 +81,8 @@
     display: inline-block;
     width: 100px; /* Ancho fijo para las etiquetas */
 }
+
+/* Oculta la columna completa donde el encabezado es "Id usuario" */
+.ocultar-columna-id {
+    display: none;
+}

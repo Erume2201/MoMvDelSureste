@@ -25,7 +25,7 @@ function renderUserRow(user, index) {
             <td>${user.rfc}</td>
             <td>${user.email}</td>
             <td>${user.rol}</td>
-            <td>${user.id_usuario}</td>
+            <td class="ocultar-columna-id">${user.id_usuario}</td>
             <td class="acciones"> 
                 <button class="btn-ver" title="Ver" data-id="${user.id_usuario}"><i class="fa-solid fa-eye"></i></button>
                 <button class="btn-editar" title="Editar" data-id="${user.id_usuario}"><i class="fa-solid fa-pen-to-square"></i></button>

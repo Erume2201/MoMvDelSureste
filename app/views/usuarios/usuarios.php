@@ -48,7 +48,7 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
                             <th>RFC</th>
                             <th>Email</th>
                             <th>Rol</th>
-                            <th>Id usuario</th>
+                            <th class="ocultar-columna-id">Id usuario</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
