@@ -81,37 +81,41 @@ body.main-operadores-view {
 
 /* Estilo para los títulos de sección con ícono */
 .view-section h3 {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 .view-section h3 .icon-title {
-    margin-right: 10px;
-    color: #007BFF; /* Color primario */
+  margin-right: 10px;
+  color: #0fc2ce;
 }
 
 /* Contenedor principal del grid */
 .data-grid {
-    display: grid;
-    gap: 20px; /* Espacio entre los elementos */
-    margin-bottom: 30px;
-    padding: 15px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    border: 1px solid #eee;
+  display: grid;
+  gap: 25px; /* Espacio entre los elementos */
+  margin-bottom: 30px;
+  padding: 25px;
+  background-color: #f3f7fa;
+  border-radius: 12px;
+  border: none;
 }
 
 /* Definición de columnas según la clase */
 .grid-2-cols {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 2 columnas más grandes */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 2 columnas más grandes */
 }
 
 /* Estilos de cada campo individual */
 .data-item {
-    padding: 10px 15px;
-    background-color: #fff;
-    border-left: 4px solid #007BFF; /* Resalte en el borde izquierdo */
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  padding: 18px 20px;
+  background-color: #fff;
+  border-left: 5px solid #0fc2ce; /* Resalte en el borde izquierdo */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+}
+.data-item:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
 }
 
 /* Estilo de la etiqueta (título del campo) */
@@ -201,8 +205,9 @@ body.main-operadores-view {
     /* 4. Estilos de los Elementos de Datos */
     .data-item {
         /* Ajustes menores para que se vean bien en una pantalla estrecha */
-        padding: 12px 15px;
+        padding: 15px;
         border-left-width: 5px; /* El borde se ve mejor un poco más grueso */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     }
 
     .data-item .value {
