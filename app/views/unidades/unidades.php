@@ -65,9 +65,11 @@ $unidades = $crud->select("SELECT * FROM unidades ORDER BY id_unidad ASC");
                                     <td><?php echo htmlspecialchars($unidad['numero_serie']); ?></td>
                                     <td><?php echo htmlspecialchars($unidad['poliza_seguro']); ?></td>
                                     <td class="acciones">
-                                        <button class="btn-ver" title="Ver"><i class="fa-solid fa-eye"></i></button>
-                                        <button class="btn-editar" title="Editar"><i class="fa-solid fa-pen-to-square"></i></button>
-                                        <button class="btn-eliminar" title="Eliminar"><i class="fa-solid fa-trash"></i></button>
+                                        <a href="<?php echo BASE_URL; ?>index.php?module=unidades_view&id=<?= $unidad['id_unidad'] ?>" class="btn-ver" title="Ver"><i class="fa-solid fa-eye"></i></a>
+                                        
+                                        <a href="<?php echo BASE_URL; ?>index.php?module=unidades_edit&id=<?= $unidad['id_unidad'] ?>" class="btn-editar" title="Editar"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        
+                                        <button class="btn-eliminar" title="Eliminar" data-id="<?= $unidad['id_unidad'] ?>"><i class="fa-solid fa-trash"></i></button>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

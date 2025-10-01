@@ -29,7 +29,7 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
             <h1>➕ Agregar Unidad</h1>
 
             <!-- Formulario -->
-            <form id="form-unidades" class="form-unidades" action="<?php echo BASE_URL; ?>app/controllers/php/addUnidades/unidades_add_action.php" method="POST">
+            <form id="form-unidades" class="form-unidades" action="<?php echo BASE_URL; ?>app/controllers/php/actionUnidades/unidades_add_action.php" method="POST">
 
                 <!-- Campos en 2 columnas -->
                 <div class="form-grid">
