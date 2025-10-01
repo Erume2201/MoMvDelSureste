@@ -86,7 +86,7 @@ body.main-clientes-view {
 }
 .view-section h3 .icon-title {
     margin-right: 10px;
-    color: #007BFF; /* Color primario */
+    color: #0cc766; /* Color primario */
 }
 
 /* Contenedor principal del grid */
@@ -109,7 +109,7 @@ body.main-clientes-view {
 .data-item {
     padding: 10px 15px;
     background-color: #fff;
-    border-left: 4px solid #007BFF; /* Resalte en el borde izquierdo */
+    border-left: 4px solid #0cc766; /* Resalte en el borde izquierdo */
     border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
