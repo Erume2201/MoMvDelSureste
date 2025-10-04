@@ -6,6 +6,7 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
 
 $crud = new CRUD();
 $clientes = $crud->select("SELECT * FROM clientes ORDER BY id_cliente ASC");
+
 ?>
 
 <!DOCTYPE html>

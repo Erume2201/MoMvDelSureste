@@ -39,6 +39,7 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
                 <div class="data-grid grid-2-cols">
                     <div class="data-item">
                         <span class="label">Nombre / Razón social</span>
+                      <!--  <input type="text" name="nombre_cliente" value="<?= e($cliente['nombre_cliente']) ?>" />-->
                         <p class="value"><?= e($cliente['nombre_cliente']) ?></p>
                     </div>
                     <div class="data-item">
