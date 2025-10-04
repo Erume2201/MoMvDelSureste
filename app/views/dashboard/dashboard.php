@@ -25,7 +25,7 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
     <div class="main-content">
         <header class="dashboard-header">
             <div class="header-nav">
-                <h1>Dashboard, Bienvenido: <?= htmlspecialchars($_SESSION['nombre']); ?></h1>
+                <h1>Dashboard, Bienvenido: <?= htmlspecialchars($_SESSION['nombre'] ?? 'Usuario'); ?></h1>
             </div>
             <div class="header-profile dropdown-menu-container">
                 <i class='bx bxs-user-circle' id="profile-icon"></i>
@@ -37,6 +37,7 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
         </header>
 
         <div class="main-grid">
+            <!-- Tarjetas de métricas -->
             <div class="card metric-card traffic">
                 <div class="card-title">TOTAL DE COTIZACIONES</div>
                 <div class="metric-value">325,456</div>
@@ -46,24 +47,27 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
                     <i class='bx bx-trending-up trend-icon'></i>
                 </div>
             </div>
+
             <div class="card metric-card users">
                 <div class="card-title">TOTAL DE COTIZACIONES PAGADAS</div>
                 <div class="metric-value">3,006</div>
                 <div class="metric-trend">
                     <span class="trend-number negative">-4.54%</span>
-                    <span class="trend-text"> PERDIDA / GANANCIA</span>
+                    <span class="trend-text">PERDIDA / GANANCIA</span>
                     <i class='bx bx-trending-down trend-icon'></i>
                 </div>
             </div>
+
             <div class="card metric-card performance">
                 <div class="card-title">AVANCE EN COTIZACIONES REALIZADAS / PAGADAS</div>
                 <div class="metric-value">60%</div>
                 <div class="metric-trend">
                     <span class="trend-number positive">+2.54%</span>
-                    <span class="trend-text"> ESTE MES</span>
+                    <span class="trend-text">ESTE MES</span>
                     <i class='bx bx-trending-up trend-icon'></i>
                 </div>
             </div>
+
             <div class="card metric-card sales">
                 <div class="card-title">GENERADO EN VENTAS</div>
                 <div class="metric-value">$852</div>
@@ -74,11 +78,13 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
                 </div>
             </div>
 
+            <!-- Tarjeta Health -->
             <div id="health-card" class="card nav-card health">
                 <span>HEALTH CARE</span>
                 <i class='bx bxs-heart'></i>
             </div>
             
+            <!-- Gráfica de línea -->
             <div class="card chart-card line-chart">
                 <div class="card-title">LINEA DE VENTAS DE ESTE AÑO</div>
                 <div class="chart-container">
@@ -86,6 +92,7 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
                 </div>
             </div>
 
+            <!-- Updates -->
             <div class="card update-card">
                 <div class="update-icon">
                     <i class='bx bxs-download'></i>
@@ -93,6 +100,7 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
                 <div class="update-text">UPDATES</div>
             </div>
 
+            <!-- Gráfica de barras -->
             <div class="card chart-card bar-chart">
                 <div class="card-title">TOTAL DE COTIZACIONES PAGADAS</div>
                 <div class="chart-container">
@@ -102,11 +110,12 @@ include __DIR__ . '../../layout/sidebar.php'; // MENÚ LATERAL
         </div>
     </div>
     
-    <script src="<?php echo BASE_URL; ?>public/js/sidebar.js"></script>
+    <!-- JS -->
+    <script src="<?= BASE_URL; ?>public/js/sidebar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="<?php echo BASE_URL; ?>public/js/dashboard.js"></script>
+    <script src="<?= BASE_URL; ?>public/js/dashboard.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="public/js/alerts.js"></script>
+    <script src="<?= BASE_URL; ?>public/js/alerts.js"></script>
 </body>
 
 </html>

@@ -1,6 +1,5 @@
 /* =========================================================
-   ESTRUCTURA GENERAL DEL DASHBOARD
-   Define el diseño base, fuentes y colores del fondo.
+ESTRUCTURA GENERAL DEL DASHBOARD
 ========================================================= */
 body {
     margin: 0;
@@ -9,228 +8,154 @@ body {
     padding: 0;
 }
 
-/* Contenedor principal del dashboard, centra y da estilo de tarjeta */
-.dashboard-container {
-    /* Sombra para dar un efecto de elevación y profundidad */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    /* Bordes redondeados para un aspecto suave */
-    border-radius: 8px;
-    /* Esconde el contenido que se salga del contenedor */
-    overflow: hidden;
-}
-
 /* =========================================================
-   ENCABEZADO
-   Estilos para la barra superior del dashboard.
+ENCABEZADO
 ========================================================= */
 .dashboard-header {
-    /* Usa Flexbox para alinear elementos en el encabezado */
     display: flex;
-    /* Coloca los elementos a los extremos (izquierda y derecha) */
     justify-content: space-between;
-    /* Centra los elementos verticalmente */
     align-items: center;
-    /* Espacio interno en el encabezado */
     padding: 15px 30px;
-    /* Color de fondo del encabezado */
     background-color: white;
-    /* Línea divisoria en la parte inferior */
     border-bottom: 1px solid #eee;
 }
 
 .header-nav {
-    /* Usa Flexbox para alinear los elementos de navegación (HOME, BREADCRUMB) */
     display: flex;
-    /* Centra los elementos verticalmente */
     align-items: center;
-    /* Espacio entre los elementos */
-    gap: 15px;
-    /* Texto en negrita para la navegación principal */
-    font-weight: bold;
-}
-
-.breadcrumb {
-    /* Color de texto para el "camino de migas" */
-    color: #999;
-    /* Tamaño de fuente más pequeño */
-    font-size: 14px;
-    /* Peso normal de la fuente */
-    font-weight: normal;
 }
 
 .header-profile i {
-    /* Tamaño del ícono de perfil */
     font-size: 30px;
-    /* Color del ícono */
     color: #555;
 }
 
 /* =========================================================
-   GRID PRINCIPAL
-   Define la estructura de cuadrícula para los bloques del dashboard.
+GRID PRINCIPAL
 ========================================================= */
 .main-grid {
-    /* Usa Grid Layout para la disposición en columnas y filas */
     display: grid;
-    /* Define 4 columnas de igual ancho (1fr) */
     grid-template-columns: repeat(4, 1fr);
-    /* Las filas se dimensionan automáticamente según su contenido */
-    grid-template-rows: auto;
-    /* Espacio entre las celdas de la cuadrícula */
     gap: 20px;
-    /* Espacio interno en la cuadrícula */
     padding: 20px;
 }
 
 /* =========================================================
-   ESTILOS GENERALES DE TARJETAS
-   Estilos comunes para todas las "cards" del dashboard.
+ESTILOS GENERALES DE TARJETAS
 ========================================================= */
 .card {
-    /* Color de fondo para la mayoría de las tarjetas */
     background-color: #f7f9fc;
-    /* Bordes redondeados */
     border-radius: 8px;
-    /* Espacio interno de la tarjeta */
     padding: 20px;
-    /* Usa Flexbox para alinear el contenido internamente */
     display: flex;
-    /* Organiza los elementos en una columna (de arriba a abajo) */
     flex-direction: column;
-    /* Sombra para las tarjetas */
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 /* =========================================================
-   TARJETAS DE MÉTRICAS (TOTAL TRAFFIC, NEW USERS, etc.)
+TARJETAS DE MÉTRICAS
 ========================================================= */
 .metric-card {
-    /* Borde superior de color para diferenciarlas */
     border-top: 5px solid;
-    /* Espacio interno adicional en la parte superior */
     padding-top: 15px;
 }
 
-/* Colores de borde específicos para cada métrica */
-.metric-card.traffic { border-color: #66bb6a; }
-.metric-card.users { border-color: #ffb74d; }
-.metric-card.performance { border-color: #e57373; }
-.metric-card.sales { border-color: #26c6da; }
+.metric-card.traffic {
+    border-color: #66bb6a;
+    background-color: #e8f5e9;
+}
+
+.metric-card.users {
+    border-color: #ffb74d;
+    background-color: #fff3e0;
+}
+
+.metric-card.performance {
+    border-color: #e57373;
+    background-color: #ffebee;
+}
+
+.metric-card.sales {
+    border-color: #26c6da;
+    background-color: #e0f7fa;
+}
 
 .metric-value {
-    /* Tamaño de fuente grande para el valor principal */
     font-size: 36px;
-    /* Negrita */
     font-weight: bold;
-    /* Margen superior para separarlo del título */
     margin-top: 10px;
 }
 
 .metric-trend {
-    /* Usa Flexbox para alinear el porcentaje y el ícono */
     display: flex;
-    /* Centra los elementos verticalmente */
     align-items: center;
-    /* Tamaño de fuente para el texto de tendencia */
     font-size: 14px;
-    /* Color de texto gris */
     color: #777;
-    /* Margen superior */
     margin-top: 5px;
 }
 
-/* Colores para los números de tendencia */
 .trend-number.positive { color: #66bb6a; }
 .trend-number.negative { color: #e57373; }
 
 .trend-icon {
-    /* Tamaño del ícono de tendencia */
     font-size: 24px;
-    /* Mueve el ícono al extremo derecho */
     margin-left: auto;
 }
 
 /* =========================================================
-   TARJETAS DE NAVEGACIÓN (HEALTH, WEATHER)
+TARJETAS DE NAVEGACIÓN
 ========================================================= */
 .nav-card {
-    /* Fondo blanco para estas tarjetas */
-    background-color: #fff;
-    /* Alineación de los elementos en una fila (texto e ícono) */
     flex-direction: row;
-    /* Distribuye el espacio entre los elementos */
     justify-content: space-between;
-    /* Centra los elementos verticalmente */
     align-items: center;
-    /* Borde a la izquierda */
     border-left: 5px solid;
-    /* Espacio interno */
     padding: 20px;
 }
 
-/* Colores de borde para cada tarjeta de navegación */
-.nav-card.health {
-    border-color: #ef9a9a !important;
-}
-.nav-card.weather {
-    border-color: #9fa8da !important;
+.card.nav-card.health {
+    background-color: #fdecea; /* rojo claro */
 }
 
 .nav-card i {
-    /* Tamaño del ícono */
     font-size: 30px;
-    /* Color del ícono */
     color: #666;
 }
 
 /* =========================================================
-   TARJETA DE UPDATES
+TARJETA DE UPDATES
 ========================================================= */
-.update-card {
-    /* Color de fondo */
+.card.update-card {
     background-color: #ffab91;
-    /* Alinea el texto al centro */
     text-align: center;
-    /* Color del texto */
     color: white;
-    /* Centra el contenido verticalmente */
     justify-content: center;
-    /* Posiciona la tarjeta en la cuadrícula */
     grid-row: 3 / span 1;
     grid-column: 1 / span 1;
 }
 
 .update-icon i {
-    /* Tamaño del ícono */
     font-size: 80px;
 }
 
 .update-text {
-    /* Texto en negrita */
     font-weight: bold;
-    /* Tamaño de fuente */
     font-size: 18px;
-    /* Margen superior */
     margin-top: 10px;
 }
 
 /* =========================================================
-   TARJETAS DE GRÁFICOS
+TARJETAS DE GRÁFICOS
 ========================================================= */
 .chart-card {
-    /* Ocupa 3 columnas en la cuadrícula */
     grid-column: span 3;
-    /* Fondo blanco para estas tarjetas */
-    background-color: white;
 }
 
-/* Posición específica para el gráfico de línea */
 .chart-card.line-chart {
     grid-row: 2 / span 1;
     grid-column: 2 / span 3;
 }
 
-/* Posición y color de fondo para el gráfico de barras */
 .chart-card.bar-chart {
     grid-row: 3 / span 1;
     grid-column: 2 / span 3;
@@ -238,51 +163,22 @@ body {
 }
 
 .chart-container {
-    /* Permite que el contenedor del gráfico ocupe el espacio disponible */
     flex-grow: 1;
 }
 
 /* =========================================================
-   ESTILOS DE LA BARRA DE NAVEGACIÓN SUPERIOR
-   ========================================================= */
+MENÚ DESPLEGABLE
+========================================================= */
 .header-profile {
     position: relative;
     cursor: pointer;
 }
 
-/* =========================================================
-   ESTILOS DEL MENÚ DESPLEGABLE
-   ========================================================= */
 .dropdown-menu {
-    /* ... (El resto de tus estilos para el menú) ... */
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: white; /* Asegura que el fondo sea blanco */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 5px;
-    list-style: none;
-    padding: 10px;
-    margin-top: 5px;
-    width: 150px;
     z-index: 1000;
-    display: none;
-}
-/* Menú desplegable */
-.dropdown-menu {
-    /* Clave: se posiciona en relación con el contenedor padre (.header-profile). */
-    position: absolute; 
-    
-    /* Posiciona el menú debajo del ícono. */
-    top: 100%;
-    
-    /* Alinea el menú a la derecha del ícono. */
-    right: 0;
-    
-    /* Asegura que el menú esté por encima de otros elementos. */
-    z-index: 1000;
-    
-    /* Estilo del menú: fondo, sombra, bordes, etc. */
     background-color: white;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     border-radius: 5px;
@@ -290,23 +186,19 @@ body {
     padding: 10px;
     margin-top: 5px;
     width: 150px;
-    
-    /* Oculta el menú por defecto. */
     display: none;
 }
 
-/* Estilos de los elementos del menú */
 .dropdown-menu li a {
     display: block;
     padding: 8px 12px;
-    color: #333; /* Color de texto oscuro para que se vea bien */
+    color: #333;
     text-decoration: none;
     font-size: 14px;
     border-radius: 3px;
     transition: background-color 0.2s;
-    background-color: transparent; /* Asegura que el color de fondo por defecto sea transparente */
 }
 
 .dropdown-menu li a:hover {
-    background-color: #f0f0f0; /* Color gris claro al pasar el mouse */
+    background-color: #f0f0f0;
 }
